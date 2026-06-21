@@ -3,7 +3,8 @@ export type ApplicationStatus =
   | 'under_review'
   | 'shortlisted'
   | 'accepted'
-  | 'rejected';
+  | 'rejected'
+  | 'waitlisted';
 
 export type FileReference = {
   url: string;

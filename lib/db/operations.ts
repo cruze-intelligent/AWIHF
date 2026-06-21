@@ -1,155 +1,189 @@
-import { Pool, type QueryResultRow } from 'pg';
+import { ApplicationStatus as PrismaApplicationStatus } from '@prisma/client';
 import { getEnv } from '@/lib/config/env';
-import type { ContactSubmissionRecord, MentorshipApplicationRecord } from './types';
+import { prisma } from '@/lib/prisma';
+import type { ContactSubmissionRecord, MentorshipApplicationRecord, ApplicationStatus } from './types';
 
 export type DbResult<T> = { ok: true; data: T } | { ok: false; error: string };
 
-let pool: Pool | null = null;
+const statusToPrisma: Record<ApplicationStatus, PrismaApplicationStatus> = {
+  pending: PrismaApplicationStatus.PENDING,
+  under_review: PrismaApplicationStatus.UNDER_REVIEW,
+  shortlisted: PrismaApplicationStatus.SHORTLISTED,
+  accepted: PrismaApplicationStatus.ACCEPTED,
+  rejected: PrismaApplicationStatus.REJECTED,
+  waitlisted: PrismaApplicationStatus.WAITLISTED,
+};
 
-function getPool() {
-  const env = getEnv();
-  if (!env.DATABASE_URL) {
-    return null;
-  }
-
-  if (!pool) {
-    pool = new Pool({
-      connectionString: env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
-      max: 5,
-      idleTimeoutMillis: 10_000,
-    });
-  }
-
-  return pool;
+function isDatabaseConfigured() {
+  return Boolean(getEnv().DATABASE_URL);
 }
 
-async function query<T extends QueryResultRow>(text: string, values: unknown[] = []): Promise<DbResult<T[]>> {
-  const db = getPool();
-  if (!db) {
-    return { ok: false, error: 'DATABASE_URL is not configured.' };
-  }
+function databaseNotConfigured<T>(): DbResult<T> {
+  return { ok: false, error: 'DATABASE_URL is not configured.' };
+}
 
-  try {
-    const result = await db.query<T>(text, values);
-    return { ok: true, data: result.rows };
-  } catch (error) {
-    console.error('Database query failed', error);
-    return { ok: false, error: 'Database operation failed.' };
-  }
+function dateOnly(value: string) {
+  return new Date(`${value}T00:00:00.000Z`);
 }
 
 export async function assertDatabaseConfigured(): Promise<DbResult<true>> {
-  return getPool() ? { ok: true, data: true } : { ok: false, error: 'DATABASE_URL is not configured.' };
+  return isDatabaseConfigured() ? { ok: true, data: true } : databaseNotConfigured();
 }
 
 export async function insertContactSubmission(record: ContactSubmissionRecord): Promise<DbResult<{ id: string }>> {
-  const result = await query<{ id: string }>(
-    `
-      insert into contact_submissions (
-        full_name, email, subject, message, source, ip_hash, user_agent
-      )
-      values ($1, $2, $3, $4, $5, $6, $7)
-      returning id
-    `,
-    [
-      record.fullName,
-      record.email,
-      record.subject || null,
-      record.message,
-      record.source ?? 'website',
-      record.ipHash ?? null,
-      record.userAgent ?? null,
-    ]
-  );
-
-  if (!result.ok) {
-    return result;
+  if (!isDatabaseConfigured()) {
+    return databaseNotConfigured();
   }
 
-  return { ok: true, data: result.data[0] };
+  try {
+    const submission = await prisma.contactSubmission.create({
+      data: {
+        fullName: record.fullName,
+        email: record.email,
+        subject: record.subject || null,
+        message: record.message,
+        source: record.source ?? 'website',
+        ipHash: record.ipHash ?? null,
+        userAgent: record.userAgent ?? null,
+      },
+      select: { id: true },
+    });
+
+    return { ok: true, data: submission };
+  } catch (error) {
+    console.error('Contact submission database insert failed', error);
+    return { ok: false, error: 'Database operation failed.' };
+  }
 }
 
 export async function insertMentorshipApplication(
   record: MentorshipApplicationRecord
 ): Promise<DbResult<{ id: string }>> {
-  const result = await query<{ id: string }>(
-    `
-      insert into mentorship_applications (
-        full_name, gender, date_of_birth, phone_number, email, institution,
-        program_of_study, year_of_study, motivation, career_interests,
-        leadership_experience, additional_comments, cv_file_url, cv_file_name,
-        cv_file_size, cv_file_mime_type, transcript_file_url, transcript_file_name,
-        transcript_file_size, transcript_file_mime_type, status, ip_hash, user_agent
-      )
-      values (
-        $1, $2, $3, $4, $5, $6,
-        $7, $8, $9, $10,
-        $11, $12, $13, $14,
-        $15, $16, $17, $18,
-        $19, $20, $21, $22, $23
-      )
-      returning id
-    `,
-    [
-      record.fullName,
-      record.gender,
-      record.dateOfBirth,
-      record.phoneNumber,
-      record.email,
-      record.institution,
-      record.programOfStudy,
-      record.yearOfStudy,
-      record.motivation,
-      record.careerInterests,
-      record.leadershipExperience ?? null,
-      record.additionalComments ?? null,
-      record.cvFile?.url ?? null,
-      record.cvFile?.fileName ?? null,
-      record.cvFile?.fileSize ?? null,
-      record.cvFile?.mimeType ?? null,
-      record.transcriptFile?.url ?? null,
-      record.transcriptFile?.fileName ?? null,
-      record.transcriptFile?.fileSize ?? null,
-      record.transcriptFile?.mimeType ?? null,
-      record.status ?? 'pending',
-      record.ipHash ?? null,
-      record.userAgent ?? null,
-    ]
-  );
-
-  if (!result.ok) {
-    return result;
+  if (!isDatabaseConfigured()) {
+    return databaseNotConfigured();
   }
 
-  return { ok: true, data: result.data[0] };
+  try {
+    const application = await prisma.mentorshipApplication.create({
+      data: {
+        fullName: record.fullName,
+        gender: record.gender,
+        dateOfBirth: dateOnly(record.dateOfBirth),
+        phoneNumber: record.phoneNumber,
+        email: record.email,
+        institution: record.institution,
+        programOfStudy: record.programOfStudy,
+        yearOfStudy: record.yearOfStudy,
+        motivation: record.motivation,
+        careerInterests: record.careerInterests,
+        leadershipExperience: record.leadershipExperience ?? null,
+        additionalComments: record.additionalComments ?? null,
+        cvFileUrl: record.cvFile?.url ?? null,
+        cvFileName: record.cvFile?.fileName ?? null,
+        cvFileSize: record.cvFile?.fileSize ?? null,
+        cvFileMimeType: record.cvFile?.mimeType ?? null,
+        transcriptFileUrl: record.transcriptFile?.url ?? null,
+        transcriptFileName: record.transcriptFile?.fileName ?? null,
+        transcriptFileSize: record.transcriptFile?.fileSize ?? null,
+        transcriptFileMimeType: record.transcriptFile?.mimeType ?? null,
+        status: statusToPrisma[record.status ?? 'pending'],
+        ipHash: record.ipHash ?? null,
+        userAgent: record.userAgent ?? null,
+      },
+      select: { id: true },
+    });
+
+    return { ok: true, data: application };
+  } catch (error) {
+    console.error('Mentorship application database insert failed', error);
+    return { ok: false, error: 'Database operation failed.' };
+  }
 }
 
 export async function getContactSubmissions() {
-  return query('select * from contact_submissions order by created_at desc');
+  if (!isDatabaseConfigured()) {
+    return databaseNotConfigured<unknown[]>();
+  }
+
+  try {
+    const submissions = await prisma.contactSubmission.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return { ok: true as const, data: submissions };
+  } catch (error) {
+    console.error('Contact submissions query failed', error);
+    return { ok: false as const, error: 'Database operation failed.' };
+  }
 }
 
-export async function getMentorshipApplications() {
-  return query('select * from mentorship_applications order by submitted_at desc');
+export async function getMentorshipApplications(status?: PrismaApplicationStatus) {
+  if (!isDatabaseConfigured()) {
+    return databaseNotConfigured<unknown[]>();
+  }
+
+  try {
+    const applications = await prisma.mentorshipApplication.findMany({
+      where: status ? { status } : undefined,
+      orderBy: { submittedAt: 'desc' },
+    });
+    return { ok: true as const, data: applications };
+  } catch (error) {
+    console.error('Mentorship applications query failed', error);
+    return { ok: false as const, error: 'Database operation failed.' };
+  }
+}
+
+export async function updateMentorshipApplicationReview(input: {
+  id: string;
+  status: PrismaApplicationStatus;
+  adminNotes?: string | null;
+  reviewedBy?: string | null;
+}) {
+  if (!isDatabaseConfigured()) {
+    return databaseNotConfigured();
+  }
+
+  try {
+    const application = await prisma.mentorshipApplication.update({
+      where: { id: input.id },
+      data: {
+        status: input.status,
+        adminNotes: input.adminNotes ?? null,
+        reviewedBy: input.reviewedBy ?? null,
+        reviewedAt: new Date(),
+      },
+    });
+    return { ok: true as const, data: application };
+  } catch (error) {
+    console.error('Mentorship application update failed', error);
+    return { ok: false as const, error: 'Database operation failed.' };
+  }
 }
 
 export async function subscribeNewsletter(email: string): Promise<DbResult<{ id: string }>> {
-  const result = await query<{ id: string }>(
-    `
-      insert into newsletter_subscribers (email, is_active)
-      values ($1, true)
-      on conflict (email) do update
-      set is_active = true, subscribed_at = now()
-      returning id
-    `,
-    [email]
-  );
-
-  if (!result.ok) {
-    return result;
+  if (!isDatabaseConfigured()) {
+    return databaseNotConfigured();
   }
 
-  return { ok: true, data: result.data[0] };
+  try {
+    const subscriber = await prisma.newsletterSubscriber.upsert({
+      where: { email },
+      update: {
+        isActive: true,
+        subscribedAt: new Date(),
+      },
+      create: {
+        email,
+        isActive: true,
+      },
+      select: { id: true },
+    });
+
+    return { ok: true, data: subscriber };
+  } catch (error) {
+    console.error('Newsletter subscription database upsert failed', error);
+    return { ok: false, error: 'Database operation failed.' };
+  }
 }
 
 export const saveContactSubmission = insertContactSubmission;

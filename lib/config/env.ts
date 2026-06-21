@@ -14,6 +14,8 @@ const envSchema = z.object({
   SANITY_PREVIEW_SECRET: optionalNonEmptyString,
   SANITY_WEBHOOK_SECRET: optionalNonEmptyString,
   DATABASE_URL: optionalNonEmptyString,
+  DIRECT_URL: optionalNonEmptyString,
+  ADMIN_API_TOKEN: optionalNonEmptyString,
   RESEND_API_KEY: optionalNonEmptyString,
   RESEND_FROM_EMAIL: z.string().min(1).default('AWIHF <noreply@example.org>'),
   AWIHF_ADMIN_EMAIL: z.string().email().default('acholiwomeninhealth@gmail.com'),

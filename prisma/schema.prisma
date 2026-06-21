@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ContactSubmission {
+  id        String   @id @default(uuid()) @db.Uuid
+  fullName  String   @map("full_name")
+  email     String
+  subject   String?
+  message   String
+  source    String?  @default("website")
+  ipHash    String?  @map("ip_hash")
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("contact_submissions")
+}
+
+model MentorshipApplication {
+  id                     String            @id @default(uuid()) @db.Uuid
+  fullName               String            @map("full_name")
+  gender                 String
+  dateOfBirth            DateTime          @map("date_of_birth") @db.Date
+  phoneNumber            String            @map("phone_number")
+  email                  String
+  institution            String
+  programOfStudy         String            @map("program_of_study")
+  yearOfStudy            String            @map("year_of_study")
+  motivation             String
+  careerInterests        String            @map("career_interests")
+  leadershipExperience   String?           @map("leadership_experience")
+  additionalComments     String?           @map("additional_comments")
+  cvFileUrl              String?           @map("cv_file_url")
+  cvFileName             String?           @map("cv_file_name")
+  cvFileSize             Int?              @map("cv_file_size")
+  cvFileMimeType         String?           @map("cv_file_mime_type")
+  transcriptFileUrl      String?           @map("transcript_file_url")
+  transcriptFileName     String?           @map("transcript_file_name")
+  transcriptFileSize     Int?              @map("transcript_file_size")
+  transcriptFileMimeType String?           @map("transcript_file_mime_type")
+  status                 ApplicationStatus @default(PENDING)
+  adminNotes             String?           @map("admin_notes")
+  reviewedBy             String?           @map("reviewed_by")
+  reviewedAt             DateTime?         @map("reviewed_at") @db.Timestamptz(6)
+  reviewNotes            String?           @map("review_notes")
+  ipHash                 String?           @map("ip_hash")
+  userAgent              String?           @map("user_agent")
+  submittedAt            DateTime          @default(now()) @map("submitted_at") @db.Timestamptz(6)
+  updatedAt              DateTime          @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([email])
+  @@index([status])
+  @@index([submittedAt])
+  @@map("mentorship_applications")
+}
+
+model NewsletterSubscriber {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique
+  subscribedAt DateTime @default(now()) @map("subscribed_at") @db.Timestamptz(6)
+  isActive     Boolean  @default(true) @map("is_active")
+
+  @@index([subscribedAt])
+  @@map("newsletter_subscribers")
+}
+
+enum ApplicationStatus {
+  PENDING      @map("pending")
+  UNDER_REVIEW @map("under_review")
+  SHORTLISTED  @map("shortlisted")
+  ACCEPTED     @map("accepted")
+  REJECTED     @map("rejected")
+  WAITLISTED   @map("waitlisted")
+}
