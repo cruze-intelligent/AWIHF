@@ -48,7 +48,7 @@ export function Hero() {
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          Healthcare for Every Acholi Woman.
+          Healing Lives, Transforming Communities.
         </h1>
 
         {/* Subtext — delayed fade */}
