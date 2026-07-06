@@ -2,6 +2,7 @@ import { applicationWindow } from './applicationWindow';
 import { donationInfo } from './donationInfo';
 import { heroSection } from './heroSection';
 import { impactStat } from './impactStat';
+import { impactReport } from './impactReport';
 import { impactStory } from './impactStory';
 import { mentorshipPackage } from './mentorshipPackage';
 import { newsArticle } from './newsArticle';
@@ -16,6 +17,7 @@ export const schemaTypes = [
   donationInfo,
   heroSection,
   impactStat,
+  impactReport,
   impactStory,
   mentorshipPackage,
   newsArticle,

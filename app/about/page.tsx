@@ -3,17 +3,25 @@ import Image from 'next/image';
 import { Heart, Users, BookOpen, Brain, Target, Shield } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { DonateCTA } from '@/components/sections/DonateCTA';
+import { PartnershipsSection } from '@/components/sections/PartnershipsSection';
 import { Linkedin } from '@/components/ui/SocialIcons';
 
 export default function AboutPage() {
-  const values = ['Empower', 'Educate', 'Research', 'Network', 'Self Improvement', 'Leadership', 'Equity', 'Collaboration'];
+  const values = [
+    'Community Centeredness',
+    'Gender Equity & Inclusion',
+    'Evidence & Innovation',
+    'Integrity & Transparency',
+    'Ubuntu in Practice',
+    'Post-Conflict Sensitivity',
+  ];
   
   const objectives = [
     "To increase access to community-based healthcare services in Acholi sub-region.",
     "To strengthen community health systems through trainings and mentorships in Acholi sub-region.",
     "To expand referral pathways for maternal and mental health in Acholi sub-region.",
     "To build health workers and peer educators through capacity building and leadership in Acholi sub-region.",
-    "To generate evidence to inform programmers and advocacy through research in Acholi sub-region."
+    "To generate evidence through research to inform programmes and advocacy in Acholi sub-region."
   ];
 
   const approaches = [
@@ -41,7 +49,7 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Lucky Ajok",
+      name: "Grace Akello",
       role: "Founder & Executive Director",
       bio: "Passionate about improving healthcare access, safe motherhood, and peer health education for women and girls in Northern Uganda.",
       image: "/images/lucky.webp",
@@ -205,6 +213,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PartnershipsSection />
 
       {/* Why It Matters */}
       <section className="section-wrapper bg-white">

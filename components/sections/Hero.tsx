@@ -28,17 +28,19 @@ export function Hero() {
       {/* Layer 3: Content Layer */}
       <div className="max-w-content mx-auto text-center flex flex-col items-center z-20">
         {/* Floating credibility badge */}
-        <div
+        <Link
+          href="/impact/report"
+          aria-label="View the 2025 AWIHF Impact Report"
           className={`inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8 transition-all duration-700 delay-100 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          }`}
+          } hover:bg-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-brown`}
           style={{ animation: mounted ? 'floatBadge 4s ease-in-out infinite 1.5s' : 'none' }}
         >
           <Users className="w-4 h-4 text-brand-gold" />
           <span className="text-white/90 text-[13px] font-medium tracking-wide">
             1,000+ households reached in 2025
           </span>
-        </div>
+        </Link>
 
         {/* Heading — staggered fade */}
         <h1

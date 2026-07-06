@@ -31,7 +31,7 @@ export function Footer() {
               <span className="text-brand-orange font-bold text-2xl tracking-tight">AWIHF</span>
             </div>
             <p className="text-white/80 max-w-sm leading-relaxed">
-              Improving healthcare outcomes for women and girls in Northern Uganda.
+              Healing Lives, Transforming Communities.
             </p>
           </div>
 
@@ -72,10 +72,10 @@ export function Footer() {
             </ul>
 
             <div className="flex space-x-4">
-              <a href="https://x.com/acholiwomeninhealth" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-gold transition-colors" aria-label="X (Twitter)">
+              <a href="https://x.com/acholiwomen" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-gold transition-colors" aria-label="X (Twitter)">
                 <Twitter className="w-6 h-6" />
               </a>
-              <a href="https://instagram.com/acholiwomeninhealth" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-gold transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/acholiwomeninhealth?igsh=MTltOW1oMWE3dHFleA==" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-gold transition-colors" aria-label="Instagram">
                 <Instagram className="w-6 h-6" />
               </a>
               <a href="https://www.linkedin.com/in/acholi-women-in-health-foundation-57686235a/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-gold transition-colors" aria-label="LinkedIn">

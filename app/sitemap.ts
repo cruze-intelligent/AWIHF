@@ -8,6 +8,7 @@ const staticRoutes = [
   '/donate',
   '/get-involved',
   '/impact',
+  '/impact/report',
   '/mentorship',
   '/news',
   '/programs',

@@ -2,12 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ImpactStrip } from '@/components/sections/ImpactStrip';
+import { ImpactReportSpotlight } from '@/components/sections/ImpactReportSpotlight';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { DonateCTA } from '@/components/sections/DonateCTA';
+import { getImpactReportContent } from '@/lib/content/impactReport';
 
-export default function ImpactPage() {
+export default async function ImpactPage() {
+  const report = await getImpactReportContent();
   const targets2026 = [
     { target: "Reach 5,000+ additional households with free services", category: "Outreach" },
     { target: "Distribute reusable sanitary pads to 1,000+ vulnerable girls", category: "Education & SRHR" },
@@ -66,6 +69,8 @@ export default function ImpactPage() {
 
       <ImpactStrip />
 
+      <ImpactReportSpotlight />
+
       {/* Programme Phases Timeline */}
       <section className="section-wrapper bg-white">
         <div className="content-container">
@@ -73,17 +78,13 @@ export default function ImpactPage() {
           <div className="max-w-4xl mx-auto relative">
             <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 md:-translate-x-1/2" />
             
-            {[
-              { phase: "Phase 1", date: "January - April", desc: "Initial community assessments, stakeholder engagements, and the launch of our foundational SRHR education initiatives in rural Gulu." },
-              { phase: "Phase 2", date: "May - August", desc: "Execution of the Patiko Medical Outreach, scaling up of antenatal care support, and the first cohort of Community Health Worker trainings." },
-              { phase: "Phase 3", date: "September - December", desc: "Establishment of mental health support groups, distribution of sanitary pads, and year-end impact evaluation." }
-            ].map((item, i) => (
+            {report.phases.map((item, i) => (
               <div key={i} className={`relative flex flex-col md:flex-row items-start mb-12 last:mb-0 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="absolute left-[16px] md:left-1/2 w-6 h-6 rounded-full bg-brand-orange border-4 border-white md:-translate-x-1/2 mt-1 z-10" />
                 <div className={`ml-16 md:ml-0 w-full md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:pl-8' : 'md:pr-8 md:text-right'}`}>
-                  <span className="text-brand-green font-bold text-sm uppercase tracking-wider">{item.date}</span>
-                  <h3 className="text-xl font-bold text-brand-brown mb-2 mt-1">{item.phase}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                  <span className="text-brand-green font-bold text-sm uppercase tracking-wider">{item.period}</span>
+                  <h3 className="text-xl font-bold text-brand-brown mb-2 mt-1">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.summary}</p>
                 </div>
               </div>
             ))}

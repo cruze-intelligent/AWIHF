@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button';
 
 const team = [
   {
-    name: "Lucky Ajok",
+    name: "Grace Akello",
     role: "Founder",
     bio: "Passionate about improving healthcare access for women in Northern Uganda.",
     image: "/images/lucky.webp",
@@ -35,15 +35,15 @@ export default function TeamPage() {
 
       <section className="section-wrapper bg-white">
         <div className="content-container">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
             {team.map((member, i) => (
               <div key={i} className="flex flex-col items-center text-center">
-                <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 border-4 border-gray-50 shadow-sm">
+                <div className="relative w-full max-w-[240px] aspect-[4/5] rounded-xl overflow-hidden mb-4 border border-gray-200 bg-gray-50 shadow-sm">
                   <Image 
                     src={member.image} 
                     alt={member.name} 
                     fill 
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <h4 className="text-[20px] font-bold text-brand-brown mb-1">{member.name}</h4>

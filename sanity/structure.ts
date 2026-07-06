@@ -18,6 +18,7 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem('newsArticle').title('News Articles'),
               S.documentTypeListItem('impactStory').title('Impact Stories'),
+              S.documentTypeListItem('impactReport').title('Impact Reports'),
               S.documentTypeListItem('program').title('Programmes'),
               S.documentTypeListItem('impactStat').title('Impact Statistics'),
             ])

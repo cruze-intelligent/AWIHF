@@ -14,12 +14,14 @@ export default async function DonatePage() {
       businessName: donationInfo.mtnBusinessName,
       accent: 'bg-[#FFCC00]',
       code: donationInfo.mtnMerchantCode,
+      phone: donationInfo.mtnPhoneNumber,
     },
     {
       name: 'Airtel Pay',
       businessName: donationInfo.airtelBusinessName,
       accent: 'bg-[#FF0000]',
       code: donationInfo.airtelMerchantCode,
+      phone: donationInfo.airtelPhoneNumber,
     },
   ];
 
@@ -59,6 +61,10 @@ export default async function DonatePage() {
                   <p className="text-sm text-gray-500 mb-2">Organization Code</p>
                   <div className="rounded-lg bg-white border border-gray-200 px-4 py-3 font-semibold text-brand-brown">
                     {option.code}
+                  </div>
+                  <p className="text-sm text-gray-500 mb-2 mt-4">Mobile Money Number</p>
+                  <div className="rounded-lg bg-white border border-gray-200 px-4 py-3 font-semibold text-brand-brown">
+                    {option.phone}
                   </div>
                 </div>
               ))}

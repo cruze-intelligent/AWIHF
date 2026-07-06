@@ -1,12 +1,15 @@
 {
-  "mtnBusinessName": "[BUSINESS NAME TO BE PROVIDED]",
-  "mtnMerchantCode": "[CODE TO BE PROVIDED]",
-  "airtelBusinessName": "[BUSINESS NAME TO BE PROVIDED]",
-  "airtelMerchantCode": "[CODE TO BE PROVIDED]",
+  "mtnBusinessName": "Acholi Women in Health Foundation",
+  "mtnMerchantCode": "30570916",
+  "mtnPhoneNumber": "0764902713",
+  "airtelBusinessName": "Acholi Women in Health Foundation",
+  "airtelMerchantCode": "7083045",
+  "airtelPhoneNumber": "0706399062",
   "instructions": [
     "Open your MTN MoMoPay or Airtel Money application.",
-    "Choose the option to pay by organization or merchant code.",
-    "Enter the AWIHF organization code shown on this page.",
-    "Confirm the amount and complete payment independently in your mobile money app."
+    "Choose the option to pay by merchant code or send mobile money to the official number shown.",
+    "Enter the AWIHF merchant code or mobile money number for your preferred network.",
+    "Confirm the organization name, enter the amount, and complete payment independently in your mobile money app.",
+    "Keep your confirmation message for your records or contact AWIHF if you need a receipt."
   ]
 }

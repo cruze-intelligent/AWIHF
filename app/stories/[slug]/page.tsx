@@ -27,7 +27,7 @@ const storiesData: Record<string, StoryData> = {
     readTime: "3 min read",
     content: [
       "In July 2025, during our landmark four-day Patiko Medical Outreach in Gulu District, our team met Evelyn, a 17-year-old expectant mother from a remote sub-county. Evelyn had not accessed any previous antenatal checkups due to Northern Uganda's severe shortage of rural health centers, leaving her vulnerable to high-risk complications.",
-      "Our clinical nurse, Lucky Ajok, immediately recognized signs of early, high-risk labor during registration. The team quickly stabilized her and activated AWIHF's maternal referral pathway, securing transport to Gulu Regional Referral Hospital. Thanks to this swift integration, Evelyn safely delivered a healthy baby boy.",
+      "Our clinical nurse, Grace Akello, immediately recognized signs of early, high-risk labor during registration. The team quickly stabilized her and activated AWIHF's maternal referral pathway, securing transport to Gulu Regional Referral Hospital. Thanks to this swift integration, Evelyn safely delivered a healthy baby boy.",
       "Following her clinical care, our peer networks provided maternity dignity packages, basic infant supplies, and parental classes. Today, Evelyn is an active advocate in our peer-to-peer teen mother support group, educating other young women to access reproductive health clinics early. Her story is a testament to the life-saving impact of community-rooted maternal networks."
     ]
   },
