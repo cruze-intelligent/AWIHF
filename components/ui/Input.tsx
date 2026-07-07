@@ -93,7 +93,7 @@ export function Textarea({
         id={inputId}
         disabled={disabled}
         required={required}
-        className={`input-field min-h-[160px] resize-y ${stateClasses}`}
+        className={`input-field min-h-[132px] md:min-h-[160px] resize-y ${stateClasses}`}
         {...props}
       />
       {error && (

@@ -43,21 +43,21 @@ export function PartnershipsSection() {
   return (
     <section className="section-wrapper bg-gray-50">
       <div className="content-container">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">
             Institutional Ecosystem
           </span>
           <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
             Partnerships That Strengthen Community Health
           </h2>
-          <p className="text-gray-600 text-[16px] leading-[1.7] mt-4">
+          <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7] mt-3 md:mt-4">
             AWIHF does not work in isolation. Its model depends on trusted relationships across health facilities,
             universities, government structures, civil society organizations, cultural institutions, and community
             leadership networks.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
           {partners.map((partner) => (
             <Card key={partner.name} className="bg-white border border-gray-200 p-5 h-full">
               <div className="w-11 h-11 rounded-xl bg-green-tint text-brand-green flex items-center justify-center mb-5">

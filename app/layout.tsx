@@ -53,8 +53,8 @@ export default async function RootLayout({
       addressCountry: 'UG',
     },
     sameAs: [
-      'https://x.com/acholiwomeninhealth',
-      'https://instagram.com/acholiwomeninhealth',
+      'https://x.com/acholiwomen',
+      'https://www.instagram.com/acholiwomeninhealth?igsh=MTltOW1oMWE3dHFleA==',
       'https://www.linkedin.com/in/acholi-women-in-health-foundation-57686235a/',
     ],
   };

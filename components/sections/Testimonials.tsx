@@ -37,23 +37,23 @@ export function Testimonials() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-brand-brown/20 to-transparent" />
 
       <div className="content-container">
-        <div className={`text-center mb-16 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`text-center mb-9 md:mb-16 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <span className="inline-flex items-center gap-2 text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3">
             Community Voices
           </span>
           <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
             Impact Through Their Eyes
           </h2>
-          <p className="text-gray-500 text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">
+          <p className="text-gray-500 text-[15px] md:text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">
             Real stories from the women and communities we serve — proof that change is happening.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
           {testimonials.map((t, i) => (
             <Card
               key={i}
-              className={`group bg-gray-50 border-none relative pt-14 pb-8 px-6 md:px-8 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 rounded-2xl border-l-0 hover:border-l-[3px] hover:border-l-brand-orange transition-all duration-300 ${
+              className={`group bg-gray-50 border-none relative pt-12 md:pt-14 pb-6 md:pb-8 px-5 md:px-8 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 rounded-2xl border-l-0 hover:border-l-[3px] hover:border-l-brand-orange transition-all duration-300 ${
                 isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isRevealed ? `${150 + i * 120}ms` : '0ms' }}
@@ -61,7 +61,7 @@ export function Testimonials() {
               <Quote className="absolute top-6 left-6 w-8 h-8 text-brand-orange/15 rotate-180" />
               
               {/* Testimonial Quote */}
-              <p className="text-[#111111] text-[16px] leading-[1.65] mb-8 relative z-10 italic flex-grow">
+              <p className="text-[#111111] text-[15px] md:text-[16px] leading-[1.65] mb-6 md:mb-8 relative z-10 italic flex-grow">
                 &ldquo;{t.quote}&rdquo;
               </p>
               
@@ -80,7 +80,7 @@ export function Testimonials() {
         </div>
 
         {/* CTA to full stories */}
-        <div className={`text-center mt-12 transition-all duration-700 delay-500 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <div className={`text-center mt-8 md:mt-12 transition-all duration-700 delay-500 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <Link href="/impact#stories">
             <Button variant="secondary" size="medium">
               Read More Stories →

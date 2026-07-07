@@ -91,7 +91,7 @@ export function Navbar() {
             <X className="w-6 h-6" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto py-6 px-4 flex flex-col space-y-4">
+        <div className="flex-1 overflow-y-auto py-5 px-4 flex flex-col space-y-2">
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -99,7 +99,7 @@ export function Navbar() {
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-lg font-medium py-2 pl-4 transition-colors ${isActive ? 'text-brand-orange border-l-2 border-brand-orange' : 'text-white hover:text-brand-gold'}`}
+                className={`text-base font-medium py-3 pl-4 transition-colors ${isActive ? 'text-brand-orange border-l-2 border-brand-orange' : 'text-white hover:text-brand-gold'}`}
               >
                 {link.name}
               </Link>

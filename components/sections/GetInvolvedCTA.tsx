@@ -47,7 +47,7 @@ export function GetInvolvedCTA() {
 
       <div className="content-container relative z-10">
         {/* Header */}
-        <div className={`text-center mb-14 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`text-center mb-8 md:mb-14 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <span className="text-brand-green font-semibold text-sm tracking-wider uppercase mb-3 block">
             Join the Movement
           </span>
@@ -60,11 +60,11 @@ export function GetInvolvedCTA() {
         </div>
 
         {/* Pathways Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7">
           {pathways.map((path, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-2xl border border-gray-200/80 p-7 md:p-8 flex flex-col h-full shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-400 overflow-hidden ${
+              className={`group relative bg-white rounded-2xl border border-gray-200/80 p-5 md:p-8 flex flex-col h-full shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-400 overflow-hidden ${
                 isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isRevealed ? `${150 + index * 120}ms` : '0ms' }}
@@ -73,13 +73,13 @@ export function GetInvolvedCTA() {
               <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${path.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
               {/* Icon */}
-              <div className={`w-14 h-14 rounded-xl ${path.iconBg} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}>
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl ${path.iconBg} flex items-center justify-center mb-4 md:mb-6 group-hover:scale-105 transition-transform duration-300`}>
                 {path.icon}
               </div>
 
               {/* Content */}
               <h3 className="text-[20px] font-bold text-brand-brown mb-3">{path.title}</h3>
-              <p className="text-gray-600 text-[15px] leading-[1.65] mb-8 flex-1">
+              <p className="text-gray-600 text-[15px] leading-[1.65] mb-5 md:mb-8 flex-1">
                 {path.description}
               </p>
 

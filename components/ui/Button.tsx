@@ -27,8 +27,8 @@ export function Button({
 
   const sizes = {
     small: "py-2 px-4 text-[14px]",
-    medium: "py-3 px-6 text-[16px]",
-    large: "py-4 px-8 text-[18px]",
+    medium: "py-2.5 px-5 md:py-3 md:px-6 text-[15px] md:text-[16px]",
+    large: "py-3 px-6 md:py-4 md:px-8 text-[16px] md:text-[18px]",
   };
 
   const disabledStyles = "disabled:bg-gray-200 disabled:text-gray-500 disabled:border-transparent disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-none disabled:hover:brightness-100 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 disabled:active:scale-100";

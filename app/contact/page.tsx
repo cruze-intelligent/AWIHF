@@ -39,10 +39,10 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="w-full bg-gradient-brand flex items-center justify-center min-h-[240px] px-4 md:px-8">
+      <section className="page-hero">
         <div className="text-center">
-          <h1 className="text-white text-3xl md:text-[36px] font-bold leading-[1.2] mb-4">Contact Us</h1>
-          <p className="text-white/80 text-[18px]">
+          <h1 className="page-hero-title">Contact Us</h1>
+          <p className="page-hero-subtitle">
             We&apos;d love to hear from you. Get in touch with our team.
           </p>
         </div>
@@ -55,8 +55,8 @@ export default function ContactPage() {
             {/* Left Column: Details */}
             <div>
               <h2 className="section-heading mb-6">Get In Touch</h2>
-              <Card className="p-8">
-                <ul className="space-y-6 text-[#111111]">
+              <Card className="p-5 md:p-8">
+                <ul className="space-y-5 md:space-y-6 text-[#111111]">
                   <li className="flex items-start">
                     <div className="w-10 h-10 rounded-full bg-orange-tint flex items-center justify-center shrink-0 mr-4 text-brand-orange">
                       <Mail className="w-5 h-5" />
@@ -86,13 +86,13 @@ export default function ContactPage() {
                     </div>
                   </li>
                 </ul>
-                <div className="mt-8 pt-8 border-t border-gray-200">
+                <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-200">
                   <div className="font-semibold text-brand-brown mb-4">Follow Us</div>
                   <div className="flex space-x-4">
-                    <a href="https://x.com/acholiwomeninhealth" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-brown hover:bg-brand-orange hover:text-white transition-colors" aria-label="X">
+                    <a href="https://x.com/acholiwomen" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-brown hover:bg-brand-orange hover:text-white transition-colors" aria-label="X">
                       <Twitter className="w-5 h-5" />
                     </a>
-                    <a href="https://instagram.com/acholiwomeninhealth" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-brown hover:bg-brand-orange hover:text-white transition-colors" aria-label="Instagram">
+                    <a href="https://www.instagram.com/acholiwomeninhealth?igsh=MTltOW1oMWE3dHFleA==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-brown hover:bg-brand-orange hover:text-white transition-colors" aria-label="Instagram">
                       <Instagram className="w-5 h-5" />
                     </a>
                     <a href="https://www.linkedin.com/in/acholi-women-in-health-foundation-57686235a/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-brown hover:bg-brand-orange hover:text-white transition-colors" aria-label="LinkedIn">
@@ -105,9 +105,9 @@ export default function ContactPage() {
 
             {/* Right Column: Form */}
             <div>
-              <Card className="p-8 h-full">
+              <Card className="p-5 md:p-8 h-full">
                 {status === 'success' ? (
-                  <div className="flex flex-col items-center text-center py-12 h-full justify-center">
+                  <div className="flex flex-col items-center text-center py-8 md:py-12 h-full justify-center">
                     <div className="w-16 h-16 bg-green-tint rounded-full flex items-center justify-center mb-6 text-brand-green">
                       <CheckCircle className="w-8 h-8" />
                     </div>

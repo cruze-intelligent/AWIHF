@@ -33,7 +33,7 @@ export function MentorshipApplicationForm() {
 
   if (status === 'success') {
     return (
-      <div className="rounded-xl bg-green-tint border border-brand-green/20 p-6 text-brand-green flex items-start gap-3" role="status">
+      <div className="rounded-xl bg-green-tint border border-brand-green/20 p-5 md:p-6 text-brand-green flex items-start gap-3" role="status">
         <CheckCircle2 className="w-6 h-6 shrink-0 mt-0.5" />
         <div>
           <h3 className="font-bold mb-1">Application received</h3>
@@ -44,9 +44,9 @@ export function MentorshipApplicationForm() {
   }
 
   return (
-    <form id="application-form" onSubmit={handleSubmit} className="space-y-8">
+    <form id="application-form" onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
       <div>
-        <h3 className="text-xl font-bold text-brand-brown mb-5">Personal Information</h3>
+        <h3 className="text-lg md:text-xl font-bold text-brand-brown mb-4 md:mb-5">Personal Information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input name="fullName" label="Full Name" required disabled={status === 'loading'} />
           <Input name="gender" label="Gender" required disabled={status === 'loading'} />
@@ -57,7 +57,7 @@ export function MentorshipApplicationForm() {
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-brand-brown mb-5">Academic Information</h3>
+        <h3 className="text-lg md:text-xl font-bold text-brand-brown mb-4 md:mb-5">Academic Information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input name="institution" label="Institution" required disabled={status === 'loading'} />
           <Input name="programOfStudy" label="Program of Study" required disabled={status === 'loading'} />
@@ -66,7 +66,7 @@ export function MentorshipApplicationForm() {
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-brand-brown mb-5">Application Information</h3>
+        <h3 className="text-lg md:text-xl font-bold text-brand-brown mb-4 md:mb-5">Application Information</h3>
         <div className="space-y-4">
           <Textarea name="motivation" label="Why do you want mentorship?" required disabled={status === 'loading'} />
           <Textarea name="careerInterests" label="Career Interests" required disabled={status === 'loading'} />
@@ -76,7 +76,7 @@ export function MentorshipApplicationForm() {
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-brand-brown mb-5">Uploads</h3>
+        <h3 className="text-lg md:text-xl font-bold text-brand-brown mb-4 md:mb-5">Uploads</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Input name="cv" label="CV/Resume" type="file" accept="application/pdf,.pdf" required disabled={status === 'loading'} />
           <Input name="transcript" label="Academic Transcript (optional)" type="file" accept="application/pdf,.pdf" disabled={status === 'loading'} />

@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-[#111111] bg-white antialiased;
+    @apply text-[#111111] bg-white antialiased overflow-x-hidden;
   }
 }
 
@@ -52,14 +52,18 @@
 }
 
 @layer components {
-  .section-wrapper { @apply w-full px-4 md:px-8 lg:px-16 py-16 md:py-24; }
+  .section-wrapper { @apply w-full px-4 md:px-8 lg:px-16 py-10 md:py-24; }
   .content-container { @apply max-w-content mx-auto; }
   .btn-primary { @apply bg-gradient-brand-h text-white font-semibold rounded-lg px-6 py-3 hover:brightness-110 active:scale-95 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-brand-orange focus-visible:outline-offset-2 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:bg-none; }
   .btn-secondary { @apply bg-white text-brand-brown border border-brand-brown font-semibold rounded-lg px-6 py-3 hover:bg-brand-brown hover:text-white active:scale-95 transition-all duration-200; }
   .card { @apply bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 transition-all duration-300; }
   .input-field { @apply w-full rounded-lg border border-gray-200 px-4 py-3 text-base text-[#111111] placeholder:text-gray-400 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-colors duration-150; }
-  .section-heading { @apply text-3xl md:text-[34px] font-bold text-brand-brown mb-8 relative pb-4 inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-16 after:h-[3px] after:bg-gradient-brand-h; }
-  .section-subheading { @apply text-lg text-gray-500 max-w-2xl leading-relaxed; }
+  .section-heading { @apply text-2xl md:text-[34px] font-bold text-brand-brown mb-5 md:mb-8 relative pb-3 md:pb-4 inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-14 md:after:w-16 after:h-[3px] after:bg-gradient-brand-h; }
+  .section-subheading { @apply text-base md:text-lg text-gray-500 max-w-2xl leading-relaxed; }
+  .page-hero { @apply w-full bg-gradient-brand flex items-center justify-center min-h-[122px] py-8 px-4 md:min-h-[280px] md:py-16 md:px-8; }
+  .page-hero-title { @apply text-white text-2xl md:text-[36px] font-bold leading-[1.15] md:leading-[1.2] mb-2 md:mb-4; }
+  .page-hero-subtitle { @apply text-white/80 text-sm md:text-[18px] leading-relaxed max-w-2xl mx-auto; }
+  .image-page-hero { @apply relative w-full flex items-center justify-center min-h-[132px] py-8 px-4 md:min-h-[380px] md:py-16 md:px-8 overflow-hidden; }
 
   /* ── Scroll-reveal utility states ── */
   .reveal-hidden {

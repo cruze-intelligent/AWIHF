@@ -69,17 +69,17 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="w-full bg-gradient-brand flex items-center justify-center min-h-[280px] px-4 md:px-8">
+      <section className="page-hero">
         <div className="text-center">
-          <h1 className="text-white text-3xl md:text-[36px] font-bold leading-[1.2] mb-4">About AWIHF</h1>
-          <p className="text-white/80 text-[18px]">Women-led. Community-rooted. Health-focused.</p>
+          <h1 className="page-hero-title">About AWIHF</h1>
+          <p className="page-hero-subtitle">Women-led. Community-rooted. Health-focused.</p>
         </div>
       </section>
 
       {/* Our Story */}
       <section className="section-wrapper bg-white">
         <div className="content-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Our Heritage</span>
               <h2 className="section-heading">Our Story</h2>
@@ -105,17 +105,17 @@ export default function AboutPage() {
       {/* Mission, Vision, and Values */}
       <section className="section-wrapper bg-gray-50">
         <div className="content-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="p-8 border-[1.5px] border-brand-brown rounded-xl bg-white shadow-sm">
-              <h3 className="text-[24px] font-semibold text-brand-orange mb-4 flex items-center gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mb-8 md:mb-12">
+            <div className="p-5 md:p-8 border-[1.5px] border-brand-brown rounded-xl bg-white shadow-sm">
+              <h3 className="text-[21px] md:text-[24px] font-semibold text-brand-orange mb-3 md:mb-4 flex items-center gap-2">
                 <Target className="w-6 h-6 text-brand-orange" /> Our Mission
               </h3>
               <p className="text-[#111111] text-[16px] leading-[1.6] italic">
                 &quot;To improve healthcare outcomes of women and girls in northern Uganda through delivery of accessible community-based health services, building a community of empowered women in healthcare through mentorship, education and research.&quot;
               </p>
             </div>
-            <div className="p-8 border-[1.5px] border-brand-brown rounded-xl bg-white shadow-sm">
-              <h3 className="text-[24px] font-semibold text-brand-orange mb-4 flex items-center gap-2">
+            <div className="p-5 md:p-8 border-[1.5px] border-brand-brown rounded-xl bg-white shadow-sm">
+              <h3 className="text-[21px] md:text-[24px] font-semibold text-brand-orange mb-3 md:mb-4 flex items-center gap-2">
                 <Shield className="w-6 h-6 text-brand-orange" /> Our Vision
               </h3>
               <p className="text-[#111111] text-[16px] leading-[1.6] italic">
@@ -124,7 +124,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="text-center">
-            <h3 className="text-[24px] font-semibold text-brand-brown mb-6">Our Core Values</h3>
+            <h3 className="text-[22px] md:text-[24px] font-semibold text-brand-brown mb-5 md:mb-6">Our Core Values</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {values.map((v) => (
                 <span key={v} className="inline-flex items-center rounded-full px-4 py-2 text-sm font-medium bg-orange-tint text-brand-orange">
@@ -140,10 +140,10 @@ export default function AboutPage() {
       <section className="section-wrapper bg-white">
         <div className="content-container max-w-4xl mx-auto">
           <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Strategic Roadmap</span>
-          <h2 className="section-heading text-center mb-10">Our Strategic Objectives</h2>
+          <h2 className="section-heading text-center mb-7 md:mb-10">Our Strategic Objectives</h2>
           <div className="space-y-4">
             {objectives.map((obj, index) => (
-              <div key={index} className="flex items-start gap-4 p-5 rounded-xl border border-gray-200 bg-white hover:border-brand-orange/30 hover:shadow-sm transition-all duration-200">
+              <div key={index} className="flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl border border-gray-200 bg-white hover:border-brand-orange/30 hover:shadow-sm transition-all duration-200">
                 <div className="w-8 h-8 rounded-full bg-orange-tint text-brand-orange font-bold text-sm flex items-center justify-center shrink-0">
                   {index + 1}
                 </div>
@@ -159,13 +159,13 @@ export default function AboutPage() {
         <div className="content-container">
           <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Our Stewards</span>
           <h2 className="section-heading text-center mb-4">Leadership & Governance</h2>
-          <p className="text-gray-500 text-[16px] text-center max-w-2xl mx-auto mb-12">
+          <p className="text-gray-500 text-[15px] md:text-[16px] text-center max-w-2xl mx-auto mb-8 md:mb-12">
             Meet the community-rooted leaders guiding our operational excellence and strategic mission in Gulu City and across Northern Uganda.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl mx-auto">
             {team.map((member, i) => (
-              <Card key={i} className="p-6 md:p-8 flex flex-col items-center text-center bg-white shadow-sm border border-gray-200 rounded-2xl hover:shadow-lg transition-all duration-300">
-                <div className="relative w-full max-w-[240px] aspect-[4/5] rounded-xl overflow-hidden mb-6 border border-orange-tint bg-gray-50 shadow-sm">
+              <Card key={i} className="p-5 md:p-8 flex flex-col items-center text-center bg-white shadow-sm border border-gray-200 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div className="relative w-full max-w-[220px] md:max-w-[240px] aspect-[4/5] rounded-xl overflow-hidden mb-5 md:mb-6 border border-orange-tint bg-gray-50 shadow-sm">
                   <Image 
                     src={member.image} 
                     alt={member.name} 
@@ -173,9 +173,9 @@ export default function AboutPage() {
                     className={member.imageClassName}
                   />
                 </div>
-                <h4 className="text-[22px] font-bold text-brand-brown mb-1">{member.name}</h4>
+                <h4 className="text-[20px] md:text-[22px] font-bold text-brand-brown mb-1">{member.name}</h4>
                 <div className="text-brand-orange font-semibold text-sm mb-4 uppercase tracking-wider">{member.role}</div>
-                <p className="text-gray-600 text-[15px] leading-relaxed mb-6 flex-1 px-4">
+                <p className="text-gray-600 text-[15px] leading-relaxed mb-5 md:mb-6 flex-1 md:px-4">
                   {member.bio}
                 </p>
                 {member.linkedin && (
@@ -199,14 +199,14 @@ export default function AboutPage() {
       <section className="section-wrapper bg-green-tint">
         <div className="content-container">
           <span className="text-brand-green font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Our Methodology</span>
-          <h2 className="section-heading text-center mb-10">Our Strategic Approach</h2>
+          <h2 className="section-heading text-center mb-7 md:mb-10">Our Strategic Approach</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {approaches.map((app, i) => (
-              <Card key={i} className="bg-white border-transparent p-6 flex flex-col h-full hover:shadow-xl transition-all duration-200">
-                <div className="w-16 h-16 rounded-xl bg-green-tint flex items-center justify-center mb-6 text-brand-green shrink-0">
+              <Card key={i} className="bg-white border-transparent p-5 md:p-6 flex flex-col h-full hover:shadow-xl transition-all duration-200">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-green-tint flex items-center justify-center mb-4 md:mb-6 text-brand-green shrink-0">
                   {app.icon}
                 </div>
-                <h4 className="text-[20px] font-semibold text-brand-brown mb-3">{app.title}</h4>
+                <h4 className="text-[18px] md:text-[20px] font-semibold text-brand-brown mb-2 md:mb-3">{app.title}</h4>
                 <p className="text-gray-500 text-[14px] leading-[1.6] flex-1">{app.desc}</p>
               </Card>
             ))}
@@ -220,17 +220,17 @@ export default function AboutPage() {
       <section className="section-wrapper bg-white">
         <div className="content-container">
           <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Regional Context</span>
-          <h2 className="section-heading text-center mb-10">Why Our Focus Matters</h2>
+          <h2 className="section-heading text-center mb-7 md:mb-10">Why Our Focus Matters</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-brown-tint p-6 rounded-xl border border-brand-brown/20 flex gap-4 items-start shadow-sm">
-              <div className="text-brand-orange text-4xl font-bold font-mono">106.0</div>
+            <div className="bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex gap-3 md:gap-4 items-start shadow-sm">
+              <div className="text-brand-orange text-3xl md:text-4xl font-bold font-mono">106.0</div>
               <div>
                 <h4 className="font-semibold text-brand-brown mb-1">Maternal Mortality Rate</h4>
                 <p className="text-gray-600 text-sm">Maternal deaths per 100,000 live births in post-conflict Acholi, compared to 69.1 national average.</p>
               </div>
             </div>
-            <div className="bg-brown-tint p-6 rounded-xl border border-brand-brown/20 flex gap-4 items-start shadow-sm">
-              <div className="text-brand-orange text-4xl font-bold font-mono">24%</div>
+            <div className="bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex gap-3 md:gap-4 items-start shadow-sm">
+              <div className="text-brand-orange text-3xl md:text-4xl font-bold font-mono">24%</div>
               <div>
                 <h4 className="font-semibold text-brand-brown mb-1">Teenage Pregnancy Rate</h4>
                 <p className="text-gray-600 text-sm">Of adolescent girls in rural Northern Uganda experience early, high-risk pregnancy due to systemic health gaps.</p>

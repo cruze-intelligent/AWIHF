@@ -12,11 +12,11 @@ export async function LatestNews() {
   return (
     <section className="section-wrapper bg-white">
       <div className="content-container">
-        <div className="text-center md:text-left mb-8">
+        <div className="text-center md:text-left mb-5 md:mb-8">
           <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-2 block">Recent Milestones</span>
           <h2 className="section-heading">Latest News & Updates</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 mt-5 md:mt-8 mb-8 md:mb-10">
           {latestPosts.map((item) => (
             <Card key={item.slug} className="group p-0 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all duration-300">
               <div className="relative aspect-video w-full bg-gray-100 overflow-hidden border-b border-gray-200">
@@ -33,7 +33,7 @@ export async function LatestNews() {
               </div>
               <div className="p-5 md:p-6 flex flex-col flex-1">
                 <span className="text-gray-400 text-xs mb-2 block font-medium">{item.date}</span>
-                <h4 className="text-[18px] md:text-[20px] font-semibold text-brand-brown mb-3 leading-[1.4] group-hover:text-brand-orange transition-colors duration-300">
+                <h4 className="text-[17px] md:text-[20px] font-semibold text-brand-brown mb-3 leading-[1.4] group-hover:text-brand-orange transition-colors duration-300">
                   {item.title}
                 </h4>
                 <p className="text-gray-500 text-[14px] leading-relaxed mb-4 flex-1">{item.excerpt}</p>

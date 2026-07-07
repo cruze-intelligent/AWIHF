@@ -13,10 +13,10 @@ export default async function MentorshipPage() {
 
   return (
     <>
-      <section className="w-full bg-gradient-brand flex items-center justify-center min-h-[260px] px-4 md:px-8">
+      <section className="page-hero">
         <div className="text-center max-w-2xl">
-          <h1 className="text-white text-3xl md:text-[36px] font-bold leading-[1.2] mb-4">Mentorship Programme</h1>
-          <p className="text-white/85 text-[18px]">
+          <h1 className="page-hero-title">Mentorship Programme</h1>
+          <p className="page-hero-subtitle">
             Application-based mentorship for healthcare students and emerging community health leaders.
           </p>
         </div>
@@ -25,7 +25,7 @@ export default async function MentorshipPage() {
       <section className="section-wrapper bg-gray-50">
         <div className="content-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <Card className="lg:col-span-5 bg-white p-6 md:p-8">
+            <Card className="lg:col-span-5 bg-white p-5 md:p-8">
               <div className="w-12 h-12 rounded-xl bg-orange-tint text-brand-orange flex items-center justify-center mb-5">
                 <GraduationCap className="w-6 h-6" />
               </div>
@@ -35,19 +35,19 @@ export default async function MentorshipPage() {
               >
                 {applicationWindow.isOpen ? 'Applications Open' : 'Applications Closed'}
               </Badge>
-              <h2 className="text-[24px] font-bold text-brand-brown mb-3">{applicationWindow.cycleName}</h2>
-              <p className="text-gray-600 text-[16px] leading-[1.7] mb-6">
+              <h2 className="text-[22px] md:text-[24px] font-bold text-brand-brown mb-3">{applicationWindow.cycleName}</h2>
+              <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7] mb-5 md:mb-6">
                 {applicationWindow.isOpen ? applicationWindow.openMessage : applicationWindow.closedMessage}
               </p>
             </Card>
 
             <div className="lg:col-span-7">
               <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Mentorship Packages</span>
-              <h2 className="section-heading mb-8">Available Packages</h2>
+              <h2 className="section-heading mb-5 md:mb-8">Available Packages</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {mentorshipPackages.map((item) => (
-                  <Card key={item.name} className="p-6 bg-white border border-gray-200">
-                    <h3 className="text-xl font-bold text-brand-brown mb-2">{item.name}</h3>
+                  <Card key={item.name} className="p-5 md:p-6 bg-white border border-gray-200">
+                    <h3 className="text-[18px] md:text-xl font-bold text-brand-brown mb-2">{item.name}</h3>
                     <p className="text-brand-orange font-semibold mb-3">{item.price}</p>
                     <p className="text-gray-600 text-sm leading-relaxed mb-5">{item.description}</p>
                     <ul className="space-y-2 mb-5">
@@ -71,8 +71,8 @@ export default async function MentorshipPage() {
         <section className="section-wrapper bg-white">
           <div className="content-container max-w-4xl mx-auto">
             <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Apply Now</span>
-            <h2 className="section-heading mb-8">Mentorship Application</h2>
-            <Card className="p-6 md:p-8 bg-white border border-gray-200">
+            <h2 className="section-heading mb-5 md:mb-8">Mentorship Application</h2>
+            <Card className="p-5 md:p-8 bg-white border border-gray-200">
               <MentorshipApplicationForm />
             </Card>
           </div>

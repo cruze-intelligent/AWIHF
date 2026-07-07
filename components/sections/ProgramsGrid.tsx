@@ -35,16 +35,16 @@ export function ProgramsGrid() {
     <section className="section-wrapper bg-gray-50">
       <div className="content-container">
         <h2 className="section-heading">Our Programs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 md:mt-8">
           {programs.map((prog, index) => (
-            <Card key={index} className="group relative overflow-hidden flex flex-col md:flex-row items-start md:items-center gap-6 hover:shadow-xl transition-all duration-300">
+            <Card key={index} className="group relative overflow-hidden flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 hover:shadow-xl transition-all duration-300">
               <div className="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-brand-orange transition-all duration-300" />
               <div className="w-12 h-12 rounded-xl bg-green-tint flex items-center justify-center shrink-0">
                 {prog.icon}
               </div>
               <div className="flex-1">
-                <h4 className="text-[20px] font-bold text-brand-brown mb-2 leading-[1.4]">{prog.title}</h4>
-                <p className="text-gray-500 text-[16px] leading-[1.6] mb-4">{prog.description}</p>
+                <h4 className="text-[18px] md:text-[20px] font-bold text-brand-brown mb-2 leading-[1.4]">{prog.title}</h4>
+                <p className="text-gray-500 text-[15px] md:text-[16px] leading-[1.6] mb-4">{prog.description}</p>
                 <Link href={prog.href} className="text-brand-orange font-medium hover:text-brand-gold transition-colors inline-flex items-center">
                   Learn More <span className="ml-1">→</span>
                 </Link>
