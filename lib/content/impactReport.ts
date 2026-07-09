@@ -1,3 +1,4 @@
+import { logger } from '@/lib/observability/logger';
 import { sanityFetch } from '@/lib/sanity/client';
 
 export type ImpactReportStat = {
@@ -114,7 +115,7 @@ export async function getImpactReportContent(): Promise<ImpactReportContent> {
       priorities
     }
   `).catch((error) => {
-    console.error('Sanity impact report fetch failed', error);
+    logger.error('sanity.impact_report.fetch_failed', error);
     return null;
   });
 

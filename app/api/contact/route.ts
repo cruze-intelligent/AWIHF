@@ -3,6 +3,7 @@ import { saveContactSubmission } from '@/lib/db/operations';
 import { notifyAdminSafely, sendEmailSafely } from '@/lib/email/resend';
 import { contactConfirmationEmail, contactNotificationEmail } from '@/lib/email/templates';
 import { getSubmissionContext } from '@/lib/http/submissionContext';
+import { logger } from '@/lib/observability/logger';
 import { sanitizeObject } from '@/lib/security/sanitize';
 import { contactSubmissionSchema } from '@/lib/validation/submissions';
 
@@ -41,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, message: 'Your message has been received.' });
   } catch (error) {
-    console.error('Contact submission failed', error);
+    logger.error('contact.submission.failed', error);
     return NextResponse.json({ message: 'Your message could not be received right now.' }, { status: 500 });
   }
 }

@@ -1,5 +1,6 @@
 import { createHash } from 'crypto';
 import { getEnv, requireEnv } from '@/lib/config/env';
+import { logger } from '@/lib/observability/logger';
 
 export type UploadedFileMetadata = {
   url: string;
@@ -77,6 +78,13 @@ export async function uploadFileToCloudinary(file: File, options: UploadOptions 
   }
 
   const payload = await response.json() as { secure_url: string; public_id: string };
+  logger.info('cloudinary.upload.succeeded', {
+    folder,
+    publicId: payload.public_id,
+    fileSize: file.size,
+    mimeType: file.type,
+  });
+
   return {
     url: payload.secure_url,
     publicId: payload.public_id,
@@ -85,4 +93,41 @@ export async function uploadFileToCloudinary(file: File, options: UploadOptions 
     mimeType: file.type,
     provider: 'cloudinary',
   };
+}
+
+export async function deleteCloudinaryAsset(
+  publicId: string,
+  options: Pick<UploadOptions, 'resourceType'> = {}
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  const cloudName = requireEnv('CLOUDINARY_CLOUD_NAME');
+  const apiKey = requireEnv('CLOUDINARY_API_KEY');
+  const apiSecret = requireEnv('CLOUDINARY_API_SECRET');
+  const resourceType = options.resourceType ?? 'raw';
+  const timestamp = Math.round(Date.now() / 1000);
+  const signature = createSignature({ public_id: publicId, timestamp }, apiSecret);
+
+  const formData = new FormData();
+  formData.set('api_key', apiKey);
+  formData.set('timestamp', String(timestamp));
+  formData.set('public_id', publicId);
+  formData.set('signature', signature);
+
+  try {
+    const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/destroy`, {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      logger.error('cloudinary.delete.failed', new Error(errorText), { publicId, status: response.status });
+      return { ok: false, error: 'Cloudinary delete failed.' };
+    }
+
+    logger.info('cloudinary.delete.succeeded', { publicId });
+    return { ok: true };
+  } catch (error) {
+    logger.error('cloudinary.delete.failed', error, { publicId });
+    return { ok: false, error: 'Cloudinary delete failed.' };
+  }
 }

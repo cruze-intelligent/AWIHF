@@ -8,6 +8,7 @@ export type ApplicationStatus =
 
 export type FileReference = {
   url: string;
+  publicId?: string;
   fileName?: string;
   fileSize?: number;
   mimeType?: string;

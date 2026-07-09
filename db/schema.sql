@@ -8,8 +8,22 @@ begin
       'under_review',
       'shortlisted',
       'accepted',
-      'rejected'
+      'rejected',
+      'waitlisted'
     );
+  end if;
+end $$;
+
+do $$
+begin
+  if exists (select 1 from pg_type where typname = 'application_status')
+    and not exists (
+      select 1
+      from pg_enum
+      where enumtypid = 'application_status'::regtype
+        and enumlabel = 'waitlisted'
+    ) then
+    alter type application_status add value 'waitlisted';
   end if;
 end $$;
 
@@ -52,16 +66,19 @@ create table if not exists mentorship_applications (
   leadership_experience text,
   additional_comments text,
   cv_file_url text,
+  cv_file_public_id text,
   cv_file_name text,
   cv_file_size integer check (cv_file_size is null or cv_file_size >= 0),
   cv_file_mime_type text,
   transcript_file_url text,
+  transcript_file_public_id text,
   transcript_file_name text,
   transcript_file_size integer check (transcript_file_size is null or transcript_file_size >= 0),
   transcript_file_mime_type text,
   status application_status not null default 'pending',
   reviewed_by text,
   reviewed_at timestamptz,
+  admin_notes text,
   review_notes text,
   ip_hash text,
   user_agent text,
@@ -121,3 +138,7 @@ create index if not exists volunteer_applications_email_idx on volunteer_applica
 create index if not exists volunteer_applications_status_idx on volunteer_applications (status);
 create index if not exists event_registrations_email_idx on event_registrations (email);
 create index if not exists event_registrations_event_key_idx on event_registrations (event_key);
+
+alter table mentorship_applications add column if not exists admin_notes text;
+alter table mentorship_applications add column if not exists cv_file_public_id text;
+alter table mentorship_applications add column if not exists transcript_file_public_id text;

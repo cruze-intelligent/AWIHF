@@ -4,8 +4,14 @@ import { getApplicationWindow } from '@/lib/content/mentorship';
 import { notifyAdminSafely, sendEmailSafely } from '@/lib/email/resend';
 import { mentorshipConfirmationEmail, mentorshipNotificationEmail } from '@/lib/email/templates';
 import { getSubmissionContext } from '@/lib/http/submissionContext';
+import { logger } from '@/lib/observability/logger';
 import { sanitizeObject } from '@/lib/security/sanitize';
-import { hashUploadOwner, uploadFileToCloudinary, validatePdfUpload } from '@/lib/storage/cloudinary';
+import {
+  deleteCloudinaryAsset,
+  hashUploadOwner,
+  uploadFileToCloudinary,
+  validatePdfUpload,
+} from '@/lib/storage/cloudinary';
 import { mentorshipApplicationSchema } from '@/lib/validation/submissions';
 
 function getOptionalString(formData: FormData, key: string) {
@@ -74,28 +80,30 @@ export async function POST(request: NextRequest) {
 
     const ownerHash = hashUploadOwner(result.data.email);
     const uploadPrefix = `${Date.now()}_${ownerHash}`;
-    let uploadNote: string | undefined;
-    const cvUpload = await uploadFileToCloudinary(cvFile, {
-      folder: 'awihf/mentorship-applications/cv',
-      resourceType: 'raw',
-      publicId: uploadPrefix,
-    }).catch((error) => {
-      console.error('CV upload failed', error);
-      uploadNote = 'CV upload failed - follow up with applicant';
-      return undefined;
-    });
+    let cvUpload: Awaited<ReturnType<typeof uploadFileToCloudinary>> | undefined;
+    let transcriptUpload: Awaited<ReturnType<typeof uploadFileToCloudinary>> | undefined;
 
-    const transcriptUpload = transcriptFile
-      ? await uploadFileToCloudinary(transcriptFile, {
-          folder: 'awihf/mentorship-applications/transcripts',
-          resourceType: 'raw',
-          publicId: `${uploadPrefix}_transcript`,
-        }).catch((error) => {
-          console.error('Transcript upload failed', error);
-          uploadNote = uploadNote ? `${uploadNote}; transcript upload failed` : 'Transcript upload failed - follow up with applicant';
-          return undefined;
-        })
-      : undefined;
+    try {
+      cvUpload = await uploadFileToCloudinary(cvFile, {
+        folder: 'awihf/mentorship-applications/cv',
+        resourceType: 'raw',
+        publicId: uploadPrefix,
+      });
+
+      transcriptUpload = transcriptFile
+        ? await uploadFileToCloudinary(transcriptFile, {
+            folder: 'awihf/mentorship-applications/transcripts',
+            resourceType: 'raw',
+            publicId: `${uploadPrefix}_transcript`,
+          })
+        : undefined;
+    } catch (error) {
+      logger.error('mentorship.upload.failed', error);
+      if (cvUpload?.publicId) {
+        void deleteCloudinaryAsset(cvUpload.publicId, { resourceType: 'raw' });
+      }
+      return NextResponse.json({ message: 'Document upload failed. Please try again.' }, { status: 500 });
+    }
 
     const saved = await saveMentorshipApplication({
       ...result.data,
@@ -107,6 +115,11 @@ export async function POST(request: NextRequest) {
     });
 
     if (!saved.ok) {
+      logger.error('mentorship.database_save.failed', new Error(saved.error));
+      await Promise.all([
+        cvUpload?.publicId ? deleteCloudinaryAsset(cvUpload.publicId, { resourceType: 'raw' }) : Promise.resolve(),
+        transcriptUpload?.publicId ? deleteCloudinaryAsset(transcriptUpload.publicId, { resourceType: 'raw' }) : Promise.resolve(),
+      ]);
       return NextResponse.json({ message: 'Your application could not be saved right now.' }, { status: 500 });
     }
 
@@ -117,7 +130,6 @@ export async function POST(request: NextRequest) {
         submittedAt,
         cvUrl: cvUpload?.url,
         transcriptUrl: transcriptUpload?.url,
-        uploadNote,
       })
     );
     void sendEmailSafely({
@@ -127,7 +139,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, applicationId: saved.data.id, message: 'Application received.' });
   } catch (error) {
-    console.error('Mentorship application failed', error);
+    logger.error('mentorship.application.failed', error);
     return NextResponse.json({ message: 'Application service is not available right now.' }, { status: 500 });
   }
 }

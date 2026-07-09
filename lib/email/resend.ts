@@ -1,4 +1,5 @@
 import { getEnv, requireEnv } from '@/lib/config/env';
+import { logger } from '@/lib/observability/logger';
 import type { EmailMessage } from './templates';
 
 type SendEmailOptions = EmailMessage & {
@@ -37,7 +38,7 @@ export async function sendEmailSafely(message: SendEmailOptions) {
     await sendEmail(message);
     return { ok: true as const };
   } catch (error) {
-    console.error('Email send failed', error);
+    logger.error('email.send.failed', error);
     return { ok: false as const, error: 'Email send failed.' };
   }
 }

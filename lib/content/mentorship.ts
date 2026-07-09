@@ -1,5 +1,6 @@
 import applicationWindowSeed from '@/content/application-window.json';
 import mentorshipPackageSeed from '@/content/mentorship-packages.json';
+import { logger } from '@/lib/observability/logger';
 import { sanityFetch } from '@/lib/sanity/client';
 
 export type MentorshipPackage = {
@@ -27,7 +28,7 @@ export async function getMentorshipPackages(): Promise<MentorshipPackage[]> {
       eligibility
     }
   `).catch((error) => {
-    console.error('Sanity mentorship package fetch failed', error);
+    logger.error('sanity.mentorship_packages.fetch_failed', error);
     return null;
   });
 
@@ -43,7 +44,7 @@ export async function getApplicationWindow(): Promise<ApplicationWindow> {
       closedMessage
     }
   `).catch((error) => {
-    console.error('Sanity application window fetch failed', error);
+    logger.error('sanity.application_window.fetch_failed', error);
     return null;
   });
 

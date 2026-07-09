@@ -4,6 +4,8 @@ import {
   uploadFileToCloudinary,
   validatePdfUpload,
 } from '@/lib/storage/cloudinary';
+import { getSubmissionContext } from '@/lib/http/submissionContext';
+import { logger } from '@/lib/observability/logger';
 
 function uploadFolderFor(type: string | null) {
   if (type === 'transcript') {
@@ -14,6 +16,11 @@ function uploadFolderFor(type: string | null) {
 }
 
 export async function POST(request: NextRequest) {
+  const context = await getSubmissionContext(request);
+  if (!context.allowed) {
+    return NextResponse.json({ message: 'Too many uploads. Please try again later.' }, { status: 429 });
+  }
+
   const formData = await request.formData();
   const file = formData.get('file');
   const email = formData.get('email');
@@ -21,6 +28,10 @@ export async function POST(request: NextRequest) {
 
   if (!(file instanceof File) || typeof email !== 'string') {
     return NextResponse.json({ message: 'A PDF file and applicant email are required.' }, { status: 400 });
+  }
+
+  if (typeof type === 'string' && !['cv', 'transcript'].includes(type)) {
+    return NextResponse.json({ message: 'Invalid upload type.' }, { status: 400 });
   }
 
   const validation = validatePdfUpload(file);
@@ -45,7 +56,7 @@ export async function POST(request: NextRequest) {
       fileSize: upload.fileSize,
     });
   } catch (error) {
-    console.error('Upload failed', error);
+    logger.error('upload.failed', error, { type: typeof type === 'string' ? type : null });
     return NextResponse.json({ message: 'File upload failed.' }, { status: 500 });
   }
 }

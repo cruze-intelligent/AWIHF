@@ -1,5 +1,6 @@
 import { ApplicationStatus as PrismaApplicationStatus } from '@prisma/client';
 import { getEnv } from '@/lib/config/env';
+import { logger } from '@/lib/observability/logger';
 import { prisma } from '@/lib/prisma';
 import type { ContactSubmissionRecord, MentorshipApplicationRecord, ApplicationStatus } from './types';
 
@@ -51,7 +52,7 @@ export async function insertContactSubmission(record: ContactSubmissionRecord): 
 
     return { ok: true, data: submission };
   } catch (error) {
-    console.error('Contact submission database insert failed', error);
+    logger.error('db.contact_submission.insert_failed', error);
     return { ok: false, error: 'Database operation failed.' };
   }
 }
@@ -79,10 +80,12 @@ export async function insertMentorshipApplication(
         leadershipExperience: record.leadershipExperience ?? null,
         additionalComments: record.additionalComments ?? null,
         cvFileUrl: record.cvFile?.url ?? null,
+        cvFilePublicId: record.cvFile?.publicId ?? null,
         cvFileName: record.cvFile?.fileName ?? null,
         cvFileSize: record.cvFile?.fileSize ?? null,
         cvFileMimeType: record.cvFile?.mimeType ?? null,
         transcriptFileUrl: record.transcriptFile?.url ?? null,
+        transcriptFilePublicId: record.transcriptFile?.publicId ?? null,
         transcriptFileName: record.transcriptFile?.fileName ?? null,
         transcriptFileSize: record.transcriptFile?.fileSize ?? null,
         transcriptFileMimeType: record.transcriptFile?.mimeType ?? null,
@@ -95,7 +98,7 @@ export async function insertMentorshipApplication(
 
     return { ok: true, data: application };
   } catch (error) {
-    console.error('Mentorship application database insert failed', error);
+    logger.error('db.mentorship_application.insert_failed', error);
     return { ok: false, error: 'Database operation failed.' };
   }
 }
@@ -111,7 +114,7 @@ export async function getContactSubmissions() {
     });
     return { ok: true as const, data: submissions };
   } catch (error) {
-    console.error('Contact submissions query failed', error);
+    logger.error('db.contact_submissions.query_failed', error);
     return { ok: false as const, error: 'Database operation failed.' };
   }
 }
@@ -128,7 +131,7 @@ export async function getMentorshipApplications(status?: PrismaApplicationStatus
     });
     return { ok: true as const, data: applications };
   } catch (error) {
-    console.error('Mentorship applications query failed', error);
+    logger.error('db.mentorship_applications.query_failed', error);
     return { ok: false as const, error: 'Database operation failed.' };
   }
 }
@@ -155,7 +158,7 @@ export async function updateMentorshipApplicationReview(input: {
     });
     return { ok: true as const, data: application };
   } catch (error) {
-    console.error('Mentorship application update failed', error);
+    logger.error('db.mentorship_application.update_failed', error);
     return { ok: false as const, error: 'Database operation failed.' };
   }
 }
@@ -181,7 +184,7 @@ export async function subscribeNewsletter(email: string): Promise<DbResult<{ id:
 
     return { ok: true, data: subscriber };
   } catch (error) {
-    console.error('Newsletter subscription database upsert failed', error);
+    logger.error('db.newsletter_subscription.upsert_failed', error);
     return { ok: false, error: 'Database operation failed.' };
   }
 }

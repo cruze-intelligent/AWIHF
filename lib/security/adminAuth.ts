@@ -1,5 +1,13 @@
 import { NextRequest } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { getEnv } from '@/lib/config/env';
+
+function safeTokenCompare(providedToken: string, expectedToken: string) {
+  const provided = Buffer.from(providedToken);
+  const expected = Buffer.from(expectedToken);
+
+  return provided.length === expected.length && timingSafeEqual(provided, expected);
+}
 
 export function verifyAdminRequest(request: NextRequest) {
   const expectedToken = getEnv().ADMIN_API_TOKEN;
@@ -12,7 +20,7 @@ export function verifyAdminRequest(request: NextRequest) {
   const headerToken = request.headers.get('x-admin-token');
   const providedToken = bearerToken || headerToken;
 
-  if (providedToken !== expectedToken) {
+  if (!providedToken || !safeTokenCompare(providedToken, expectedToken)) {
     return { ok: false as const, status: 401, message: 'Unauthorized.' };
   }
 

@@ -1,4 +1,5 @@
 import donationSeed from '@/content/donation-info.json';
+import { logger } from '@/lib/observability/logger';
 import { sanityFetch } from '@/lib/sanity/client';
 
 export type DonationInfo = {
@@ -23,7 +24,7 @@ export async function getDonationInfo(): Promise<DonationInfo> {
       instructions
     }
   `).catch((error) => {
-    console.error('Sanity donation fetch failed', error);
+    logger.error('sanity.donation.fetch_failed', error);
     return null;
   });
 

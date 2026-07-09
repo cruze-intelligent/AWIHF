@@ -1,4 +1,5 @@
 import newsSeed from '@/content/news.json';
+import { logger } from '@/lib/observability/logger';
 import { sanityFetch } from '@/lib/sanity/client';
 import { imageUrl } from '@/lib/sanity/image';
 
@@ -49,7 +50,7 @@ async function fetchNewsFromCms(): Promise<CmsNewsArticle[]> {
       "content": coalesce(body[].children[].text, [])
     }
   `).catch((error) => {
-    console.error('Sanity news fetch failed', error);
+    logger.error('sanity.news.fetch_failed', error);
     return null;
   });
 
