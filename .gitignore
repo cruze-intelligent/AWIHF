@@ -26,8 +26,15 @@
 Thumbs.db
 *.pem
 *.log
-.codex-tmp/
+*.tmp
+*.temp
+tmp/
+temp/
+.cache/
 .npm-cache/
+.eslintcache
+.turbo/
+.parcel-cache/
 
 # debug
 npm-debug.log*
@@ -45,11 +52,19 @@ yarn-error.log*
 # editor and OS-local state
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# local agent/workflow notes
+# local AI/tooling workflow artifacts
 CODEX.md
+CLAUDE.md
+AGENTS.md
+.codex*/
+.codex-tmp/
 .claude/
 .codex/
+.aider*
+.ai/
 
 # typescript
 *.tsbuildinfo

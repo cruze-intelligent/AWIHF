@@ -16,19 +16,19 @@ This pass focused on repository professionalism, documentation, discoverability,
 
 Moved historical/internal files into `docs/internal/`:
 
-- `AGENTS.md`
-- `CLAUDE.md`
 - `HANDOFF.md`
 - `HANDOFF_REPORT.md`
 - `TEST_REPORT.md`
 
 These are retained for project history but are no longer root-level project artifacts.
 
+Removed explicit AI-agent workflow notes from the tracked repository because they are not part of the software product or long-term engineering documentation.
+
 ## Root Directory Improvements
 
 - Replaced the default template README with a professional project README.
 - Kept the root focused on source directories, framework configuration, package metadata, and documentation entry points.
-- Added `.gitignore` coverage for local caches, logs, editor settings, local agent notes, and `.env.example` tracking.
+- Added `.gitignore` coverage for local caches, logs, editor settings, local AI/tooling artifacts, and `.env.example` tracking.
 
 ## Documentation Created
 
