@@ -23,7 +23,11 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+*.log
+.codex-tmp/
+.npm-cache/
 
 # debug
 npm-debug.log*
@@ -33,9 +37,19 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
+
+# editor and OS-local state
+.vscode/
+.idea/
+
+# local agent/workflow notes
+CODEX.md
+.claude/
+.codex/
 
 # typescript
 *.tsbuildinfo
