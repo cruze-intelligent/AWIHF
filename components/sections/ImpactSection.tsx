@@ -79,10 +79,10 @@ export function ImpactSection() {
         {/* Section Header */}
         <div className={`text-center mb-9 md:mb-16 transition-all duration-700 ${sectionRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h2 className="text-2xl md:text-[38px] font-bold text-white mb-4 md:mb-6 leading-[1.2]">
-            Our 2025 Impact
+            Our Impact
           </h2>
           <p className="text-white/70 text-[15px] md:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-            In 2025, AWIHF delivered three phases of programming across the Acholi sub-region, establishing a strong evidence base and demonstrating high-volume, community-centred health delivery.
+            AWIHF delivered three phases of programming across the Acholi sub-region, establishing a strong evidence base and demonstrating high-volume, community-centred health delivery.
           </p>
         </div>
 

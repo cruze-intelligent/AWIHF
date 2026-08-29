@@ -7,10 +7,8 @@ import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { DonateCTA } from '@/components/sections/DonateCTA';
-import { getImpactReportContent } from '@/lib/content/impactReport';
 
-export default async function ImpactPage() {
-  const report = await getImpactReportContent();
+export default function ImpactPage() {
   const impactTimeline = [
     {
       period: "2023",
