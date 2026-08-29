@@ -37,7 +37,7 @@ export function Hero() {
         >
           <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
           <span className="text-white/90 text-[12px] md:text-[13px] font-medium tracking-wide">
-            1,000+ households reached in 2025
+            1,000+ households reached so far
           </span>
         </Link>
 
