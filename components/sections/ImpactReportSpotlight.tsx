@@ -15,9 +15,6 @@ export async function ImpactReportSpotlight() {
             <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-white text-brand-orange flex items-center justify-center mb-4 md:mb-5 shadow-sm">
               <FileText className="w-6 h-6" />
             </div>
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">
-              Annual Impact Report
-            </span>
             <h2 className="text-[24px] md:text-[36px] font-bold text-brand-brown leading-tight mb-3 md:mb-4">
               {report.title}
             </h2>

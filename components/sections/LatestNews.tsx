@@ -13,7 +13,6 @@ export async function LatestNews() {
     <section className="section-wrapper bg-white">
       <div className="content-container">
         <div className="text-center md:text-left mb-5 md:mb-8">
-          <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-2 block">Recent Milestones</span>
           <h2 className="section-heading">Latest News & Updates</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 mt-5 md:mt-8 mb-8 md:mb-10">

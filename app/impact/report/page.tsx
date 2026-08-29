@@ -11,9 +11,6 @@ export default async function ImpactReportPage() {
     <>
       <section className="w-full bg-gradient-brand flex items-center justify-center min-h-[150px] md:min-h-[320px] py-7 md:py-16 px-4 md:px-8">
         <div className="text-center max-w-4xl">
-          <span className="text-white/80 text-xs md:text-sm font-semibold uppercase tracking-wider mb-3 md:mb-4 block">
-            Annual Impact Report
-          </span>
           <h1 className="text-white text-2xl md:text-[42px] font-bold leading-[1.15] mb-3 md:mb-5">{report.title}</h1>
           <p className="text-white/85 text-sm md:text-[20px] leading-[1.55] md:leading-[1.6] max-w-3xl mx-auto">
             {report.tagline}
@@ -67,9 +64,6 @@ export default async function ImpactReportPage() {
       <section className="section-wrapper bg-gray-50">
         <div className="content-container">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">
-              Programme Timeline
-            </span>
             <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
               How Impact Was Built Across 2025
             </h2>

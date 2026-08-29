@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../ui/Button';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { Calendar, Home, Stethoscope } from 'lucide-react';
+import { Calendar, MapPin, Users } from 'lucide-react';
 
 export function Spotlight() {
   const { ref, isRevealed } = useScrollReveal({ threshold: 0.12 });
@@ -16,52 +16,40 @@ export function Spotlight() {
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-brand-brown/[0.04] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="content-container relative z-10">
-        {/* Connecting label to Programs section above */}
-        <div className={`text-center mb-7 md:mb-10 transition-all duration-600 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <span className="inline-flex items-center gap-2 text-brand-orange font-semibold text-sm tracking-wider uppercase">
-            <span className="w-8 h-px bg-brand-orange/40" />
-            See Our Programmes in Action
-            <span className="w-8 h-px bg-brand-orange/40" />
-          </span>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-          {/* Image — reduced footprint with aspect constraint */}
-          <div className={`md:col-span-5 w-full max-w-[320px] md:max-w-[380px] mx-auto relative rounded-2xl overflow-hidden shadow-lg transition-all duration-700 ${isRevealed ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <div className="aspect-[4/3] md:aspect-[4/5] relative">
+          {/* Image — sized to preserve the full launch photo */}
+          <div className={`md:col-span-5 w-full max-w-[330px] md:max-w-[392px] mx-auto relative rounded-2xl overflow-hidden shadow-lg transition-all duration-700 ${isRevealed ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+            <div className="aspect-[4/3] relative bg-brand-brown/5">
               <div className="absolute inset-0 bg-brand-brown/8 z-10 pointer-events-none" />
               <Image
-                src="/images/AWIHF-Patiko.webp"
-                alt="Acholi Women in Health Foundation team and community members at the Patiko Medical Outreach program"
+                src="/images/AWIHF-Launch.webp"
+                alt="Official launch of Acholi Women in Health Foundation at Gulu University Library Hall on 11 July 2026"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 380px"
+                className="object-contain object-center"
+                sizes="(max-width: 768px) 100vw, 392px"
               />
             </div>
             {/* Photo credit badge */}
             <div className="absolute bottom-3 left-3 z-20 bg-black/40 backdrop-blur-sm rounded-lg px-3 py-1.5">
-              <span className="text-white/80 text-[11px] font-medium">Patiko, July 2025</span>
+              <span className="text-white/80 text-[11px] font-medium">Official Launch, July 2026</span>
             </div>
           </div>
 
           {/* Content — expanded for balance */}
           <div className={`md:col-span-7 flex flex-col items-start transition-all duration-700 delay-150 ${isRevealed ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3">
-              Programme Spotlight
-            </span>
             <h2 className="text-[24px] md:text-[32px] font-bold text-brand-brown leading-[1.25] mb-4 md:mb-5">
-              Patiko Medical Outreach - July 2025
+              Official Launch of AWIHF, July 2026
             </h2>
             <p className="text-[#111111] text-[15px] md:text-[17px] leading-[1.65] mb-5 md:mb-6">
-              Our largest single programme event reached over 1,000 households across four days, delivering free medical consultations, vision screenings, SRHR education, and post-abortion care referrals in the most underserved rural Acholi communities.
+              Acholi Women in Health Foundation was officially launched at Gulu University Library Hall in a gathering that affirmed our long-term commitment to women- and girl-centered healthcare in Northern Uganda. Graced by Deputy IGG Dr. Patricia Acan Okiria, Commissioner for Non-Communicable Diseases with the Ministry of Health Oyoo Charles Akiya, and a broad range of partners and stakeholders, the launch marked a defining moment for AWIHF&apos;s community-rooted mission and the next chapter of our work.
             </p>
 
             {/* Quick stats strip */}
             <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8">
               {[
-                { icon: <Calendar className="w-4 h-4" />, text: '4 Days' },
-                { icon: <Home className="w-4 h-4" />, text: '1,000+ Households' },
-                { icon: <Stethoscope className="w-4 h-4" />, text: '6 Services Delivered' },
+                { icon: <Calendar className="w-4 h-4" />, text: '11 July 2026' },
+                { icon: <MapPin className="w-4 h-4" />, text: 'Gulu University Library Hall' },
+                { icon: <Users className="w-4 h-4" />, text: 'Leaders & Stakeholders' },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -73,8 +61,8 @@ export function Spotlight() {
               ))}
             </div>
 
-            <Link href="/impact">
-              <Button variant="secondary" size="medium">Read Full Story</Button>
+            <Link href="/news/awihf-official-launch-2026">
+              <Button variant="secondary" size="medium">Read Launch Story</Button>
             </Link>
           </div>
         </div>

@@ -48,9 +48,6 @@ export function GetInvolvedCTA() {
       <div className="content-container relative z-10">
         {/* Header */}
         <div className={`text-center mb-8 md:mb-14 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="text-brand-green font-semibold text-sm tracking-wider uppercase mb-3 block">
-            Join the Movement
-          </span>
           <h2 className="section-heading mx-auto text-center after:mx-auto after:left-auto after:right-auto">
             Get Involved
           </h2>

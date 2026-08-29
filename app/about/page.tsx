@@ -49,7 +49,7 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Grace Akello",
+      name: "Lucky Ajok",
       role: "Founder & Executive Director",
       bio: "Passionate about improving healthcare access, safe motherhood, and peer health education for women and girls in Northern Uganda.",
       image: "/images/lucky.webp",
@@ -81,10 +81,9 @@ export default function AboutPage() {
         <div className="content-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Our Heritage</span>
               <h2 className="section-heading">Our Story</h2>
               <p className="text-[16px] leading-[1.6] text-[#111111] mb-4">
-                Established in 2024, Acholi Women in Health Foundation (AWIHF) was founded in response to the persistent and disproportionate health challenges facing women and girls in the post-conflict Acholi sub-region of Northern Uganda.
+                Founded in 2023, Acholi Women in Health Foundation (AWIHF) was established in response to the persistent and disproportionate health challenges facing women and girls in the post-conflict Acholi sub-region of Northern Uganda.
               </p>
               <p className="text-[16px] leading-[1.6] text-[#111111]">
                 Two decades of Lord&apos;s Resistance Army (LRA) insurgency left behind mass displacement, widespread gender-based violence, and a decimated public health infrastructure. With maternal mortality figures at 106.0 per 100,000 live births (compared to 69.1 nationally) and a 24% teenage pregnancy rate in rural areas, AWIHF exists to close the gaps that peace has not yet closed. We bring healthcare services directly to community hubs while strengthening systems for long-term health equity.
@@ -139,7 +138,6 @@ export default function AboutPage() {
       {/* Strategic Objectives */}
       <section className="section-wrapper bg-white">
         <div className="content-container max-w-4xl mx-auto">
-          <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Strategic Roadmap</span>
           <h2 className="section-heading text-center mb-7 md:mb-10">Our Strategic Objectives</h2>
           <div className="space-y-4">
             {objectives.map((obj, index) => (
@@ -157,7 +155,6 @@ export default function AboutPage() {
       {/* Leadership & Governance Section */}
       <section className="section-wrapper bg-gray-50" id="leadership">
         <div className="content-container">
-          <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Our Stewards</span>
           <h2 className="section-heading text-center mb-4">Leadership & Governance</h2>
           <p className="text-gray-500 text-[15px] md:text-[16px] text-center max-w-2xl mx-auto mb-8 md:mb-12">
             Meet the community-rooted leaders guiding our operational excellence and strategic mission in Gulu City and across Northern Uganda.
@@ -198,7 +195,6 @@ export default function AboutPage() {
       {/* Our Approach */}
       <section className="section-wrapper bg-green-tint">
         <div className="content-container">
-          <span className="text-brand-green font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Our Methodology</span>
           <h2 className="section-heading text-center mb-7 md:mb-10">Our Strategic Approach</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {approaches.map((app, i) => (
@@ -219,7 +215,6 @@ export default function AboutPage() {
       {/* Why It Matters */}
       <section className="section-wrapper bg-white">
         <div className="content-container">
-          <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block text-center">Regional Context</span>
           <h2 className="section-heading text-center mb-7 md:mb-10">Why Our Focus Matters</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex gap-3 md:gap-4 items-start shadow-sm">

@@ -59,7 +59,6 @@ export function ProgramLayout({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start">
             {/* Left: Overview */}
             <div className="lg:col-span-7 text-[#111111] text-[16px] leading-[1.6]">
-              <span className="text-brand-orange font-semibold text-xs tracking-wider uppercase mb-2 block">Program Overview</span>
               <h2 className="text-2xl md:text-3xl font-bold text-brand-brown mb-4 md:mb-6">Scope of Work</h2>
               {description}
             </div>
@@ -93,8 +92,8 @@ export function ProgramLayout({
                 {focusArea}
               </p>
               <div className="border-t border-brand-green/10 pt-4 mt-auto">
-                <span className="text-[12px] uppercase font-bold text-brand-green tracking-wider block">Operational District</span>
-                <span className="text-[#111111] font-semibold text-sm">Gulu & Acholi Sub-Region, Northern Uganda</span>
+                <span className="text-[12px] uppercase font-bold text-brand-green tracking-wider block">Area of operation</span>
+                <span className="text-[#111111] font-semibold text-sm">Gulu, Acholi sub-region</span>
               </div>
             </div>
 
@@ -124,7 +123,6 @@ export function ProgramLayout({
       <section className="section-wrapper bg-white">
         <div className="content-container max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-brand-orange font-semibold text-xs tracking-wider uppercase mb-2 block">Our Track Record</span>
             <h2 className="text-2xl md:text-3xl font-bold text-brand-brown">Success Indicators</h2>
           </div>
           <div className="bg-orange-tint/40 border border-brand-orange/20 rounded-2xl p-5 md:p-8">
@@ -145,7 +143,6 @@ export function ProgramLayout({
         <div className="content-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-5">
-              <span className="text-brand-orange font-semibold text-xs tracking-wider uppercase mb-2 block">Field Activity</span>
               <h2 className="text-2xl md:text-3xl font-bold text-brand-brown mb-3 md:mb-4">Programme in Practice</h2>
               <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7]">
                 A field image from this programme, included to show real implementation activity without relying on unrelated filler photography.

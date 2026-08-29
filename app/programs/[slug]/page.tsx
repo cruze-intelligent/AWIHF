@@ -34,7 +34,7 @@ const programsData: Record<string, ProgramData> = {
       "Running regional cervical cancer awareness and preventive care campaign outreaches."
     ],
     successIndicators: [
-      "1,000+ households successfully supported during regional maternal health and Patiko outreach events.",
+      "1,000+ households successfully supported during regional maternal health, Patiko, and Abwoch outreach events.",
       "Referral pathways successfully established with Gulu City referral hospitals for high-risk obstetric cases.",
       "Significant reduction in school absenteeism among adolescent girls in our target rural schools.",
       "500+ teenage mothers supported with comprehensive clinical care, peer counseling, and parent integration classes."
@@ -42,7 +42,7 @@ const programsData: Record<string, ProgramData> = {
     description: (
       <div className="space-y-6">
         <p>
-          Acholi Women in Health Foundation (AWIHF)&apos;s Maternal & Reproductive Health program is a community-rooted response to the critical maternal healthcare deficit in Northern Uganda. The post-conflict status of the region has left healthcare infrastructure fragmented, resulting in an Acholi sub-region maternal mortality rate of 106.0 per 100,000 live births—vastly exceeding the national average of 69.1.
+          Acholi Women in Health Foundation (AWIHF)&apos;s Maternal & Reproductive Health program is a community-rooted response to the critical maternal healthcare deficit in Northern Uganda. The post-conflict status of the region has left healthcare infrastructure fragmented, resulting in an Acholi sub-region maternal mortality rate of 106.0 per 100,000 live births, far above the national average of 69.1.
         </p>
         <p>
           We operate direct grassroots interventions, bringing skilled birth attendance counseling, family planning education, and pregnancy care packages directly to community health hubs in rural sub-counties. Through peer support networks and local health-center referral relationships, we advocate for safe motherhood and dignity at every birth.
@@ -100,14 +100,14 @@ const programsData: Record<string, ProgramData> = {
       "Conducting large-scale public health education campaigns focusing on cervical cancer and reproductive safety.",
       "Training SRHR peer educators to sustain educational programs at the sub-county level.",
       "Distributing reusable sanitary pads to vulnerable girls to support their school attendance.",
-      "Running community health outreach events providing free health screenings and consultations.",
+      "Running community health outreach events providing free health screenings and consultations, including the Abwoch Health Center III medical outreach.",
       "Organizing public campaigns against Gender-Based Violence (GBV) and supporting AIDS awareness."
     ],
     successIndicators: [
       "1,000+ vulnerable girls supplied with school-retaining hygiene kits and reusable sanitary pad supplies.",
       "200+ active SRHR peer educators trained and facilitating community-level peer health conversations.",
       "5,000+ households targeted for critical preventive care literacy campaigns in the Gulu sub-region.",
-      "Widely increased public screening and clinical attendance for cervical cancer and SRHR consultations."
+      "Widely increased public screening and clinical attendance for cervical cancer, HIV, sickle cell, and SRHR consultations through outreach events such as Abwoch."
     ],
     description: (
       <div className="space-y-6">
@@ -115,7 +115,7 @@ const programsData: Record<string, ProgramData> = {
           Knowledge is the first and strongest line of defense in community healthcare. In rural Gulu City and its surrounding areas, limited health literacy and cultural taboos leave women and young girls highly vulnerable to preventable conditions.
         </p>
         <p>
-          AWIHF&apos;s Community Health Education program empowers individuals through accessible, localized health literacy campaigns. We focus heavily on peer-to-peer training, allowing young women to act as community advocates. By providing critical tools—including cervical cancer education and reusable sanitary pads—we ensure girls can stay in school and protect their health with dignity.
+          AWIHF&apos;s Community Health Education program empowers individuals through accessible, localized health literacy campaigns. We focus heavily on peer-to-peer training, allowing young women to act as community advocates. By providing critical tools, including cervical cancer education and reusable sanitary pads, we ensure girls can stay in school and protect their health with dignity.
         </p>
       </div>
     ),
@@ -151,6 +151,41 @@ const programsData: Record<string, ProgramData> = {
         </p>
         <p>
           Through our Healthcare Systems Strengthening program, AWIHF addresses this structural gap. We focus on empowering Community Health Workers (CHWs) and establishing a national mentorship network for healthcare students. By supporting medical students and connecting them with experienced mentors, we build a pipeline of future women leaders in healthcare ready to innovate and deliver high-quality community care.
+        </p>
+      </div>
+    ),
+  },
+  'school-community-outreach-programme': {
+    title: 'School & Community Outreach Programme',
+    heroImage: '/images/AWIHF-School Outreach.webp',
+    fieldImage: '/images/AWIHF-School Outreach.webp',
+    stats: [
+      { value: 'School-based', label: 'Delivery Model' },
+      { value: 'Community-led', label: 'Approach' },
+      { value: 'Prevention-focused', label: 'Health Priority' },
+    ],
+    objective: "To take health information, early screening awareness, and referral guidance directly into schools and communities so that women, girls, and families can act early and seek care with confidence.",
+    focusArea: "School-going girls, teachers, parents, and underserved communities in Gulu and the wider Acholi sub-region that benefit from preventive education and direct outreach engagement.",
+    activities: [
+      "Conducting school visits that deliver menstrual health education, SRHR awareness, and practical guidance for adolescent girls.",
+      "Running community outreach sessions that connect families with health information, screening opportunities, and referral pathways.",
+      "Supporting awareness on cervical cancer, HIV, sickle cell disease, and other priority public health concerns through local engagement.",
+      "Working with school and community leaders to improve health-seeking behaviour and build trust in community-based care.",
+      "Linking outreach participants to AWIHF programmes in maternal health, mental health, and community health education where follow-up support is needed."
+    ],
+    successIndicators: [
+      "Health information delivered in school and community spaces where women, girls, and families already gather.",
+      "Improved awareness of referral options for reproductive health, cancer screening, and preventive care services.",
+      "Stronger collaboration with teachers, community leaders, and outreach volunteers supporting sustained local engagement.",
+      "A practical pathway for extending AWIHF services beyond single-event camps into ongoing school and community touchpoints."
+    ],
+    description: (
+      <div className="space-y-6">
+        <p>
+          The School & Community Outreach Programme extends AWIHF&apos;s work into everyday spaces where health decisions are shaped. By working through schools and community gathering points, the programme makes trusted health information more accessible to girls, families, and local leaders.
+        </p>
+        <p>
+          This programme strengthens prevention by combining education, awareness, and referral support. It helps bridge the gap between community knowledge and formal health services, while reinforcing dignity, early action, and locally rooted engagement across Gulu and the Acholi sub-region.
         </p>
       </div>
     ),

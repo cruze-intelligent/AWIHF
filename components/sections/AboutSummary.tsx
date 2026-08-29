@@ -11,12 +11,11 @@ export function AboutSummary() {
           
           {/* Left Column: Heading and description */}
           <div className="lg:col-span-6">
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Who We Are</span>
             <h2 className="section-heading">
               Women-led. Community-rooted. Health-focused.
             </h2>
             <p className="text-[#111111] text-[16px] md:text-[18px] leading-[1.65] md:leading-[1.6] mb-4 md:mb-5">
-              Acholi Women in Health Foundation (AWIHF) was founded in 2024 to address the persistent health challenges facing women and girls in the post-conflict Acholi sub-region of Northern Uganda.
+              Acholi Women in Health Foundation (AWIHF) was founded in 2023 to address the persistent health challenges facing women and girls in the post-conflict Acholi sub-region of Northern Uganda.
             </p>
             <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.65] md:leading-[1.6] mb-6 md:mb-8">
               Our mission is to close the gaps left behind by two decades of insurgency. We believe that when women are empowered to lead, innovate, and deliver high-quality care, the entire community thrives.

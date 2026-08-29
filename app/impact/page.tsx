@@ -11,6 +11,81 @@ import { getImpactReportContent } from '@/lib/content/impactReport';
 
 export default async function ImpactPage() {
   const report = await getImpactReportContent();
+  const impactTimeline = [
+    {
+      period: "2023",
+      title: "AWIHF Founded",
+      summary:
+        "AWIHF was founded to respond to the persistent health challenges facing women and girls in the post-conflict Acholi sub-region, establishing the organisation's women-led and community-rooted mission.",
+      highlights: [
+        "Defined a mission focused on equitable, community-based healthcare for women and girls.",
+        "Positioned the organisation around maternal health, mental health, education, and systems strengthening.",
+      ],
+    },
+    {
+      period: "January - June 2025",
+      title: "Research and Community Groundwork",
+      summary:
+        "The first half of 2025 focused on evidence gathering, early awareness work, and shaping programmes around community realities in Gulu and the wider Acholi sub-region.",
+      highlights: [
+        "Launched community-based research on barriers to sexual and reproductive health access.",
+        "Supported early cervical cancer awareness and preventive education efforts.",
+        "Strengthened advocacy and programme planning using community evidence.",
+      ],
+    },
+    {
+      period: "10 - 13 July 2025",
+      title: "Patiko Medical Outreach",
+      summary:
+        "AWIHF delivered its landmark four-day Patiko Medical Outreach, reaching more than 1,000 households with high-volume, integrated frontline services.",
+      highlights: [
+        "Provided free medical consultations, diagnostic support, and vision screenings.",
+        "Delivered SRHR education, maternal care support, and referral guidance in underserved rural communities.",
+        "Demonstrated AWIHF's operational capacity for trusted, large-scale outreach delivery.",
+      ],
+    },
+    {
+      period: "25 September 2025",
+      title: "Regional Cervical Cancer Initiative",
+      summary:
+        "Building on field outreach work, AWIHF expanded preventive care education through a regional cervical cancer awareness and diagnosis literacy initiative.",
+      highlights: [
+        "Educated rural women on early detection, risk factors, and screening benefits.",
+        "Worked with local facilities to connect awareness with real screening pathways.",
+      ],
+    },
+    {
+      period: "5 November 2025",
+      title: "National Mentorship Programme Launch",
+      summary:
+        "AWIHF extended its impact beyond direct service delivery by launching a mentorship pipeline for healthcare students, emerging professionals, and community health workers.",
+      highlights: [
+        "Connected student professionals with experienced clinical mentors across Uganda.",
+        "Strengthened the long-term health workforce supporting resilient local systems.",
+      ],
+    },
+    {
+      period: "3 July 2026",
+      title: "Abwoch Medical Outreach",
+      summary:
+        "AWIHF conducted a community medical outreach at Abwoch Health Center III, bringing essential screening, reproductive health services, and counselling closer to underserved families.",
+      highlights: [
+        "Offered general consultations and screening at a community health facility touchpoint.",
+        "Delivered HIV screening and counselling alongside breast, cervical cancer, and sickle cell awareness.",
+        "Reinforced AWIHF's model of pairing preventive education with referral-oriented support.",
+      ],
+    },
+    {
+      period: "11 July 2026",
+      title: "Official Public Launch",
+      summary:
+        "AWIHF officially launched at Gulu University Library Hall, publicly marking the organisation's next chapter after a growing track record of outreach, advocacy, and partnership-building.",
+      highlights: [
+        "Convened public leaders, health partners, and community stakeholders around the mission.",
+        "Signaled a transition from formative programme delivery into a stronger institutional phase.",
+      ],
+    },
+  ];
   const targets2026 = [
     { target: "Reach 5,000+ additional households with free services", category: "Outreach" },
     { target: "Distribute reusable sanitary pads to 1,000+ vulnerable girls", category: "Education & SRHR" },
@@ -62,8 +137,8 @@ export default async function ImpactPage() {
         />
         <div className="absolute inset-0 bg-gradient-brand md:bg-brand-brown/70" />
         <div className="relative z-10 text-center">
-          <h1 className="page-hero-title">Our 2025 Impact</h1>
-          <p className="page-hero-subtitle">Measurable change across the Acholi sub-region — community-centred health delivery at scale.</p>
+          <h1 className="page-hero-title">Our Impact</h1>
+          <p className="page-hero-subtitle">A growing record of community-centred health delivery across Gulu and the Acholi sub-region.</p>
         </div>
       </section>
 
@@ -71,20 +146,28 @@ export default async function ImpactPage() {
 
       <ImpactReportSpotlight />
 
-      {/* Programme Phases Timeline */}
+      {/* Organisational Timeline */}
       <section className="section-wrapper bg-white">
         <div className="content-container">
-          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto mb-8 md:mb-12">2025 Programme Phases</h2>
+          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto mb-8 md:mb-12">Timeline of Growth and Impact</h2>
           <div className="max-w-4xl mx-auto relative">
             <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 md:-translate-x-1/2" />
             
-            {report.phases.map((item, i) => (
+            {impactTimeline.map((item, i) => (
               <div key={i} className={`relative flex flex-col md:flex-row items-start mb-8 md:mb-12 last:mb-0 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="absolute left-[16px] md:left-1/2 w-6 h-6 rounded-full bg-brand-orange border-4 border-white md:-translate-x-1/2 mt-1 z-10" />
                 <div className={`ml-16 md:ml-0 w-[calc(100%-4rem)] md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:pl-8' : 'md:pr-8 md:text-right'}`}>
                   <span className="text-brand-green font-bold text-sm uppercase tracking-wider">{item.period}</span>
                   <h3 className="text-xl font-bold text-brand-brown mb-2 mt-1">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{item.summary}</p>
+                  <ul className={`mt-4 space-y-2 text-sm text-gray-600 ${i % 2 === 0 ? '' : 'md:ml-auto'}`}>
+                    {item.highlights.map((highlight) => (
+                      <li key={highlight} className={`flex gap-2 ${i % 2 === 0 ? '' : 'md:justify-end'}`}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-orange mt-2 shrink-0" />
+                        <span className={i % 2 === 0 ? '' : 'md:text-right'}>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -99,7 +182,6 @@ export default async function ImpactPage() {
           <div className="absolute inset-0 bg-brand-brown/80" />
         </div>
         <div className="relative z-10 text-center max-w-4xl">
-          <h2 className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-4">Spotlight Event</h2>
           <h3 className="text-white text-2xl md:text-[40px] font-bold leading-[1.2] mb-4 md:mb-6">Patiko Medical Outreach</h3>
           <p className="text-white/90 text-[16px] md:text-[18px] leading-[1.6] mb-3 md:mb-4 font-medium">July 10–13, 2025</p>
           <p className="text-white/80 text-[15px] md:text-[18px] leading-[1.6]">
@@ -139,7 +221,6 @@ export default async function ImpactPage() {
       <section id="stories" className="section-wrapper bg-white scroll-mt-20">
         <div className="content-container">
           <div className="text-center mb-8 md:mb-12">
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Community Voices</span>
             <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">Stories of Impact</h2>
             <p className="text-gray-500 text-[15px] md:text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">
               Real narratives of resilience, health empowerment, and transformation from the communities we serve.

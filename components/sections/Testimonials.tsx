@@ -38,14 +38,11 @@ export function Testimonials() {
 
       <div className="content-container">
         <div className={`text-center mb-9 md:mb-16 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="inline-flex items-center gap-2 text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3">
-            Community Voices
-          </span>
           <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
             Impact Through Their Eyes
           </h2>
           <p className="text-gray-500 text-[15px] md:text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">
-            Real stories from the women and communities we serve — proof that change is happening.
+            Real stories from the women and communities we serve, showing that change is happening.
           </p>
         </div>
 

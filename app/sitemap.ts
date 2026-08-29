@@ -20,6 +20,7 @@ const programRoutes = [
   '/programs/mental-health-trauma-support',
   '/programs/community-health-education',
   '/programs/healthcare-systems-strengthening',
+  '/programs/school-community-outreach-programme',
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

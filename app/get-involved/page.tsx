@@ -45,7 +45,6 @@ export default function GetInvolvedPage() {
       <section className="section-wrapper bg-white">
         <div className="content-container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Join Our Mission</span>
             <h2 className="section-heading mb-4 md:mb-6">Empowering Communities, One Voice at a Time</h2>
             <p className="text-[#111111] text-[15px] md:text-[18px] leading-[1.65] md:leading-[1.6]">
               At AWIHF, our work goes beyond isolated programs. We are building a movement of health advocates, local mentors, and supporters who refuse to let post-conflict scars stand in the way of a girl&apos;s education or a mother&apos;s safe delivery. Explore our active pathways below and find your role in our story.

@@ -42,7 +42,6 @@ export default async function MentorshipPage() {
             </Card>
 
             <div className="lg:col-span-7">
-              <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Mentorship Packages</span>
               <h2 className="section-heading mb-5 md:mb-8">Available Packages</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {mentorshipPackages.map((item) => (
@@ -70,7 +69,6 @@ export default async function MentorshipPage() {
       {applicationWindow.isOpen && (
         <section className="section-wrapper bg-white">
           <div className="content-container max-w-4xl mx-auto">
-            <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">Apply Now</span>
             <h2 className="section-heading mb-5 md:mb-8">Mentorship Application</h2>
             <Card className="p-5 md:p-8 bg-white border border-gray-200">
               <MentorshipApplicationForm />

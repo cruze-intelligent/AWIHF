@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '../ui/Button';
 import { StatCard } from '../ui/StatCard';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { FlaskConical, Ribbon, HeartPulse, Users, Stethoscope, TrendingUp, Target, GraduationCap } from 'lucide-react';
+import { FlaskConical, Ribbon, HeartPulse, Users, Stethoscope, Target, GraduationCap } from 'lucide-react';
 
 const impactStats = [
   {
@@ -26,14 +26,14 @@ const impactStats = [
     endValue: 3,
     suffix: '',
     label: 'Programme Phases Completed',
-    description: 'From community assessments in January to mental health support groups in December — a full year of structured, phased health delivery across the Acholi sub-region.',
+    description: 'From community assessments in January to mental health support groups in December, this reflected a full year of structured, phased health delivery across the Acholi sub-region.',
     icon: <Target className="w-6 h-6" />,
   },
   {
-    endValue: 4,
+    endValue: 5,
     suffix: '',
     label: 'Core Programme Areas',
-    description: 'Maternal health, mental health, community education, and systems strengthening — an integrated approach because women\'s health challenges do not exist in isolation.',
+    description: 'Maternal health, mental health, community health education, healthcare systems strengthening, and school and community outreach work together because women\'s health challenges do not exist in isolation.',
     icon: <Stethoscope className="w-6 h-6" />,
   },
 ];
@@ -78,10 +78,6 @@ export function ImpactSection() {
       <div className="relative z-10 max-w-content mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-9 md:mb-16 transition-all duration-700 ${sectionRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="inline-flex items-center gap-2 text-brand-orange font-semibold text-sm tracking-wider uppercase mb-4">
-            <TrendingUp className="w-4 h-4" />
-            Measurable Change
-          </span>
           <h2 className="text-2xl md:text-[38px] font-bold text-white mb-4 md:mb-6 leading-[1.2]">
             Our 2025 Impact
           </h2>

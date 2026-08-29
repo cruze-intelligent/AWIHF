@@ -44,9 +44,6 @@ export function PartnershipsSection() {
     <section className="section-wrapper bg-gray-50">
       <div className="content-container">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-          <span className="text-brand-orange font-semibold text-sm tracking-wider uppercase mb-3 block">
-            Institutional Ecosystem
-          </span>
           <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
             Partnerships That Strengthen Community Health
           </h2>

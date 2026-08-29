@@ -26,7 +26,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-brand-brown/70 z-10" />
 
       {/* Layer 3: Content Layer */}
-      <div className="max-w-content mx-auto text-center flex flex-col items-center z-20">
+      <div className="max-w-content mx-auto text-center flex flex-col items-center z-20 -translate-y-14 md:-translate-y-24 lg:-translate-y-28">
         {/* Floating credibility badge */}
         <Link
           href="/impact/report"
@@ -37,29 +37,23 @@ export function Hero() {
         >
           <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
           <span className="text-white/90 text-[12px] md:text-[13px] font-medium tracking-wide">
-            1,000+ households reached so far
+            1,000+ households reached
           </span>
         </Link>
 
         {/* Heading — staggered fade */}
         <h1
-          className={`text-white text-[32px] sm:text-[36px] md:text-[52px] font-bold leading-[1.08] mb-4 md:mb-6 max-w-4xl transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          className={`text-white text-[32px] sm:text-[36px] md:text-[52px] font-bold leading-[1.08] mb-6 md:mb-10 max-w-4xl transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
         >
           Bridging barriers to ensure everyone recieves quality healthcare.
         </h1>
+      </div>
 
-        {/* Subtext — delayed fade */}
-        <p
-          className={`text-white/80 text-[15px] md:text-[18px] leading-[1.55] md:leading-[1.65] max-w-2xl mb-6 md:mb-10 transition-all duration-700 delay-200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-        >
-          Bringing community-rooted health services to the women and girls of Northern Uganda.
-        </p>
-
-        {/* Buttons — further delayed */}
+      {/* Buttons — anchored near the bottom of the hero */}
+      <div className="absolute bottom-12 md:bottom-16 left-1/2 -translate-x-1/2 z-20 w-full max-w-content px-4 md:px-8">
         <div
-          className={`flex flex-col sm:flex-row items-center gap-3 md:gap-4 transition-all duration-700 delay-[400ms] ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          className={`flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 transition-all duration-700 delay-[400ms] ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
         >
           <Link href="/donate">
