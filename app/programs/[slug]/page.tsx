@@ -131,32 +131,35 @@ const programsData: Record<string, ProgramData> = {
     heroImage: '/images/AWIHF-HSS-Hero.webp',
     fieldImage: '/images/AWIHF-HSS-Field.webp',
     stats: [
-      { value: '1,000+', label: 'CHWs Equipped Target' },
-      { value: '50+', label: 'Healthcare Students Mentored' },
-      { value: '2+', label: 'Referral Pathways Advanced' },
+      { value: '60', label: 'VHTs Trained Target' },
+      { value: '3+', label: 'Health Center MoUs' },
+      { value: 'Community', label: 'Referral Integration' },
     ],
-    objective: "To build a capable pipeline of local healthcare professionals and equip community networks to ensure long-term, resilient healthcare infrastructure.",
-    focusArea: "Community Health Workers (CHWs), medical and nursing students nationwide, and local public health facilities in Gulu District.",
+    objective: "To strengthen frontline healthcare delivery across the Acholi sub-region by training Village Health Teams, equipping community workers, and building coordinated referral linkages with local health centers.",
+    focusArea: "Village Health Teams (VHTs), Community Health Workers, local health center staff, and public health facilities across Gulu City and rural Acholi sub-counties.",
     activities: [
-      "Conducting skill-strengthening and leadership workshops for frontline healthcare workers.",
-      "Establishing a national mentorship program connecting healthcare student professionals with mentors.",
-      "Equipping Community Health Workers with tools and clinical guidelines for maternal health.",
-      "Coordinating with municipal health authorities and Gulu referral hospitals.",
-      "Conducting operational research to generate evidence informing local healthcare advocacy."
+      "Training 60 Village Health Teams in three annual cohorts on maternal danger signs, GBV first response, and sickle cell psychosocial support.",
+      "Developing and formalizing institutional Memoranda of Understanding (MoUs) with sub-county health centres III & IV and referral hospitals.",
+      "Establishing community-to-facility emergency referral pathways for high-risk obstetric and mental health cases.",
+      "Supporting routine health information management and linkage with district health offices.",
+      "Conducting community-grounded operational research to inform district health planning and evidence-based policy advocacy."
     ],
     successIndicators: [
-      "50+ healthcare student professionals equipped nationwide with practical clinical and leadership skills.",
-      "1,000 Community Health Workers mapped for 2026 maternal care and referral pathway trainings.",
-      "2+ referral and coordination pathways advanced to align public health interventions.",
-      "Robust baseline data generated to support evidence-based regional healthcare advocacy."
+      "60 Village Health Teams fully trained and actively conducting community health surveillance and referral.",
+      "Formalized referral linkages and MoUs established with sub-county health facilities and referral hospitals in Gulu.",
+      "Measurable improvement in timely referral and skilled facility delivery rates for high-risk obstetric cases.",
+      "Community-generated health evidence integrated into district health coordination dialogues and local planning."
     ],
     description: (
       <div className="space-y-6">
         <p>
-          A sustainable health system depends entirely on the capacity of its workforce. Decades of conflict severely decimated Northern Uganda&apos;s health facilities, leaving a significant shortage of skilled personnel and inadequate capacity at the frontline.
+          Sustainable community health outcomes require strong, coordinated primary healthcare systems. In post-conflict Northern Uganda, rural health infrastructure faces compounding constraints: under-equipped primary health centers, long travel distances for emergency care, and critical gaps in community-level health surveillance.
         </p>
         <p>
-          Through our Healthcare Systems Strengthening programme, we address this structural gap. We focus on empowering Community Health Workers (CHWs) and establishing a national mentorship network for healthcare students. By supporting medical students and connecting them with experienced mentors, we build a pipeline of future women leaders in healthcare ready to innovate and deliver high-quality community care.
+          Our Healthcare Systems Strengthening programme works at the vital intersection of communities and formal health facilities. By training Village Health Teams (VHTs) as skilled first responders, standardizing emergency maternal referral protocols, and establishing formal partnerships with local health centers, we reinforce the foundations of community health delivery.
+        </p>
+        <p>
+          This programme operates in close synergy with our clinical initiatives and our national Mentorship Programme, ensuring that both frontline community workers and emerging healthcare professionals are equipped to deliver compassionate, high-quality care.
         </p>
       </div>
     ),
@@ -192,6 +195,44 @@ const programsData: Record<string, ProgramData> = {
         </p>
         <p>
           This programme strengthens prevention by combining education, awareness, and referral support. It helps bridge the gap between community knowledge and formal health services, while reinforcing dignity, early action, and locally rooted engagement across Gulu and the Acholi sub-region.
+        </p>
+      </div>
+    ),
+  },
+  'mentorship': {
+    title: 'Mentorship Programme',
+    heroImage: '/images/AWIHF-Mentorship.webp',
+    fieldImage: '/images/AWIHF-Mentorship.webp',
+    stats: [
+      { value: '150', label: 'Mentees Target (3-Yr Plan)' },
+      { value: '50+', label: 'Students Equipped (Pilot)' },
+      { value: 'National', label: 'University Network' },
+    ],
+    objective: "To bridge the clinical and leadership capacity gap in Uganda's health sector by connecting emerging medical, nursing, and health sciences students nationwide with seasoned clinical and public health mentors.",
+    focusArea: "Medical students, nursing students, clinical officers, emerging healthcare professionals, and young women leaders across Ugandan universities and health training institutions.",
+    activities: [
+      "Pairing healthcare students 1-on-1 and in cohorts with experienced clinical practitioners and public health leaders.",
+      "Conducting structured multi-phase workshops on clinical acumen, bioethics, community health systems, and leadership.",
+      "Facilitating hands-on clinical and outreach exposure during community health camps and frontline service delivery.",
+      "Providing research literacy, evidence synthesis guidance, and career pathway planning for healthcare trainees.",
+      "Establishing peer learning networks and a structured mentee career tracking system to support long-term professional retention."
+    ],
+    successIndicators: [
+      "150 health mentees graduated through structured multi-phase cohorts across the 3-year strategic cycle (Yr 1: 30, Yr 2: 80, Yr 3: 150).",
+      "50+ healthcare student professionals equipped nationwide with practical clinical, leadership, and public health skills.",
+      "Documented career tracking showing increased mentee transition into clinical practice, community health delivery, and public health leadership.",
+      "Formalized mentorship linkages and academic partnerships with universities and health training institutions across Uganda."
+    ],
+    description: (
+      <div className="space-y-6">
+        <p>
+          A resilient health system depends entirely on the competence, confidence, and compassion of its workforce. Decades of conflict and resource constraints in Northern Uganda have created deep workforce shortages, while across the country, medical and nursing students often complete rigorous academic training without structured clinical mentorship, leadership coaching, or community-anchored practice.
+        </p>
+        <p>
+          The AWIHF Mentorship Programme addresses this critical transition by connecting emerging healthcare students and young professionals with seasoned clinical and public health leaders. Through multi-phase cohorts, practical field exposure, and structured peer learning, we build a supportive bridge from classroom learning to frontline leadership.
+        </p>
+        <p>
+          Our mentorship model places particular emphasis on empowering young women in healthcare. By fostering clinical excellence, research literacy, ethical practice, and community commitment, the programme cultivates the next generation of healthcare leaders equipped to transform healthcare delivery in Acholi and across Uganda.
         </p>
       </div>
     ),

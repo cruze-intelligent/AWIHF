@@ -1,10 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
 import { PageHero } from '@/components/shared/PageHero';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { MentorshipApplicationForm } from '@/components/mentorship/MentorshipApplicationForm';
 import { getApplicationWindow, getMentorshipPackages } from '@/lib/content/mentorship';
-import { CheckCircle2, GraduationCap } from 'lucide-react';
+import { CheckCircle2, GraduationCap, ArrowRight } from 'lucide-react';
 
 export default async function MentorshipPage() {
   const [applicationWindow, mentorshipPackages] = await Promise.all([
@@ -36,6 +37,12 @@ export default async function MentorshipPage() {
               <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7] mb-5 md:mb-6">
                 {applicationWindow.isOpen ? applicationWindow.openMessage : applicationWindow.closedMessage}
               </p>
+              <Link 
+                href="/programs/mentorship" 
+                className="inline-flex items-center text-sm font-semibold text-brand-orange hover:text-brand-gold transition-colors pt-2 border-t border-gray-100 w-full"
+              >
+                View Full Programme Details & Strategic Plan <ArrowRight className="w-4 h-4 ml-1.5" />
+              </Link>
             </Card>
 
             <div className="lg:col-span-7">

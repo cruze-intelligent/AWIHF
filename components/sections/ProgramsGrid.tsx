@@ -1,38 +1,44 @@
 import React from 'react';
 import Link from 'next/link';
-import { Heart, Brain, Users, BookOpen, School } from 'lucide-react';
+import { Heart, Brain, Users, BookOpen, School, GraduationCap } from 'lucide-react';
 import { Card } from '../ui/Card';
 
 const programs = [
   {
     icon: <Heart className="w-8 h-8 text-brand-green" />,
     title: "Maternal & Reproductive Health",
-    description: "Safe motherhood, antenatal care, family planning and SRHR services for women of all ages.",
+    description: "Safe motherhood, antenatal care, family planning, and cervical cancer awareness for women across the Acholi sub-region.",
     href: "/programs/maternal-reproductive-health"
   },
   {
     icon: <Brain className="w-8 h-8 text-brand-green" />,
     title: "Mental Health & Trauma Support",
-    description: "Accessible, community-rooted mental health and psychosocial support for women and girls navigating trauma, emotional distress, and life challenges.",
+    description: "Community-based psychosocial support, healing circles, and peer networks for SCD warriors and women navigating trauma.",
     href: "/programs/mental-health-trauma-support"
   },
   {
     icon: <Users className="w-8 h-8 text-brand-green" />,
     title: "Community Health Education",
-    description: "Outreach, peer education, and health literacy programs that empower women to protect their health.",
+    description: "Schools health sessions, menstrual hygiene management, and peer health education empowering adolescent girls.",
     href: "/programs/community-health-education"
   },
   {
     icon: <BookOpen className="w-8 h-8 text-brand-green" />,
     title: "Healthcare Systems Strengthening",
-    description: "Trainings and mentorships building the local health workforce.",
+    description: "Equipping Village Health Teams (VHTs) and building health facility emergency referral coordination.",
     href: "/programs/healthcare-systems-strengthening"
   },
   {
     icon: <School className="w-8 h-8 text-brand-green" />,
     title: "School & Community Outreach Programme",
-    description: "School-based and community outreach bringing health education, screenings, and referral information closer to families.",
+    description: "Integrated frontline medical outreaches bringing primary healthcare, screenings, and diagnostic education directly to rural communities.",
     href: "/programs/school-community-outreach-programme"
+  },
+  {
+    icon: <GraduationCap className="w-8 h-8 text-brand-green" />,
+    title: "Mentorship Programme",
+    description: "Connecting medical and nursing students nationwide with clinical mentors to build future women health leadership.",
+    href: "/programs/mentorship"
   }
 ];
 
