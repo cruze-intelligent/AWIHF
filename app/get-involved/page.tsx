@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { PageHero } from '@/components/shared/PageHero';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
@@ -13,20 +14,20 @@ export default function GetInvolvedPage() {
       description: "Directly fund safe births, mental health circles, cervical cancer screenings, and school dignity pad kits. Every contribution reaches the grassroots directly.",
       ctaText: "Make a Donation",
       ctaHref: "/donate",
-      presetDetails: "UGX 10,000 - UGX 25,000 - UGX 50,000 - Custom"
+      presetDetails: "Manual Mobile Money Donation (MTN / Airtel)"
     },
     {
-      icon: <Award className="w-8 h-8 text-brand-orange" />,
-      title: "Become a Mentor or Volunteer",
-      description: "Are you a healthcare student, doctor, midwife, or volunteer? Serve as a mentor or educator to build Northern Uganda's health capacity.",
+      icon: <Award className="w-8 h-8 text-brand-green" />,
+      title: "Volunteer & Mentor",
+      description: "Are you a healthcare professional or clinical student? Serve as a mentor, community health educator, or outreach volunteer in Northern Uganda.",
       ctaText: "Apply to Volunteer",
       ctaHref: "/contact?subject=volunteer",
-      presetDetails: "Clinical Mentorship - Community Outreach"
+      presetDetails: "Medical, Nursing & Clinical Volunteers"
     },
     {
-      icon: <MessageSquare className="w-8 h-8 text-brand-orange" />,
-      title: "Spread the Word & Advocate",
-      description: "Amplify Acholi women's health rights. Share our community success stories, latest news, and research outcomes with your networks.",
+      icon: <MessageSquare className="w-8 h-8 text-brand-brown" />,
+      title: "Advocate & Share Our Mission",
+      description: "Amplify Acholi women's health rights. Share our verified impact stories, join national campaigns, and help raise community awareness across your networks.",
       ctaText: "Read Impact Stories",
       ctaHref: "/impact",
       presetDetails: "Newsletter updates - Social Advocacy"
@@ -35,17 +36,15 @@ export default function GetInvolvedPage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="text-center max-w-2xl">
-          <h1 className="page-hero-title">Get Involved</h1>
-          <p className="page-hero-subtitle">Your time, voice, and support can change lives in Northern Uganda.</p>
-        </div>
-      </section>
+      <PageHero
+        title="Get Involved"
+        subtitle="Your time, voice, and support can change lives in Northern Uganda."
+      />
 
       <section className="section-wrapper bg-white">
         <div className="content-container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-heading mb-4 md:mb-6">Empowering Communities, One Voice at a Time</h2>
+            <h2 className="section-heading mb-4 md:mb-6">Empowering Communities Together</h2>
             <p className="text-[#111111] text-[15px] md:text-[18px] leading-[1.65] md:leading-[1.6]">
               At AWIHF, our work goes beyond isolated programs. We are building a movement of health advocates, local mentors, and supporters who refuse to let post-conflict scars stand in the way of a girl&apos;s education or a mother&apos;s safe delivery. Explore our active pathways below and find your role in our story.
             </p>

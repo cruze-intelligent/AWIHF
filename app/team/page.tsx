@@ -1,49 +1,30 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PageHero } from '@/components/shared/PageHero';
 import { Linkedin } from '@/components/ui/SocialIcons';
 import { Button } from '@/components/ui/Button';
-
-const team = [
-  {
-    name: "Grace Akello",
-    role: "Founder",
-    bio: "Passionate about improving healthcare access for women in Northern Uganda.",
-    image: "/images/lucky.webp",
-    linkedin: "#"
-  },
-  {
-    name: "Stephen Odora",
-    role: "Co-Founder",
-    bio: "Dedicated to building resilient health systems and community empowerment.",
-    image: "/images/stephen.webp",
-    linkedin: "#"
-  }
-];
+import { leadershipTeam } from '@/lib/config/organization';
 
 export default function TeamPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="text-center">
-          <h1 className="page-hero-title">Our Team</h1>
-          <p className="page-hero-subtitle">
-            Meet the dedicated individuals driving our mission forward.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Our Team"
+        subtitle="Meet the dedicated individuals driving our mission forward."
+      />
 
       <section className="section-wrapper bg-white">
         <div className="content-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-12 max-w-4xl mx-auto">
-            {team.map((member, i) => (
+            {leadershipTeam.map((member, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div className="relative w-full max-w-[220px] md:max-w-[240px] aspect-[4/5] rounded-xl overflow-hidden mb-4 border border-gray-200 bg-gray-50 shadow-sm">
                   <Image 
                     src={member.image} 
                     alt={member.name} 
                     fill 
-                    className="object-contain"
+                    className={member.imageClassName}
                   />
                 </div>
                 <h4 className="text-[20px] font-bold text-brand-brown mb-1">{member.name}</h4>
@@ -52,7 +33,7 @@ export default function TeamPage() {
                   {member.bio}
                 </p>
                 {member.linkedin && (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#0A66C2] transition-colors" aria-label={`LinkedIn of ${member.name}`}>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#0A66C2] transition-colors" aria-label={`LinkedIn profile for ${member.name}`}>
                     <Linkedin className="w-5 h-5" />
                   </a>
                 )}

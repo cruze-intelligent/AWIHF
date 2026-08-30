@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PreviewBanner } from "@/components/layout/PreviewBanner";
+import { organizationProfile } from "@/lib/config/organization";
 import { draftMode } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -40,22 +41,22 @@ export default async function RootLayout({
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NGO',
-    name: 'Acholi Women in Health Foundation',
-    alternateName: 'AWIHF',
+    name: organizationProfile.name,
+    alternateName: organizationProfile.shortName,
     url: 'https://acholiwomeninhealth.org',
-    email: 'acholiwomeninhealth@gmail.com',
-    telephone: ['0762401363', '0772388143'],
+    email: organizationProfile.email,
+    telephone: organizationProfile.phoneNumbers,
     address: {
       '@type': 'PostalAddress',
-      postOfficeBoxNumber: '361606',
-      addressLocality: 'Gulu City',
-      addressRegion: 'Northern Uganda',
-      addressCountry: 'UG',
+      postOfficeBoxNumber: organizationProfile.postalAddress.poBox.replace('P.O. Box ', ''),
+      addressLocality: organizationProfile.postalAddress.locality,
+      addressRegion: organizationProfile.postalAddress.region,
+      addressCountry: organizationProfile.postalAddress.country,
     },
     sameAs: [
-      'https://x.com/acholiwomen',
-      'https://www.instagram.com/acholiwomeninhealth?igsh=MTltOW1oMWE3dHFleA==',
-      'https://www.linkedin.com/in/acholi-women-in-health-foundation-57686235a/',
+      organizationProfile.social.x,
+      organizationProfile.social.instagram,
+      organizationProfile.social.linkedin,
     ],
   };
 

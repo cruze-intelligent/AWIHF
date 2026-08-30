@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { organizationProfile } from '@/lib/config/organization';
 
 const optionalNonEmptyString = z.preprocess(
   (value) => (value === '' ? undefined : value),
@@ -18,7 +19,8 @@ const envSchema = z.object({
   ADMIN_API_TOKEN: optionalNonEmptyString,
   RESEND_API_KEY: optionalNonEmptyString,
   RESEND_FROM_EMAIL: z.string().min(1).default('AWIHF <noreply@example.org>'),
-  AWIHF_ADMIN_EMAIL: z.string().email().default('acholiwomeninhealth@gmail.com'),
+  ORGANIZATION_EMAIL: z.string().email().optional(),
+  AWIHF_ADMIN_EMAIL: z.string().email().default(organizationProfile.email),
   CLOUDINARY_CLOUD_NAME: optionalNonEmptyString,
   CLOUDINARY_API_KEY: optionalNonEmptyString,
   CLOUDINARY_API_SECRET: optionalNonEmptyString,
@@ -39,4 +41,9 @@ export function requireEnv<K extends keyof AppEnv>(key: K): NonNullable<AppEnv[K
     throw new Error(`Missing required environment variable: ${String(key)}`);
   }
   return value as NonNullable<AppEnv[K]>;
+}
+
+export function getOrganizationEmail() {
+  const env = getEnv();
+  return env.ORGANIZATION_EMAIL ?? env.AWIHF_ADMIN_EMAIL ?? organizationProfile.email;
 }

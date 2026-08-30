@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowDownToLine, CheckCircle2, FileText, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { PageHero } from '@/components/shared/PageHero';
 import { getImpactReportContent } from '@/lib/content/impactReport';
 
 export default async function ImpactReportPage() {
@@ -9,27 +10,22 @@ export default async function ImpactReportPage() {
 
   return (
     <>
-      <section className="w-full bg-gradient-brand flex items-center justify-center min-h-[150px] md:min-h-[320px] py-7 md:py-16 px-4 md:px-8">
-        <div className="text-center max-w-4xl">
-          <h1 className="text-white text-2xl md:text-[42px] font-bold leading-[1.15] mb-3 md:mb-5">{report.title}</h1>
-          <p className="text-white/85 text-sm md:text-[20px] leading-[1.55] md:leading-[1.6] max-w-3xl mx-auto">
-            {report.tagline}
-          </p>
-          <div className="mt-5 md:mt-8 flex flex-col sm:flex-row gap-2.5 md:gap-3 justify-center">
-            <a href={report.downloadUrl} target="_blank" rel="noopener noreferrer">
-              <Button size="medium" className="w-full sm:w-auto bg-white text-brand-brown hover:bg-white hover:brightness-100 border-none">
-                <ArrowDownToLine className="w-5 h-5 mr-2" />
-                Download Full Report
-              </Button>
-            </a>
-            <Link href="/impact">
-              <Button size="medium" variant="ghost" className="w-full sm:w-auto text-white border-white hover:bg-white/10 hover:text-white">
-                Back to Impact
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title={report.title}
+        subtitle={report.tagline}
+      >
+        <a href={report.downloadUrl} target="_blank" rel="noopener noreferrer">
+          <Button size="medium" className="w-full sm:w-auto bg-white text-brand-brown hover:bg-white hover:brightness-100 border-none">
+            <ArrowDownToLine className="w-5 h-5 mr-2" />
+            Download Full Report
+          </Button>
+        </a>
+        <Link href="/impact">
+          <Button size="medium" variant="ghost" className="w-full sm:w-auto text-white border-white hover:bg-white/10 hover:text-white">
+            Back to Impact
+          </Button>
+        </Link>
+      </PageHero>
 
       <section className="section-wrapper bg-white">
         <div className="content-container">
@@ -64,8 +60,8 @@ export default async function ImpactReportPage() {
       <section className="section-wrapper bg-gray-50">
         <div className="content-container">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-            <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
-              How Impact Was Built Across 2025
+            <h2 className="section-heading">
+              2025 Impact Overview
             </h2>
           </div>
 
@@ -93,7 +89,7 @@ export default async function ImpactReportPage() {
         <div className="content-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card className="p-5 md:p-8 border border-gray-200">
-              <h2 className="text-[23px] md:text-[26px] font-bold text-brand-brown mb-5">Gaps That Still Need Urgent Support</h2>
+              <h2 className="text-[23px] md:text-[26px] font-bold text-brand-brown mb-5">Key Healthcare Priorities</h2>
               <ul className="space-y-3">
                 {report.gaps.map((gap) => (
                   <li key={gap} className="flex gap-3 text-[#111111] leading-relaxed">

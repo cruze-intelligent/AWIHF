@@ -37,7 +37,7 @@ const fallbackImpactReport: ImpactReportContent = {
   tagline: 'Every donation saves lives. Every partnership creates lasting change.',
   downloadUrl: '/AWIHF Impact report.pdf',
   executiveSummary: [
-    '2025 was a defining year for Acholi Women in Health Foundation. AWIHF launched community-based SRHR research, reached more than 1,000 households through the Patiko Medical Outreach, and equipped emerging healthcare professionals across Uganda.',
+    '2025 was a defining year for Acholi Women in Health Foundation. We launched community-based SRHR research, reached more than 1,000 households through the Patiko Medical Outreach, and equipped emerging healthcare professionals across Uganda.',
     'The report documents a year of foundation-building, high-volume outreach, advocacy, partnership development, and a clear 2026 scale-up agenda for women and girls in Northern Uganda.',
   ],
   stats: [
@@ -46,14 +46,14 @@ const fallbackImpactReport: ImpactReportContent = {
     { value: '3', label: 'Programme Phases', detail: 'Implemented from January to December 2025.' },
     { value: '4+', label: 'Strategic Partnerships', detail: 'Formed to deepen institutional and community reach.' },
     { value: 'SRHR', label: 'Research Launched', detail: 'Focused on barriers affecting women and girls in Acholi.' },
-    { value: 'GBV', label: 'Campaigns Joined', detail: 'AWIHF contributed to national prevention and awareness campaigns.' },
+    { value: 'GBV', label: 'Campaigns Joined', detail: 'We contributed to national prevention and awareness campaigns.' },
   ],
   phases: [
     {
       title: 'Building Foundations',
       period: 'January - June 2025',
       summary:
-        "The first half of 2025 focused on building the evidence base and positioning AWIHF as a leading voice on women's health rights in Northern Uganda.",
+        "The first half of 2025 focused on building our evidence base and positioning our foundation as a leading voice on women's health rights in Northern Uganda.",
       highlights: [
         'Launched community-based research on SRHR barriers affecting women and girls.',
         'Participated in regional cervical cancer awareness programming.',
@@ -64,7 +64,7 @@ const fallbackImpactReport: ImpactReportContent = {
       title: 'Our Biggest Impact',
       period: 'July - September 2025',
       summary:
-        "This quarter was defined by the landmark Patiko Medical Outreach, community-level behavior change programming, and the launch of AWIHF's national mentorship programme.",
+        "This quarter was defined by the landmark Patiko Medical Outreach, community-level behavior change programming, and the launch of our national mentorship programme.",
       highlights: [
         'Reached 1,000+ households across four days in Patiko.',
         'Delivered free consultations, vision screenings, SRHR education, and referral information.',
@@ -75,7 +75,7 @@ const fallbackImpactReport: ImpactReportContent = {
       title: 'Global Advocacy',
       period: 'October - December 2025',
       summary:
-        'The final quarter extended AWIHF beyond clinics and into advocacy spaces, partnerships, dignity programming, and student professional development.',
+        'The final quarter extended our work beyond clinics and into advocacy spaces, partnerships, dignity programming, and student professional development.',
       highlights: [
         'Joined national AIDS awareness and GBV prevention campaigns.',
         'Formalised partnerships with Acholi Students Union and Her Worth Foundation.',

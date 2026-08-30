@@ -33,7 +33,8 @@
 |---|---:|---|---|
 | `RESEND_API_KEY` | Yes for email sending | `lib/email/resend.ts` | Secret. Never expose to client code. |
 | `RESEND_FROM_EMAIL` | Yes | email sender | Can use a temporary Resend sender in staging. Replace with verified domain sender for production. |
-| `AWIHF_ADMIN_EMAIL` | Yes | admin notifications | Organization inbox for contact and mentorship notifications. |
+| `ORGANIZATION_EMAIL` | Recommended | admin notifications | Preferred recipient for organization inbox notifications such as contact, volunteer, and mentorship submissions. |
+| `AWIHF_ADMIN_EMAIL` | Backward compatible fallback | admin notifications | Legacy recipient variable retained for existing deployments. Used when `ORGANIZATION_EMAIL` is not set. |
 
 ## Cloudinary
 

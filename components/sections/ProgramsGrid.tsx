@@ -13,7 +13,7 @@ const programs = [
   {
     icon: <Brain className="w-8 h-8 text-brand-green" />,
     title: "Mental Health & Trauma Support",
-    description: "Psychosocial support and trauma-informed care for women living with the aftermath of conflict.",
+    description: "Accessible, community-rooted mental health and psychosocial support for women and girls navigating trauma, emotional distress, and life challenges.",
     href: "/programs/mental-health-trauma-support"
   },
   {

@@ -42,7 +42,7 @@ const programsData: Record<string, ProgramData> = {
     description: (
       <div className="space-y-6">
         <p>
-          Acholi Women in Health Foundation (AWIHF)&apos;s Maternal & Reproductive Health program is a community-rooted response to the critical maternal healthcare deficit in Northern Uganda. The post-conflict status of the region has left healthcare infrastructure fragmented, resulting in an Acholi sub-region maternal mortality rate of 106.0 per 100,000 live births, far above the national average of 69.1.
+          Our Maternal & Reproductive Health programme is a community-rooted response to the critical maternal healthcare deficit in Northern Uganda. The post-conflict status of the region has left healthcare infrastructure fragmented, resulting in an Acholi sub-region maternal mortality rate of 106.0 per 100,000 live births, far above the national average of 69.1.
         </p>
         <p>
           We operate direct grassroots interventions, bringing skilled birth attendance counseling, family planning education, and pregnancy care packages directly to community health hubs in rural sub-counties. Through peer support networks and local health-center referral relationships, we advocate for safe motherhood and dignity at every birth.
@@ -55,32 +55,38 @@ const programsData: Record<string, ProgramData> = {
     heroImage: '/images/AWIHF-MH-Hero.webp',
     fieldImage: '/images/AWIHF-MH-Field.webp',
     stats: [
-      { value: '500+', label: 'Teen Mothers Supported' },
+      { value: 'Community-Based', label: 'Psychosocial Support' },
+      { value: 'Trauma-Informed', label: 'Safe Healing Spaces' },
       { value: '3+', label: 'Referral Hubs Target' },
-      { value: 'AOR 7.2', label: 'Post-Conflict PTSD Burden' },
     ],
-    objective: "To provide psychosocial support, trauma-informed counseling, and community-led healing to women and girls carrying the psychological burdens of the two-decade LRA conflict.",
-    focusArea: "Conflict-affected women, survivors of gender-based violence (GBV), and youth suffering from chronic PTSD or clinical depression in Northern Uganda.",
+    objective: "To improve access to compassionate, community-based mental-health and psychosocial support for women and girls, while creating safe spaces for healing, strengthening coping skills, reducing stigma, and connecting people to appropriate care when additional support is needed.",
+    focusArea: "Women, adolescent girls, young mothers, and community members across Northern Uganda experiencing emotional challenges, psychological distress, trauma, social pressures, or barriers to accessing appropriate mental-health care.",
     activities: [
-      "Facilitating weekly community-level peer trauma-healing circles in Gulu sub-counties.",
-      "Conducting group-based and individual psychosocial counseling sessions led by professionals.",
-      "Establishing secure and accessible community-level mental health referral hubs.",
-      "Running community anti-stigma workshops to dismantle barriers to seeking mental health support.",
-      "Integrating trauma-informed principles into local public health clinics and community support groups."
+      "Facilitating community-level peer support and trauma-healing discussion circles in Gulu and surrounding sub-counties.",
+      "Providing accessible group-based and individual psychosocial support sessions guided by trained facilitators.",
+      "Establishing safe, trusted community referral pathways to connect individuals with specialized care when needed.",
+      "Conducting community anti-stigma workshops to normalize conversations around mental health and encourage early help-seeking.",
+      "Integrating trauma-informed principles into local health centers, schools, and community support groups."
     ],
     successIndicators: [
-      "Stigma reduction among Gulu sub-counties, allowing more women to speak openly about mental distress.",
-      "Structured referral pathways successfully established for immediate professional clinical support.",
-      "Resilient networks of community-based healing circles successfully operating at the grassroots level.",
-      "Hundreds of GBV survivors and teenage mothers rehabilitated through psychological and peer-care groups."
+      "Reduced mental-health stigma across target communities, enabling women and girls to speak openly and seek care with dignity.",
+      "Structured, trusted referral pathways active for women and girls requiring specialized clinical or psychosocial support.",
+      "Resilient networks of grassroots healing circles and peer support groups operating in local communities.",
+      "Hundreds of women, young mothers, and girls equipped with practical coping strategies, psychosocial support, and community care."
     ],
     description: (
       <div className="space-y-6">
         <p>
-          The psychological aftermath of two decades of LRA conflict in Northern Uganda represents a silent, ongoing crisis. Exposure to severe trauma, loss, and displacement has left rates of PTSD and depression alarmingly high in Gulu and neighboring areas (AOR 2.8 to 7.19 according to Cango Lyec research studies).
+          Mental health is an important part of overall health and wellbeing, yet many women and girls face emotional and psychological challenges without having access to the support they need. In communities across Northern Uganda, people may experience stress, grief, trauma, anxiety, depression, family and social pressures, or other challenges that affect their wellbeing and their ability to participate fully in everyday life.
         </p>
         <p>
-          AWIHF exists to break this cycle. Our Mental Health & Trauma Support program addresses the deep, invisible scars of war. By creating safe spaces, running healing circles, and integrating clinical referral channels, we ensure that women can access compassionate, trauma-informed mental healthcare without fear or stigma.
+          At AWIHF, we work to make mental-health and psychosocial support more accessible, compassionate, and community-rooted. Our Mental Health & Trauma Support programme creates safe spaces where women and girls can talk openly, receive practical support, build coping skills, and connect with appropriate care when additional support is needed.
+        </p>
+        <p>
+          Our work includes community-based peer support, trauma-informed approaches, psychosocial support, healing and discussion spaces, and referral pathways for people who may require more specialized care. We also work to reduce the stigma that can prevent people from seeking help and to strengthen the ability of communities and local health actors to respond to mental-health needs.
+        </p>
+        <p>
+          While our work recognizes the lasting effects of conflict and other traumatic experiences in Northern Uganda, our approach is broader. We support women and girls facing a range of mental-health and psychosocial challenges and work with communities to promote understanding, early support, dignity, and pathways to appropriate care.
         </p>
       </div>
     ),
@@ -115,7 +121,7 @@ const programsData: Record<string, ProgramData> = {
           Knowledge is the first and strongest line of defense in community healthcare. In rural Gulu City and its surrounding areas, limited health literacy and cultural taboos leave women and young girls highly vulnerable to preventable conditions.
         </p>
         <p>
-          AWIHF&apos;s Community Health Education program empowers individuals through accessible, localized health literacy campaigns. We focus heavily on peer-to-peer training, allowing young women to act as community advocates. By providing critical tools, including cervical cancer education and reusable sanitary pads, we ensure girls can stay in school and protect their health with dignity.
+          Our Community Health Education programme empowers individuals through accessible, localized health literacy campaigns. We focus heavily on peer-to-peer training, allowing young women to act as community advocates. By providing critical tools, including cervical cancer education and reusable sanitary pads, we ensure girls can stay in school and protect their health with dignity.
         </p>
       </div>
     ),
@@ -150,7 +156,7 @@ const programsData: Record<string, ProgramData> = {
           A sustainable health system depends entirely on the capacity of its workforce. Decades of conflict severely decimated Northern Uganda&apos;s health facilities, leaving a significant shortage of skilled personnel and inadequate capacity at the frontline.
         </p>
         <p>
-          Through our Healthcare Systems Strengthening program, AWIHF addresses this structural gap. We focus on empowering Community Health Workers (CHWs) and establishing a national mentorship network for healthcare students. By supporting medical students and connecting them with experienced mentors, we build a pipeline of future women leaders in healthcare ready to innovate and deliver high-quality community care.
+          Through our Healthcare Systems Strengthening programme, we address this structural gap. We focus on empowering Community Health Workers (CHWs) and establishing a national mentorship network for healthcare students. By supporting medical students and connecting them with experienced mentors, we build a pipeline of future women leaders in healthcare ready to innovate and deliver high-quality community care.
         </p>
       </div>
     ),
@@ -171,18 +177,18 @@ const programsData: Record<string, ProgramData> = {
       "Running community outreach sessions that connect families with health information, screening opportunities, and referral pathways.",
       "Supporting awareness on cervical cancer, HIV, sickle cell disease, and other priority public health concerns through local engagement.",
       "Working with school and community leaders to improve health-seeking behaviour and build trust in community-based care.",
-      "Linking outreach participants to AWIHF programmes in maternal health, mental health, and community health education where follow-up support is needed."
+      "Linking outreach participants to our programmes in maternal health, mental health, and community health education where follow-up support is needed."
     ],
     successIndicators: [
       "Health information delivered in school and community spaces where women, girls, and families already gather.",
       "Improved awareness of referral options for reproductive health, cancer screening, and preventive care services.",
       "Stronger collaboration with teachers, community leaders, and outreach volunteers supporting sustained local engagement.",
-      "A practical pathway for extending AWIHF services beyond single-event camps into ongoing school and community touchpoints."
+      "A practical pathway for extending our services beyond single-event camps into ongoing school and community touchpoints."
     ],
     description: (
       <div className="space-y-6">
         <p>
-          The School & Community Outreach Programme extends AWIHF&apos;s work into everyday spaces where health decisions are shaped. By working through schools and community gathering points, the programme makes trusted health information more accessible to girls, families, and local leaders.
+          Our School & Community Outreach Programme extends our work into everyday spaces where health decisions are shaped. By working through schools and community gathering points, the programme makes trusted health information more accessible to girls, families, and local leaders.
         </p>
         <p>
           This programme strengthens prevention by combining education, awareness, and referral support. It helps bridge the gap between community knowledge and formal health services, while reinforcing dignity, early action, and locally rooted engagement across Gulu and the Acholi sub-region.

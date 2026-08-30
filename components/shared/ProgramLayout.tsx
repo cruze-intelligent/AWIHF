@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { PageHero } from './PageHero';
 import { DonateCTA } from '../sections/DonateCTA';
 import { CheckCircle, Target, Users, Settings } from 'lucide-react';
 
 interface ProgramLayoutProps {
   title: string;
-  heroImage: string;
+  heroImage?: string;
   fieldImage: string;
   stats: { value: string; label: string }[];
   objective: string;
@@ -28,30 +29,11 @@ export function ProgramLayout({
 }: ProgramLayoutProps) {
   return (
     <>
-      {/* Hero */}
-      <section className="relative w-full min-h-[132px] md:min-h-[400px] flex items-center justify-center px-4 md:px-8 py-8 md:py-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src={heroImage} alt={`${title} programme hero image`} fill className="hidden md:block object-cover object-center" priority />
-          <div className="absolute inset-0 bg-gradient-brand md:bg-brand-brown/62" />
-        </div>
-        <div className="relative z-10 text-center max-w-3xl flex flex-col items-center">
-          <h1 className="text-white text-2xl md:text-[40px] font-bold leading-[1.15] md:leading-[1.2]">{title}</h1>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="w-full px-4 md:px-8 lg:px-16 py-8 md:py-0 md:-mt-10 relative z-20 bg-gray-50 md:bg-transparent">
-        <div className="max-w-content mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {stats.map((stat, i) => (
-              <div key={i} className="bg-white border border-gray-200 shadow-sm md:shadow-lg p-5 md:p-6 rounded-xl text-center flex flex-col items-center justify-center min-h-[112px] md:min-h-[140px] hover:shadow-xl transition-all duration-200">
-                <div className="text-brand-green text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-brand-brown font-semibold text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Standardized Shared Hero & Floating Impact Stats */}
+      <PageHero
+        title={title}
+        stats={stats}
+      />
 
       {/* Overview & Objectives */}
       <section className="section-wrapper bg-white">

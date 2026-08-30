@@ -22,8 +22,8 @@ export function Hero() {
         />
       </div>
 
-      {/* Layer 2: Layered gradient overlay for depth and readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-brand-brown/70 z-10" />
+      {/* Layer 2: Neutral overlay for text readability without tinting the image */}
+      <div className="absolute inset-0 bg-black/25 z-10" />
 
       {/* Layer 3: Content Layer */}
       <div className="max-w-content mx-auto text-center flex flex-col items-center z-20 -translate-y-14 md:-translate-y-24 lg:-translate-y-28">
@@ -46,7 +46,7 @@ export function Hero() {
           className={`text-white text-[32px] sm:text-[36px] md:text-[52px] font-bold leading-[1.08] mb-6 md:mb-10 max-w-4xl transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
         >
-          Bridging barriers to ensure everyone recieves quality healthcare.
+          Bridging barriers to ensure everyone receives quality healthcare.
         </h1>
       </div>
 

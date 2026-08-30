@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { PageHero } from '@/components/shared/PageHero';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -27,14 +28,10 @@ export default async function DonatePage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="text-center max-w-2xl">
-          <h1 className="page-hero-title">Support Our Work</h1>
-          <p className="page-hero-subtitle">
-            Use AWIHF&apos;s mobile money organization codes to complete your donation securely from your own phone.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Support Our Work"
+        subtitle="Use our official mobile money organization codes to complete your donation securely from your own phone."
+      />
 
       <section className="w-full px-4 py-8 md:py-16 md:-mt-14 relative z-10">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -46,7 +43,7 @@ export default async function DonatePage() {
               Donate through MTN MoMoPay or Airtel Pay
             </h2>
             <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7] mb-6 md:mb-8">
-              AWIHF does not process card payments or online checkout transactions on this website. The website only displays the official organization payment information. You complete the payment independently through your mobile money application.
+              We do not process card payments or online checkout transactions on this website. The website displays our official organization payment details so you can complete your donation independently through your mobile money application.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -106,7 +103,9 @@ export default async function DonatePage() {
 
       <section className="section-wrapper bg-green-tint">
         <div className="content-container max-w-4xl mx-auto">
-          <h2 className="section-heading text-center mb-6 md:mb-8">Where Your Support Goes</h2>
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="section-heading">Where Your Support Goes</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               'Maternal health supplies and safe motherhood care.',

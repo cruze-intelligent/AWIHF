@@ -48,7 +48,7 @@ export function GetInvolvedCTA() {
       <div className="content-container relative z-10">
         {/* Header */}
         <div className={`text-center mb-8 md:mb-14 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <h2 className="section-heading mx-auto text-center after:mx-auto after:left-auto after:right-auto">
+          <h2 className="section-heading">
             Get Involved
           </h2>
           <p className="section-subheading mx-auto mt-2">

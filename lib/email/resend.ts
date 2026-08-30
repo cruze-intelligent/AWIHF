@@ -1,4 +1,4 @@
-import { getEnv, requireEnv } from '@/lib/config/env';
+import { getEnv, getOrganizationEmail, requireEnv } from '@/lib/config/env';
 import { logger } from '@/lib/observability/logger';
 import type { EmailMessage } from './templates';
 
@@ -44,11 +44,9 @@ export async function sendEmailSafely(message: SendEmailOptions) {
 }
 
 export async function notifyAdmin(message: EmailMessage) {
-  const env = getEnv();
-  return sendEmail({ ...message, to: env.AWIHF_ADMIN_EMAIL });
+  return sendEmail({ ...message, to: getOrganizationEmail() });
 }
 
 export async function notifyAdminSafely(message: EmailMessage) {
-  const env = getEnv();
-  return sendEmailSafely({ ...message, to: env.AWIHF_ADMIN_EMAIL });
+  return sendEmailSafely({ ...message, to: getOrganizationEmail() });
 }

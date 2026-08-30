@@ -33,12 +33,9 @@ export function Testimonials() {
 
   return (
     <section ref={ref} className="section-wrapper bg-white relative overflow-hidden">
-      {/* Subtle connecting element to Impact section above */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-brand-brown/20 to-transparent" />
-
       <div className="content-container">
         <div className={`text-center mb-9 md:mb-16 transition-all duration-700 ${isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
+          <h2 className="section-heading">
             Impact Through Their Eyes
           </h2>
           <p className="text-gray-500 text-[15px] md:text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">

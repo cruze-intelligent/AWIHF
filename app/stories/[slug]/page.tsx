@@ -27,21 +27,21 @@ const storiesData: Record<string, StoryData> = {
     readTime: "3 min read",
     content: [
       "In July 2025, during our landmark four-day Patiko Medical Outreach in Gulu District, our team met Evelyn, a 17-year-old expectant mother from a remote sub-county. Evelyn had not accessed any previous antenatal checkups due to Northern Uganda's severe shortage of rural health centers, leaving her vulnerable to high-risk complications.",
-      "Our clinical nurse, Grace Akello, immediately recognized signs of early, high-risk labor during registration. The team quickly stabilized her and activated AWIHF's maternal referral pathway, securing transport to Gulu Regional Referral Hospital. Thanks to this swift integration, Evelyn safely delivered a healthy baby boy.",
+      "Our clinical nurse, Grace Akello, immediately recognized signs of early, high-risk labor during registration. The team quickly stabilized her and activated our maternal referral pathway, securing transport to Gulu Regional Referral Hospital. Thanks to this swift integration, Evelyn safely delivered a healthy baby boy.",
       "Following her clinical care, our peer networks provided maternity dignity packages, basic infant supplies, and parental classes. Today, Evelyn is an active advocate in our peer-to-peer teen mother support group, educating other young women to access reproductive health clinics early. Her story is a testament to the life-saving impact of community-rooted maternal networks."
     ]
   },
   'healing-trauma-gulu': {
-    title: "Rebuilding Mental Wellness After Conflict",
+    title: "Rebuilding Mental Wellbeing & Safe Community Spaces",
     category: "Mental Health",
     image: "/images/AWIHF-MH-Field.webp",
     author: "Psychosocial Support Team",
     date: "October 10, 2025",
     readTime: "4 min read",
     content: [
-      "Northern Uganda carried the structural brunt of a two-decade civil conflict, leaving behind widespread PTSD and depression. In Pece, Gulu City, Stephen Odora and AWIHF's community counselors launched weekly psychosocial healing circles to break the heavy silence surrounding mental distress and trauma.",
-      "Amina, a survivor of LRA-era gender-based violence, had lived with debilitating anxiety and extreme isolation for over a decade. When she first attended our healing circle, she joined a network of fellow survivors who shared their experiences in a safe, non-judgmental community space.",
-      "Supported by clinical psychology sessions and cognitive behavioral healing circles, Amina slowly reclaimed her self-worth. Today, Amina has graduated to an active local sewing cooperative, achieving economic independence. 'I was invisible for twelve years,' Amina shares. 'AWIHF gave me my voice and my life back.'"
+      "Across Northern Uganda, many women and girls experience heavy emotional burdens, distress, and trauma while facing significant stigma and limited access to mental health services. In Pece, Gulu City, our team launched weekly psychosocial healing circles to break the silence surrounding mental distress.",
+      "Amina, a young woman navigating overwhelming anxiety and isolation, attended one of our community healing circles. In this safe, non-judgmental space, she connected with peer facilitators and participants who shared lived experiences and practical coping mechanisms.",
+      "Through sustained group support and trauma-informed psychosocial sessions, Amina developed resilient coping skills and rebuilt her self-worth. Today, she participates actively in a local artisan cooperative, demonstrating the restorative power of accessible, dignified community care."
     ]
   },
   'dignity-hygiene-education': {
@@ -52,9 +52,48 @@ const storiesData: Record<string, StoryData> = {
     date: "September 8, 2025",
     readTime: "3 min read",
     content: [
-      "Adolescent girls in Northern Uganda's rural schools lose an average of four to five school days each month due to a lack of proper sanitary kits and severe reproductive health stigma. AWIHF launched its Community Health Education program to restore dignity and protect girls' school attendance.",
-      "Florence, a 14-year-old student, struggled to attend classes consistently during her menstrual cycles, causing her academic performance to decline. AWIHF's outreach team equipped her school with hygiene resources and provided reusable sanitary pads that sustain school attendance for a full calendar year.",
-      "Along with hygiene kits, Florence participated in our Sexual and Reproductive Health and Rights (SRHR) workshops. Recognizing her potential, she was trained as a peer educator. Florence now leads her school's health club, empowering her classmates and helping reduce local adolescent school dropouts to nearly zero."
+      "Adolescent girls in Northern Uganda's rural schools often miss vital classroom days each month due to a lack of proper sanitary supplies and persistent menstrual health stigma. We launched our Community Health Education initiatives to restore dignity and safeguard girls' educational continuity.",
+      "Florence, a 14-year-old student, struggled to attend classes consistently during her menstrual cycles, affecting her academic progress. Our outreach team equipped her school with hygiene resources and provided durable, reusable sanitary pads designed to support school retention throughout the academic year.",
+      "Along with hygiene supplies, Florence took part in our Sexual and Reproductive Health and Rights (SRHR) workshops. Trained as a student peer educator, Florence now leads her school's health club, guiding her peers with accurate information and fostering supportive environments."
+    ]
+  },
+  'abwoch-medical-outreach-2026': {
+    title: "Integrated Frontline Care at Abwoch Health Center III",
+    category: "Community Outreach",
+    image: "/images/AWIHF-Abwoch.webp",
+    author: "AWIHF Clinical Team",
+    date: "July 3, 2026",
+    readTime: "3 min read",
+    content: [
+      "On 3 July 2026, our medical outreach at Abwoch Health Center III brought integrated primary healthcare and diagnostic screening directly to rural families in Gulu District who face steep travel barriers to clinical facilities.",
+      "The outreach created a comprehensive frontline health touchpoint: offering general medical consultations, reproductive health services, HIV screening and counseling, breast cancer screening, sickle cell screening, and cervical cancer awareness.",
+      "By combining preventive health education with direct screening and clinical referral pathways, the Abwoch outreach exemplified our commitment to meeting communities where they are and ensuring dignity across all stages of care."
+    ]
+  },
+  'national-mentorship-launch': {
+    title: "Building the Next Generation of Healthcare Leaders",
+    category: "Mentorship & Systems",
+    image: "/images/AWIHF-Mentorship.webp",
+    author: "Mentorship Operations Desk",
+    date: "November 5, 2025",
+    readTime: "4 min read",
+    content: [
+      "To build sustainable, resilient health systems in Northern Uganda, we launched a national mentorship pipeline connecting medical and nursing students nationwide with seasoned clinical and public health leaders.",
+      "Through structured clinical mentorship, leadership development workshops, and peer learning cohorts, more than 50 healthcare student professionals have been equipped with practical skills and community-anchored principles.",
+      "This program empowers emerging women healthcare professionals to innovate, lead clinical care delivery, and strengthen local public health infrastructure for years to come."
+    ]
+  },
+  'cervical-cancer-regional-initiative': {
+    title: "Extending Cervical Cancer Screening & Diagnosis Literacy",
+    category: "Preventive Care",
+    image: "/images/AWIHF-Cervical Cancer.webp",
+    author: "Health Committee",
+    date: "September 25, 2025",
+    readTime: "3 min read",
+    content: [
+      "Cervical cancer is one of the leading yet preventable health burdens among women in Northern Uganda, where limited diagnostic facilities and lack of awareness often delay life-saving care.",
+      "In response, our regional initiative rolled out extensive public screening campaigns and diagnostic literacy workshops across rural sub-counties, educating women on early symptoms, risk factors, and the vital importance of routine screening.",
+      "We collaborated closely with local health centers to establish accessible screening pathways, ensuring that informed community members can access timely screening, clinical evaluation, and follow-up care."
     ]
   }
 };

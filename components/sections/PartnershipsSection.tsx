@@ -6,7 +6,7 @@ const partners = [
     name: 'Health Facilities & Referral Networks',
     type: 'Clinical collaboration',
     description:
-      'AWIHF works with local health facilities and referral actors to connect community outreach, maternal care, mental health support, and emergency pathways.',
+      'We work with local health facilities and referral actors to connect community outreach, maternal care, mental health support, and emergency pathways.',
     icon: <Building2 className="w-6 h-6" />,
   },
   {
@@ -20,7 +20,7 @@ const partners = [
     name: 'Academic & Research Institutions',
     type: 'Evidence generation',
     description:
-      'Research, student mentorship, and learning partnerships help AWIHF translate community realities into stronger programmes and advocacy.',
+      'Research, student mentorship, and learning partnerships help us translate community realities into stronger programmes and advocacy.',
     icon: <GraduationCap className="w-6 h-6" />,
   },
   {
@@ -44,11 +44,11 @@ export function PartnershipsSection() {
     <section className="section-wrapper bg-gray-50">
       <div className="content-container">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">
-            Partnerships That Strengthen Community Health
+          <h2 className="section-heading">
+            Partnerships for Community Health
           </h2>
           <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7] mt-3 md:mt-4">
-            AWIHF does not work in isolation. Its model depends on trusted relationships across health facilities,
+            We do not work in isolation. Our model depends on trusted relationships across health facilities,
             universities, government structures, civil society organizations, cultural institutions, and community
             leadership networks.
           </p>

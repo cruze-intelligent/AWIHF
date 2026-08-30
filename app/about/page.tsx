@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { PageHero } from '@/components/shared/PageHero';
 import { Heart, Users, BookOpen, Brain, Target, Shield } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { DonateCTA } from '@/components/sections/DonateCTA';
 import { PartnershipsSection } from '@/components/sections/PartnershipsSection';
 import { Linkedin } from '@/components/ui/SocialIcons';
+import { leadershipTeam } from '@/lib/config/organization';
 
 export default function AboutPage() {
   const values = [
@@ -27,18 +29,18 @@ export default function AboutPage() {
   const approaches = [
     { 
       icon: <Users className="w-8 h-8 text-brand-green" />, 
-      title: "Community Ownership", 
-      desc: "Our programs are co-designed with community members, elders, and women's groups to ensure cultural relevance and local trust." 
+      title: "Community Action", 
+      desc: "We mobilize women and community groups to actively participate in addressing local health needs." 
     },
     { 
       icon: <Heart className="w-8 h-8 text-brand-green" />, 
-      title: "Integrated Care", 
-      desc: "We address the physical, emotional, and social dimensions of health together because Acholi women's health challenges do not exist in isolation." 
+      title: "Capacity Building", 
+      desc: "We empower health workers, village health teams, and youth with skills to lead healthcare transformation." 
     },
     { 
       icon: <BookOpen className="w-8 h-8 text-brand-green" />, 
-      title: "Capacity Building", 
-      desc: "We train and support community health workers, peer educators, and local volunteers to extend our reach and build lasting local capacity." 
+      title: "Research & Evidence", 
+      desc: "We generate localized data to inform high-impact interventions and support health policy changes." 
     },
     { 
       icon: <Brain className="w-8 h-8 text-brand-green" />, 
@@ -47,34 +49,13 @@ export default function AboutPage() {
     }
   ];
 
-  const team = [
-    {
-      name: "Lucky Ajok",
-      role: "Founder & Executive Director",
-      bio: "Passionate about improving healthcare access, safe motherhood, and peer health education for women and girls in Northern Uganda.",
-      image: "/images/lucky.webp",
-      imageClassName: "object-contain",
-      linkedin: "#"
-    },
-    {
-      name: "Stephen Odora",
-      role: "Co-Founder & Operations Director",
-      bio: "Dedicated to building resilient local health networks, trauma-informed psychosocial services, and community-led strengthening programs.",
-      image: "/images/stephen.webp",
-      imageClassName: "object-cover object-top",
-      linkedin: "#"
-    }
-  ];
-
   return (
     <>
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="text-center">
-          <h1 className="page-hero-title">About AWIHF</h1>
-          <p className="page-hero-subtitle">Women-led. Community-rooted. Health-focused.</p>
-        </div>
-      </section>
+      {/* Standardized Hero */}
+      <PageHero
+        title="About AWIHF"
+        subtitle="Women-led. Community-rooted. Health-focused."
+      />
 
       {/* Our Story */}
       <section className="section-wrapper bg-white">
@@ -86,7 +67,7 @@ export default function AboutPage() {
                 Founded in 2023, Acholi Women in Health Foundation (AWIHF) was established in response to the persistent and disproportionate health challenges facing women and girls in the post-conflict Acholi sub-region of Northern Uganda.
               </p>
               <p className="text-[16px] leading-[1.6] text-[#111111]">
-                Two decades of Lord&apos;s Resistance Army (LRA) insurgency left behind mass displacement, widespread gender-based violence, and a decimated public health infrastructure. With maternal mortality figures at 106.0 per 100,000 live births (compared to 69.1 nationally) and a 24% teenage pregnancy rate in rural areas, AWIHF exists to close the gaps that peace has not yet closed. We bring healthcare services directly to community hubs while strengthening systems for long-term health equity.
+                Two decades of Lord&apos;s Resistance Army (LRA) insurgency left behind mass displacement, widespread gender-based violence, and a decimated public health infrastructure. With maternal mortality figures at 106.0 per 100,000 live births (compared to 69.1 nationally) and a 24% teenage pregnancy rate in rural areas, we exist to close the gaps that peace has not yet closed. We bring healthcare services directly to community hubs while strengthening systems for long-term health equity.
               </p>
             </div>
             <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-white shadow-md border border-gray-100">
@@ -138,7 +119,9 @@ export default function AboutPage() {
       {/* Strategic Objectives */}
       <section className="section-wrapper bg-white">
         <div className="content-container max-w-4xl mx-auto">
-          <h2 className="section-heading text-center mb-7 md:mb-10">Our Strategic Objectives</h2>
+          <div className="text-center mb-7 md:mb-10">
+            <h2 className="section-heading">Our Strategic Objectives</h2>
+          </div>
           <div className="space-y-4">
             {objectives.map((obj, index) => (
               <div key={index} className="flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl border border-gray-200 bg-white hover:border-brand-orange/30 hover:shadow-sm transition-all duration-200">
@@ -155,12 +138,14 @@ export default function AboutPage() {
       {/* Leadership & Governance Section */}
       <section className="section-wrapper bg-gray-50" id="leadership">
         <div className="content-container">
-          <h2 className="section-heading text-center mb-4">Leadership & Governance</h2>
+          <div className="text-center mb-4">
+            <h2 className="section-heading">Leadership & Governance</h2>
+          </div>
           <p className="text-gray-500 text-[15px] md:text-[16px] text-center max-w-2xl mx-auto mb-8 md:mb-12">
             Meet the community-rooted leaders guiding our operational excellence and strategic mission in Gulu City and across Northern Uganda.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-4xl mx-auto">
-            {team.map((member, i) => (
+            {leadershipTeam.map((member, i) => (
               <Card key={i} className="p-5 md:p-8 flex flex-col items-center text-center bg-white shadow-sm border border-gray-200 rounded-2xl hover:shadow-lg transition-all duration-300">
                 <div className="relative w-full max-w-[220px] md:max-w-[240px] aspect-[4/5] rounded-xl overflow-hidden mb-5 md:mb-6 border border-orange-tint bg-gray-50 shadow-sm">
                   <Image 
@@ -195,7 +180,9 @@ export default function AboutPage() {
       {/* Our Approach */}
       <section className="section-wrapper bg-green-tint">
         <div className="content-container">
-          <h2 className="section-heading text-center mb-7 md:mb-10">Our Strategic Approach</h2>
+          <div className="text-center mb-7 md:mb-10">
+            <h2 className="section-heading">Our Strategic Approach</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {approaches.map((app, i) => (
               <Card key={i} className="bg-white border-transparent p-5 md:p-6 flex flex-col h-full hover:shadow-xl transition-all duration-200">
@@ -212,23 +199,80 @@ export default function AboutPage() {
 
       <PartnershipsSection />
 
-      {/* Why It Matters */}
+      {/* Why Our Focus Matters */}
       <section className="section-wrapper bg-white">
-        <div className="content-container">
-          <h2 className="section-heading text-center mb-7 md:mb-10">Why Our Focus Matters</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex gap-3 md:gap-4 items-start shadow-sm">
-              <div className="text-brand-orange text-3xl md:text-4xl font-bold font-mono">106.0</div>
+        <div className="content-container max-w-6xl mx-auto">
+          <div className="text-center mb-7 md:mb-12">
+            <h2 className="section-heading">Why Our Focus Matters</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            {/* Card 1 */}
+            <div className="lg:col-span-2 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-brand-orange text-2xl md:text-3xl font-bold font-mono">106.0</span>
+                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Maternal Health</span>
+              </div>
               <div>
-                <h4 className="font-semibold text-brand-brown mb-1">Maternal Mortality Rate</h4>
-                <p className="text-gray-600 text-sm">Maternal deaths per 100,000 live births in post-conflict Acholi, compared to 69.1 national average.</p>
+                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Maternal Health & Safe Motherhood</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Women and girls need timely, respectful, and accessible healthcare throughout pregnancy, childbirth, and the postnatal period. Barriers to information, referral, skilled care, and continued support can place mothers and newborns at greater risk. Our work strengthens access to maternal and reproductive-health information and community-level support so women can make informed decisions and reach appropriate care when they need it.
+                </p>
               </div>
             </div>
-            <div className="bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex gap-3 md:gap-4 items-start shadow-sm">
-              <div className="text-brand-orange text-3xl md:text-4xl font-bold font-mono">24%</div>
+
+            {/* Card 2 */}
+            <div className="lg:col-span-2 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-brand-orange text-2xl md:text-3xl font-bold font-mono">24%</span>
+                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Adolescent Care</span>
+              </div>
               <div>
-                <h4 className="font-semibold text-brand-brown mb-1">Teenage Pregnancy Rate</h4>
-                <p className="text-gray-600 text-sm">Of adolescent girls in rural Northern Uganda experience early, high-risk pregnancy due to systemic health gaps.</p>
+                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Adolescent Reproductive Health</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Adolescents need accurate, age-appropriate health information and supportive environments in which they can ask questions without fear or stigma. Early pregnancy and limited access to reproductive-health information can affect education, wellbeing, economic opportunity, and future health. Our work supports women and girls with practical health education and community-based approaches that encourage informed choices and earlier access to appropriate care.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="lg:col-span-2 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-brand-orange text-xl md:text-2xl font-bold font-mono">Safe Spaces</span>
+                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Psychosocial</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Mental Health & Psychosocial Wellbeing</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Mental health is inseparable from overall wellbeing. Women and girls may face stress, grief, trauma, anxiety, depression, social pressures, and other challenges while having limited access to safe and supportive services. Our mental-health work creates spaces for people to seek support, strengthen coping skills, reduce stigma, and connect with appropriate care when more specialized help is needed.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="md:col-span-1 lg:col-span-3 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-brand-orange text-xl md:text-2xl font-bold font-mono">Grassroots</span>
+                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Community Reach</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Community-Based Health Access</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Health services are most effective when people can understand them, reach them, trust them, and receive appropriate support at the right time. Community health workers, local health actors, and community networks play an important role in connecting people with health information, prevention services, referrals, and care. We work to strengthen these local connections and bring health support closer to the communities we serve.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 5 */}
+            <div className="md:col-span-1 lg:col-span-3 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-brand-orange text-xl md:text-2xl font-bold font-mono">Local Capacity</span>
+                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Health Systems</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Stronger Local Health Systems</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Sustainable health improvement requires more than individual interventions. Communities also need capable health workers, stronger referral pathways, practical knowledge, and local systems that can continue responding to health needs. Our work invests in community-level capacity and healthcare education while strengthening connections between communities and existing health services.
+                </p>
               </div>
             </div>
           </div>

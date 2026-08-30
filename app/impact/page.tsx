@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ImpactStrip } from '@/components/sections/ImpactStrip';
+import { PageHero } from '@/components/shared/PageHero';
 import { ImpactReportSpotlight } from '@/components/sections/ImpactReportSpotlight';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -9,54 +9,61 @@ import { Button } from '@/components/ui/Button';
 import { DonateCTA } from '@/components/sections/DonateCTA';
 
 export default function ImpactPage() {
+  const impactHeroStats = [
+    { value: "1,000+", label: "Households Reached" },
+    { value: "50+", label: "Healthcare Students Equipped" },
+    { value: "4", label: "Core Programme Areas" },
+    { value: "3", label: "Programme Phases Completed" },
+  ];
+
   const impactTimeline = [
     {
       period: "2023",
       title: "AWIHF Founded",
       summary:
-        "AWIHF was founded to respond to the persistent health challenges facing women and girls in the post-conflict Acholi sub-region, establishing the organisation's women-led and community-rooted mission.",
+        "Founded in response to the persistent health challenges facing women and girls in the post-conflict Acholi sub-region, establishing our women-led and community-rooted mission.",
       highlights: [
         "Defined a mission focused on equitable, community-based healthcare for women and girls.",
-        "Positioned the organisation around maternal health, mental health, education, and systems strengthening.",
+        "Positioned our organisation around maternal health, mental health, education, and systems strengthening.",
       ],
     },
     {
       period: "January - June 2025",
       title: "Research and Community Groundwork",
       summary:
-        "The first half of 2025 focused on evidence gathering, early awareness work, and shaping programmes around community realities in Gulu and the wider Acholi sub-region.",
+        "The first half of 2025 focused on evidence gathering, early awareness work, and shaping our programmes around community realities in Gulu and the wider Acholi sub-region.",
       highlights: [
         "Launched community-based research on barriers to sexual and reproductive health access.",
         "Supported early cervical cancer awareness and preventive education efforts.",
-        "Strengthened advocacy and programme planning using community evidence.",
+        "Strengthened our advocacy and programme planning using direct community evidence.",
       ],
     },
     {
       period: "10 - 13 July 2025",
       title: "Patiko Medical Outreach",
       summary:
-        "AWIHF delivered its landmark four-day Patiko Medical Outreach, reaching more than 1,000 households with high-volume, integrated frontline services.",
+        "We delivered our landmark four-day Patiko Medical Outreach, reaching more than 1,000 households with high-volume, integrated frontline services.",
       highlights: [
         "Provided free medical consultations, diagnostic support, and vision screenings.",
         "Delivered SRHR education, maternal care support, and referral guidance in underserved rural communities.",
-        "Demonstrated AWIHF's operational capacity for trusted, large-scale outreach delivery.",
+        "Demonstrated our operational capacity for trusted, large-scale outreach delivery.",
       ],
     },
     {
       period: "25 September 2025",
       title: "Regional Cervical Cancer Initiative",
       summary:
-        "Building on field outreach work, AWIHF expanded preventive care education through a regional cervical cancer awareness and diagnosis literacy initiative.",
+        "Building on field outreach work, we expanded preventive care education through a regional cervical cancer awareness and diagnosis literacy initiative.",
       highlights: [
         "Educated rural women on early detection, risk factors, and screening benefits.",
-        "Worked with local facilities to connect awareness with real screening pathways.",
+        "Worked with local health facilities to connect awareness with real screening pathways.",
       ],
     },
     {
       period: "5 November 2025",
       title: "National Mentorship Programme Launch",
       summary:
-        "AWIHF extended its impact beyond direct service delivery by launching a mentorship pipeline for healthcare students, emerging professionals, and community health workers.",
+        "We extended our impact beyond direct service delivery by launching a mentorship pipeline for healthcare students, emerging professionals, and community health workers.",
       highlights: [
         "Connected student professionals with experienced clinical mentors across Uganda.",
         "Strengthened the long-term health workforce supporting resilient local systems.",
@@ -66,21 +73,21 @@ export default function ImpactPage() {
       period: "3 July 2026",
       title: "Abwoch Medical Outreach",
       summary:
-        "AWIHF conducted a community medical outreach at Abwoch Health Center III, bringing essential screening, reproductive health services, and counselling closer to underserved families.",
+        "We conducted a community medical outreach at Abwoch Health Center III, bringing essential screening, reproductive health services, and counselling closer to underserved families.",
       highlights: [
         "Offered general consultations and screening at a community health facility touchpoint.",
         "Delivered HIV screening and counselling alongside breast, cervical cancer, and sickle cell awareness.",
-        "Reinforced AWIHF's model of pairing preventive education with referral-oriented support.",
+        "Reinforced our model of pairing preventive education with referral-oriented support.",
       ],
     },
     {
       period: "11 July 2026",
       title: "Official Public Launch",
       summary:
-        "AWIHF officially launched at Gulu University Library Hall, publicly marking the organisation's next chapter after a growing track record of outreach, advocacy, and partnership-building.",
+        "Acholi Women in Health Foundation officially launched at Gulu University Library Hall, publicly marking our next chapter after a growing track record of outreach, advocacy, and partnership-building.",
       highlights: [
-        "Convened public leaders, health partners, and community stakeholders around the mission.",
-        "Signaled a transition from formative programme delivery into a stronger institutional phase.",
+        "Convened public leaders, health partners, and community stakeholders around our shared mission.",
+        "Signaled our transition from formative programme delivery into a stronger institutional phase.",
       ],
     },
   ];
@@ -102,15 +109,17 @@ export default function ImpactPage() {
       excerpt: "How a young mother accessed crucial prenatal support, clinical consultations, and emergency birth referrals during our Patiko Medical Outreach, ensuring a safe delivery.",
       category: "Maternal Health",
       image: "/images/AWIHF-Patiko.webp",
-      author: "AWIHF Outreach Team"
+      author: "AWIHF Outreach Team",
+      link: "/stories/safe-motherhood-patiko"
     },
     {
       slug: "healing-trauma-gulu",
-      title: "Rebuilding Mental Wellness After Conflict",
-      excerpt: "How a young woman carried the heavy post-conflict trauma burden and PTSD in Gulu, but found a secure path to recovery, clinical care, and hope through AWIHF healing circles.",
+      title: "Rebuilding Mental Wellbeing & Safe Community Spaces",
+      excerpt: "How community-led healing circles and psychosocial counseling in Gulu helped women overcome severe isolation, build coping skills, and find pathways to dignity.",
       category: "Mental Health",
       image: "/images/AWIHF-MH-Field.webp",
-      author: "Psychosocial Support Team"
+      author: "Psychosocial Support Team",
+      link: "/stories/healing-trauma-gulu"
     },
     {
       slug: "dignity-hygiene-education",
@@ -118,36 +127,55 @@ export default function ImpactPage() {
       excerpt: "How a teenage schoolgirl in a rural sub-county was equipped with reusable sanitary pads and trained as an SRHR peer educator, eliminating absenteeism in her classroom.",
       category: "Health Education",
       image: "/images/AWIHF-CHE-Field.webp",
-      author: "Education Coordinator"
+      author: "Education Coordinator",
+      link: "/stories/dignity-hygiene-education"
+    },
+    {
+      slug: "abwoch-medical-outreach-2026",
+      title: "Integrated Frontline Care at Abwoch Health Center III",
+      excerpt: "Bringing general medical screening, reproductive health services, HIV counseling, and cancer awareness directly to rural families in need of accessible frontline care.",
+      category: "Community Outreach",
+      image: "/images/AWIHF-Abwoch.webp",
+      author: "AWIHF Clinical Team",
+      link: "/stories/abwoch-medical-outreach-2026"
+    },
+    {
+      slug: "national-mentorship-launch",
+      title: "Building the Next Generation of Healthcare Leaders",
+      excerpt: "Connecting over 50 nursing and medical students nationwide with experienced clinical mentors to bridge structural gaps in local healthcare capacity.",
+      category: "Mentorship & Systems",
+      image: "/images/AWIHF-Mentorship.webp",
+      author: "Mentorship Operations Desk",
+      link: "/stories/national-mentorship-launch"
+    },
+    {
+      slug: "cervical-cancer-regional-initiative",
+      title: "Extending Cervical Cancer Screening & Diagnosis Literacy",
+      excerpt: "Rolling out large-scale diagnostic literacy and screening awareness across rural sub-counties to promote early detection and timely healthcare access.",
+      category: "Preventive Care",
+      image: "/images/AWIHF-Cervical Cancer.webp",
+      author: "Health Committee",
+      link: "/stories/cervical-cancer-regional-initiative"
     }
   ];
 
   return (
     <>
-      <section className="image-page-hero">
-        <Image
-          src="/images/AWIHF-Patiko.webp"
-          alt="Patiko Medical Outreach community impact"
-          fill
-          priority
-          className="hidden md:block object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-brand md:bg-brand-brown/70" />
-        <div className="relative z-10 text-center">
-          <h1 className="page-hero-title">Our Impact</h1>
-          <p className="page-hero-subtitle">A growing record of community-centred health delivery across Gulu and the Acholi sub-region.</p>
-        </div>
-      </section>
-
-      <ImpactStrip />
+      {/* Standardized Shared Hero Banner & Floating Statistics */}
+      <PageHero
+        title="Our Impact"
+        subtitle="A growing record of community-centred health delivery across Gulu and the Acholi sub-region."
+        stats={impactHeroStats}
+      />
 
       <ImpactReportSpotlight />
 
       {/* Organisational Timeline */}
       <section className="section-wrapper bg-white">
         <div className="content-container">
-          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto mb-8 md:mb-12">Timeline of Growth and Impact</h2>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="section-heading">Timeline of Growth and Impact</h2>
+          </div>
           <div className="max-w-4xl mx-auto relative">
             <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 md:-translate-x-1/2" />
             
@@ -191,7 +219,9 @@ export default function ImpactPage() {
       {/* Programme Highlights */}
       <section className="section-wrapper bg-gray-50">
         <div className="content-container">
-          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto mb-7 md:mb-10">Programme Highlights</h2>
+          <div className="text-center mb-7 md:mb-10">
+            <h2 className="section-heading">Programme Highlights</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <Card className="border-t-4 border-t-brand-orange">
               <h4 className="text-[20px] font-semibold text-brand-brown mb-3">SRHR Research</h4>
@@ -219,12 +249,12 @@ export default function ImpactPage() {
       <section id="stories" className="section-wrapper bg-white scroll-mt-20">
         <div className="content-container">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto">Stories of Impact</h2>
+            <h2 className="section-heading">Stories of Impact</h2>
             <p className="text-gray-500 text-[15px] md:text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">
               Real narratives of resilience, health empowerment, and transformation from the communities we serve.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {stories.map((story) => (
               <Card key={story.slug} className="group p-0 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all duration-300">
                 <div className="relative aspect-[3/2] w-full bg-gray-100 overflow-hidden border-b border-gray-200">
@@ -247,7 +277,7 @@ export default function ImpactPage() {
                     {story.excerpt}
                   </p>
                   <div className="mt-auto">
-                    <Link href={`/stories/${story.slug}`}>
+                    <Link href={story.link || `/stories/${story.slug}`}>
                       <Button variant="secondary" size="small" className="w-full sm:w-auto">Read Story</Button>
                     </Link>
                   </div>
@@ -261,7 +291,9 @@ export default function ImpactPage() {
       {/* Looking Ahead 2026 */}
       <section className="section-wrapper bg-gray-50">
         <div className="content-container max-w-4xl mx-auto">
-          <h2 className="section-heading text-center mx-auto after:mx-auto after:left-auto after:right-auto mb-7 md:mb-10">Looking Ahead: 2026 Targets</h2>
+          <div className="text-center mb-7 md:mb-10">
+            <h2 className="section-heading">Looking Ahead: 2026 Targets</h2>
+          </div>
           <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="w-full text-left border-collapse">
               <thead>

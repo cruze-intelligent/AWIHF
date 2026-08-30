@@ -1,4 +1,5 @@
 import type { ContactSubmissionInput, MentorshipApplicationInput } from '@/lib/validation/submissions';
+import { organizationProfile } from '@/lib/config/organization';
 
 export type EmailMessage = {
   subject: string;
@@ -44,9 +45,9 @@ function layout(title: string, body: string) {
               </tr>
               <tr>
                 <td style="padding:18px 28px;background:#fbf6f2;border-top:1px solid #eadfd7;color:#5f5f5f;font-size:13px;line-height:1.6;">
-                  <strong style="color:#4B2C11;">Acholi Women in Health Foundation</strong><br />
-                  Gulu City, Uganda<br />
-                  acholiwomeninhealth@gmail.com
+                  <strong style="color:#4B2C11;">${organizationProfile.name}</strong><br />
+                  ${organizationProfile.postalAddress.locality}, Uganda<br />
+                  ${organizationProfile.email}
                 </td>
               </tr>
             </table>
@@ -152,7 +153,7 @@ export function mentorshipConfirmationEmail(
       `
         ${paragraph(`Dear ${input.fullName},`)}
         ${paragraph(`Thank you for applying to the AWIHF Mentorship Program. Your reference number is ${reference}.`)}
-        ${paragraph('Our team will review your application and contact you within 10 working days. For questions, contact acholiwomeninhealth@gmail.com.')}
+        ${paragraph(`Our team will review your application and contact you within 10 working days. For questions, contact ${organizationProfile.email}.`)}
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin-top:14px;">
           ${row('Institution', input.institution)}
           ${row('Programme', input.programOfStudy)}

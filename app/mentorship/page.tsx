@@ -1,4 +1,5 @@
 import React from 'react';
+import { PageHero } from '@/components/shared/PageHero';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { MentorshipApplicationForm } from '@/components/mentorship/MentorshipApplicationForm';
@@ -13,14 +14,10 @@ export default async function MentorshipPage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="text-center max-w-2xl">
-          <h1 className="page-hero-title">Mentorship Programme</h1>
-          <p className="page-hero-subtitle">
-            Application-based mentorship for healthcare students and emerging community health leaders.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Mentorship Programme"
+        subtitle="Application-based mentorship for healthcare students and emerging community health leaders."
+      />
 
       <section className="section-wrapper bg-gray-50">
         <div className="content-container">
