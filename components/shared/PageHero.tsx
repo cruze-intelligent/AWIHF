@@ -53,22 +53,23 @@ export function PageHero({
     <>
       {/* Canonical Hero Banner */}
       <section className={`relative w-full min-h-[140px] md:min-h-[280px] py-8 px-4 md:py-16 md:px-8 flex items-center justify-center overflow-hidden bg-brand-brown ${className}`}>
-        {/* Layer 1: Subdued background image from homepage */}
+        {/* Background Layers: Homepage photograph underneath + Semi-transparent orange/gold brand overlay on top */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {/* Layer 3 (Bottom): Shared homepage hero image */}
           <Image
             src={heroImage}
             alt={imageAlt || `${title} hero banner`}
             fill
-            className="object-cover object-[50%_25%] md:object-[50%_20%] opacity-22 mix-blend-luminosity"
+            className="object-cover object-[50%_25%] md:object-[50%_20%]"
             priority
             sizes="100vw"
           />
-          {/* Layer 2: Branded orange/gold gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-brand opacity-92" />
+          {/* Layer 2 (Middle): AWIHF signature orange-to-gold brand overlay with tuned translucency */}
+          <div className="absolute inset-0 bg-gradient-brand opacity-85" />
           <div className="absolute inset-0 bg-brand-brown/12" />
         </div>
 
-        {/* Layer 3: Hero Content */}
+        {/* Layer 1 (Top): 100% Opaque Hero Content */}
         <div className="relative z-10 text-center max-w-3xl mx-auto flex flex-col items-center justify-center">
           <h1 className="text-white text-2xl md:text-[36px] lg:text-[40px] font-bold leading-[1.15] md:leading-[1.2] mb-2 md:mb-3">
             {title}
