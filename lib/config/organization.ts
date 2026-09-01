@@ -23,7 +23,7 @@ export const leadershipTeam = [
     bio: 'Passionate about improving healthcare access, safe motherhood, and peer health education for women and girls in Northern Uganda.',
     image: '/images/lucky.webp',
     imageClassName: 'object-contain',
-    linkedin: 'https://www.linkedin.com/in/lucky-ajok-9b322a23?utm_content=profile&utm_medium=member_ios&utm_source=chatgpt.com',
+    linkedin: 'https://www.linkedin.com/in/lucky-ajok-9b322a23a?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
   },
   {
     name: 'Stephen Odora',
