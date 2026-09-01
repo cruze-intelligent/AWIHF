@@ -34,7 +34,7 @@ const storiesData: Record<string, StoryData> = {
   'healing-trauma-gulu': {
     title: "Rebuilding Mental Wellbeing & Safe Community Spaces",
     category: "Mental Health",
-    image: "/images/AWIHF-MH-Field.webp",
+    image: "/images/AWIHF-MentalHealth1.webp",
     author: "Psychosocial Support Team",
     date: "October 10, 2025",
     readTime: "4 min read",
@@ -47,7 +47,7 @@ const storiesData: Record<string, StoryData> = {
   'dignity-hygiene-education': {
     title: "Dignity in Education: Empowering Schoolgirls",
     category: "Health Education",
-    image: "/images/AWIHF-CHE-Field.webp",
+    image: "/images/AWIHF-SchoolOutreach4.webp",
     author: "Education Coordinator",
     date: "September 8, 2025",
     readTime: "3 min read",
@@ -73,7 +73,7 @@ const storiesData: Record<string, StoryData> = {
   'national-mentorship-launch': {
     title: "Building the Next Generation of Healthcare Leaders",
     category: "Mentorship & Systems",
-    image: "/images/AWIHF-Mentorship.webp",
+    image: "/images/AWIHF-Mentorship1.webp",
     author: "Mentorship Operations Desk",
     date: "November 5, 2025",
     readTime: "4 min read",
@@ -86,7 +86,7 @@ const storiesData: Record<string, StoryData> = {
   'cervical-cancer-regional-initiative': {
     title: "Extending Cervical Cancer Screening & Diagnosis Literacy",
     category: "Preventive Care",
-    image: "/images/AWIHF-Cervical Cancer.webp",
+    image: "/images/AWIHF-Maternal2.webp",
     author: "Health Committee",
     date: "September 25, 2025",
     readTime: "3 min read",
@@ -142,14 +142,23 @@ export default async function StoryDetailPage(props: { params: Promise<{ slug: s
             </div>
           </div>
 
-          {/* Banner image */}
-          <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-7 md:mb-10 shadow-sm border border-gray-200">
+          {/* Banner image — uncropped & proportioned */}
+          <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-7 md:mb-10 shadow-sm border border-gray-200 bg-amber-50 flex items-center justify-center">
+            <Image 
+              src={story.image} 
+              alt="" 
+              fill 
+              aria-hidden="true"
+              className="object-cover blur-xl scale-110 opacity-30 pointer-events-none"
+              sizes="(max-width: 1024px) 100vw, 800px"
+            />
             <Image 
               src={story.image} 
               alt={story.title} 
               fill 
-              className="object-cover"
+              className="object-contain relative z-10 p-1 sm:p-2"
               priority
+              sizes="(max-width: 1024px) 100vw, 800px"
             />
           </div>
 

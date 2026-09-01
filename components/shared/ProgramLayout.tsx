@@ -1,13 +1,15 @@
 import React from 'react';
-import Image from 'next/image';
 import { PageHero } from './PageHero';
+import { ProgrammeInPracticeGallery } from './ProgrammeInPracticeGallery';
 import { DonateCTA } from '../sections/DonateCTA';
 import { CheckCircle, Target, Users, Settings } from 'lucide-react';
 
 interface ProgramLayoutProps {
   title: string;
   heroImage?: string;
-  fieldImage: string;
+  fieldImage?: string;
+  practiceImages?: string[];
+  practiceDescription?: string;
   stats: { value: string; label: string }[];
   objective: string;
   focusArea: string;
@@ -20,6 +22,8 @@ export function ProgramLayout({
   title, 
   heroImage, 
   fieldImage,
+  practiceImages,
+  practiceDescription,
   stats, 
   objective, 
   focusArea, 
@@ -27,6 +31,10 @@ export function ProgramLayout({
   successIndicators, 
   description
 }: ProgramLayoutProps) {
+  const resolvedImages = practiceImages && practiceImages.length > 0 
+    ? practiceImages 
+    : fieldImage ? [fieldImage] : [];
+
   return (
     <>
       {/* Standardized Shared Hero & Floating Impact Stats */}
@@ -120,30 +128,14 @@ export function ProgramLayout({
         </div>
       </section>
 
-      {/* Field Activity */}
-      <section className="section-wrapper bg-gray-50">
-        <div className="content-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-5">
-              <h2 className="text-2xl md:text-3xl font-bold text-brand-brown mb-3 md:mb-4">Programme in Practice</h2>
-              <p className="text-gray-600 text-[15px] md:text-[16px] leading-[1.7]">
-                A field image from this programme, included to show real implementation activity without relying on unrelated filler photography.
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-white shadow-sm border border-gray-200">
-                <Image
-                  src={fieldImage}
-                  alt={`${title} field activity`}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 1024px) 100vw, 720px"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Reusable Programme in Practice Carousel Gallery */}
+      {resolvedImages.length > 0 && (
+        <ProgrammeInPracticeGallery
+          title={title}
+          description={practiceDescription}
+          images={resolvedImages}
+        />
+      )}
 
       <DonateCTA />
     </>

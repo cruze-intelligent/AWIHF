@@ -61,7 +61,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${inter.variable} font-sans antialiased bg-white flex flex-col min-h-screen`}>
         <script
           type="application/ld+json"

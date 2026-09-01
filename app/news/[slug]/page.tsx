@@ -79,12 +79,20 @@ export default async function NewsDetailPage(props: NewsDetailProps) {
             </div>
           </div>
 
-          <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-7 md:mb-10 shadow-sm border border-gray-200 bg-gray-50">
+          <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-7 md:mb-10 shadow-sm border border-gray-200 bg-amber-50 flex items-center justify-center">
+            <Image
+              src={article.image}
+              alt=""
+              fill
+              aria-hidden="true"
+              className="object-cover blur-xl scale-110 opacity-30 pointer-events-none"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
             <Image
               src={article.image}
               alt={article.title}
               fill
-              className="object-cover"
+              className="object-contain relative z-10 p-1 sm:p-2"
               priority
               sizes="(max-width: 768px) 100vw, 768px"
             />

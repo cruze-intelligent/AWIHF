@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PageHero } from '@/components/shared/PageHero';
 import { Heart, Users, BookOpen, Brain, Target, Shield } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
 import { DonateCTA } from '@/components/sections/DonateCTA';
 import { PartnershipsSection } from '@/components/sections/PartnershipsSection';
 import { Linkedin } from '@/components/ui/SocialIcons';
@@ -75,7 +76,8 @@ export default function AboutPage() {
                 src="/images/AWIHF logo.webp" 
                 alt="Acholi Women in Health Foundation logo" 
                 fill 
-                className="object-contain p-8 md:p-12" 
+                className="object-contain p-8 md:p-12"
+                sizes="(max-width: 768px) 100vw, 500px" 
               />
             </div>
           </div>
@@ -153,6 +155,7 @@ export default function AboutPage() {
                     alt={member.name} 
                     fill 
                     className={member.imageClassName}
+                    sizes="(max-width: 768px) 100vw, 240px"
                   />
                 </div>
                 <h4 className="text-[20px] md:text-[22px] font-bold text-brand-brown mb-1">{member.name}</h4>
@@ -201,80 +204,100 @@ export default function AboutPage() {
 
       {/* Why Our Focus Matters */}
       <section className="section-wrapper bg-white">
-        <div className="content-container max-w-6xl mx-auto">
-          <div className="text-center mb-7 md:mb-12">
+        <div className="content-container">
+          <div className="text-center mb-7 md:mb-10">
             <h2 className="section-heading">Why Our Focus Matters</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
             {/* Card 1 */}
-            <div className="lg:col-span-2 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-brand-orange text-2xl md:text-3xl font-bold font-mono">106.0</span>
-                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Maternal Health</span>
-              </div>
+            <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Maternal Health & Safe Motherhood</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="flex items-center justify-between gap-3 mb-3.5">
+                  <span className="text-2xl md:text-[26px] font-bold text-brand-orange tracking-tight">106.0</span>
+                  <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
+                    Maternal Health
+                  </Badge>
+                </div>
+                <h4 className="text-[17px] md:text-[18px] font-bold text-brand-brown mb-2.5 leading-snug">
+                  Maternal Health & Safe Motherhood
+                </h4>
+                <p className="text-gray-600 text-[13.5px] md:text-[14px] leading-relaxed">
                   Women and girls need timely, respectful, and accessible healthcare throughout pregnancy, childbirth, and the postnatal period. Barriers to information, referral, skilled care, and continued support can place mothers and newborns at greater risk. Our work strengthens access to maternal and reproductive-health information and community-level support so women can make informed decisions and reach appropriate care when they need it.
                 </p>
               </div>
-            </div>
+            </Card>
 
             {/* Card 2 */}
-            <div className="lg:col-span-2 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-brand-orange text-2xl md:text-3xl font-bold font-mono">24%</span>
-                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Adolescent Care</span>
-              </div>
+            <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Adolescent Reproductive Health</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="flex items-center justify-between gap-3 mb-3.5">
+                  <span className="text-2xl md:text-[26px] font-bold text-brand-orange tracking-tight">24%</span>
+                  <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
+                    Adolescent Care
+                  </Badge>
+                </div>
+                <h4 className="text-[17px] md:text-[18px] font-bold text-brand-brown mb-2.5 leading-snug">
+                  Adolescent Reproductive Health
+                </h4>
+                <p className="text-gray-600 text-[13.5px] md:text-[14px] leading-relaxed">
                   Adolescents need accurate, age-appropriate health information and supportive environments in which they can ask questions without fear or stigma. Early pregnancy and limited access to reproductive-health information can affect education, wellbeing, economic opportunity, and future health. Our work supports women and girls with practical health education and community-based approaches that encourage informed choices and earlier access to appropriate care.
                 </p>
               </div>
-            </div>
+            </Card>
 
             {/* Card 3 */}
-            <div className="lg:col-span-2 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-brand-orange text-xl md:text-2xl font-bold font-mono">Safe Spaces</span>
-                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Psychosocial</span>
-              </div>
+            <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Mental Health & Psychosocial Wellbeing</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="flex items-center justify-between gap-3 mb-3.5">
+                  <span className="text-xl md:text-[22px] font-bold text-brand-orange tracking-tight">Safe Spaces</span>
+                  <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
+                    Psychosocial
+                  </Badge>
+                </div>
+                <h4 className="text-[17px] md:text-[18px] font-bold text-brand-brown mb-2.5 leading-snug">
+                  Mental Health & Psychosocial Wellbeing
+                </h4>
+                <p className="text-gray-600 text-[13.5px] md:text-[14px] leading-relaxed">
                   Mental health is inseparable from overall wellbeing. Women and girls may face stress, grief, trauma, anxiety, depression, social pressures, and other challenges while having limited access to safe and supportive services. Our mental-health work creates spaces for people to seek support, strengthen coping skills, reduce stigma, and connect with appropriate care when more specialized help is needed.
                 </p>
               </div>
-            </div>
+            </Card>
 
             {/* Card 4 */}
-            <div className="md:col-span-1 lg:col-span-3 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-brand-orange text-xl md:text-2xl font-bold font-mono">Grassroots</span>
-                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Community Reach</span>
-              </div>
+            <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Community-Based Health Access</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="flex items-center justify-between gap-3 mb-3.5">
+                  <span className="text-xl md:text-[22px] font-bold text-brand-orange tracking-tight">Grassroots</span>
+                  <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
+                    Community Reach
+                  </Badge>
+                </div>
+                <h4 className="text-[17px] md:text-[18px] font-bold text-brand-brown mb-2.5 leading-snug">
+                  Community-Based Health Access
+                </h4>
+                <p className="text-gray-600 text-[13.5px] md:text-[14px] leading-relaxed">
                   Health services are most effective when people can understand them, reach them, trust them, and receive appropriate support at the right time. Community health workers, local health actors, and community networks play an important role in connecting people with health information, prevention services, referrals, and care. We work to strengthen these local connections and bring health support closer to the communities we serve.
                 </p>
               </div>
-            </div>
+            </Card>
 
             {/* Card 5 */}
-            <div className="md:col-span-1 lg:col-span-3 bg-brown-tint p-5 md:p-6 rounded-xl border border-brand-brown/20 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-brand-orange text-xl md:text-2xl font-bold font-mono">Local Capacity</span>
-                <span className="text-xs uppercase font-bold text-brand-brown/60 tracking-wider bg-white/80 px-2.5 py-1 rounded-md border border-brand-brown/10">Health Systems</span>
-              </div>
+            <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
               <div>
-                <h4 className="font-semibold text-brand-brown text-base md:text-lg mb-2">Stronger Local Health Systems</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="flex items-center justify-between gap-3 mb-3.5">
+                  <span className="text-xl md:text-[22px] font-bold text-brand-orange tracking-tight">Local Capacity</span>
+                  <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
+                    Health Systems
+                  </Badge>
+                </div>
+                <h4 className="text-[17px] md:text-[18px] font-bold text-brand-brown mb-2.5 leading-snug">
+                  Stronger Local Health Systems
+                </h4>
+                <p className="text-gray-600 text-[13.5px] md:text-[14px] leading-relaxed">
                   Sustainable health improvement requires more than individual interventions. Communities also need capable health workers, stronger referral pathways, practical knowledge, and local systems that can continue responding to health needs. Our work invests in community-level capacity and healthcare education while strengthening connections between communities and existing health services.
                 </p>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </section>

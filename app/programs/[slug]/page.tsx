@@ -4,8 +4,10 @@ import { ProgramLayout } from '@/components/shared/ProgramLayout';
 
 type ProgramData = {
   title: string;
-  heroImage: string;
-  fieldImage: string;
+  heroImage?: string;
+  fieldImage?: string;
+  practiceImages: string[];
+  practiceDescription?: string;
   stats: { value: string; label: string }[];
   objective: string;
   focusArea: string;
@@ -17,8 +19,15 @@ type ProgramData = {
 const programsData: Record<string, ProgramData> = {
   'maternal-reproductive-health': {
     title: 'Maternal & Reproductive Health',
-    heroImage: '/images/AWIHF-maternal-Hero.webp',
-    fieldImage: '/images/AWIHF-maternal-Field.webp',
+    heroImage: '/images/AWIHF-Maternal1.webp',
+    fieldImage: '/images/AWIHF-Maternal1.webp',
+    practiceImages: [
+      '/images/AWIHF-Maternal1.webp',
+      '/images/AWIHF-Maternal2.webp',
+      '/images/AWIHF-Maternal3.webp',
+      '/images/AWIHF-Maternal4.webp',
+      '/images/AWIHF-Maternal5.webp',
+    ],
     stats: [
       { value: '1,000+', label: 'Households Reached' },
       { value: '500+', label: 'Teenage Mothers Supported' },
@@ -52,8 +61,15 @@ const programsData: Record<string, ProgramData> = {
   },
   'mental-health-trauma-support': {
     title: 'Mental Health & Trauma Support',
-    heroImage: '/images/AWIHF-MH-Hero.webp',
-    fieldImage: '/images/AWIHF-MH-Field.webp',
+    heroImage: '/images/AWIHF-MentalHealth1.webp',
+    fieldImage: '/images/AWIHF-MentalHealth1.webp',
+    practiceImages: [
+      '/images/AWIHF-MentalHealth1.webp',
+      '/images/AWIHF-MentalHealth2.webp',
+      '/images/AWIHF-MentalHealth3.webp',
+      '/images/AWIHF-Mental Health4.webp',
+      '/images/AWIHF-MentalHealth5.webp',
+    ],
     stats: [
       { value: 'Community-Based', label: 'Psychosocial Support' },
       { value: 'Trauma-Informed', label: 'Safe Healing Spaces' },
@@ -93,8 +109,15 @@ const programsData: Record<string, ProgramData> = {
   },
   'community-health-education': {
     title: 'Community Health Education',
-    heroImage: '/images/AWIHF-CHE-Hero.webp',
-    fieldImage: '/images/AWIHF-CHE-Field.webp',
+    heroImage: '/images/AWIHF-CHE1.webp',
+    fieldImage: '/images/AWIHF-CHE1.webp',
+    practiceImages: [
+      '/images/AWIHF-CHE1.webp',
+      '/images/AWIHF-CHE2.webp',
+      '/images/AWIHF-CHE3.webp',
+      '/images/AWIHF-CHE4.webp',
+      '/images/AWIHF-CHE5.webp',
+    ],
     stats: [
       { value: '1,000+', label: 'Households Reached' },
       { value: '200+', label: 'Peer Educators Trained' },
@@ -128,8 +151,15 @@ const programsData: Record<string, ProgramData> = {
   },
   'healthcare-systems-strengthening': {
     title: 'Healthcare Systems Strengthening',
-    heroImage: '/images/AWIHF-HSS-Hero.webp',
-    fieldImage: '/images/AWIHF-HSS-Field.webp',
+    heroImage: '/images/AWIHF-HSS1.webp',
+    fieldImage: '/images/AWIHF-HSS1.webp',
+    practiceImages: [
+      '/images/AWIHF-HSS1.webp',
+      '/images/AWIHF-HSS2.webp',
+      '/images/AWIHF-HSS3.webp',
+      '/images/AWIHF-HSS4.webp',
+      '/images/AWIHF-HSS5.webp',
+    ],
     stats: [
       { value: '60', label: 'VHTs Trained Target' },
       { value: '3+', label: 'Health Center MoUs' },
@@ -166,8 +196,15 @@ const programsData: Record<string, ProgramData> = {
   },
   'school-community-outreach-programme': {
     title: 'School & Community Outreach Programme',
-    heroImage: '/images/AWIHF-School Outreach.webp',
-    fieldImage: '/images/AWIHF-School Outreach.webp',
+    heroImage: '/images/AWIHF-SchoolOutreach1.webp',
+    fieldImage: '/images/AWIHF-SchoolOutreach1.webp',
+    practiceImages: [
+      '/images/AWIHF-SchoolOutreach1.webp',
+      '/images/AWIHF-SchoolOutreach2.webp',
+      '/images/AWIHF-SchoolOutreach3.webp',
+      '/images/AWIHF-SchoolOutreach4.webp',
+      '/images/AWIHF-SchoolOutreach5.webp',
+    ],
     stats: [
       { value: 'School-based', label: 'Delivery Model' },
       { value: 'Community-led', label: 'Approach' },
@@ -201,8 +238,15 @@ const programsData: Record<string, ProgramData> = {
   },
   'mentorship': {
     title: 'Mentorship Programme',
-    heroImage: '/images/AWIHF-Mentorship.webp',
-    fieldImage: '/images/AWIHF-Mentorship.webp',
+    heroImage: '/images/AWIHF-Mentorship1.webp',
+    fieldImage: '/images/AWIHF-Mentorship1.webp',
+    practiceImages: [
+      '/images/AWIHF-Mentorship1.webp',
+      '/images/AWIHF-Mentorship2.webp',
+      '/images/AWIHF-Mentorship3.webp',
+      '/images/AWIHF-Mentorship4.webp',
+      '/images/AWIHF-Mentorship5.webp',
+    ],
     stats: [
       { value: '150', label: 'Mentees Target (3-Yr Plan)' },
       { value: '50+', label: 'Students Equipped (Pilot)' },

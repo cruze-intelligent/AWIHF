@@ -25,6 +25,7 @@ export default function TeamPage() {
                     alt={member.name} 
                     fill 
                     className={member.imageClassName}
+                    sizes="(max-width: 768px) 100vw, 240px"
                   />
                 </div>
                 <h4 className="text-[20px] font-bold text-brand-brown mb-1">{member.name}</h4>

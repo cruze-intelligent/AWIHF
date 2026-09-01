@@ -18,6 +18,7 @@ export function Hero() {
           alt="Acholi Women in Health Foundation field healthcare operations in Northern Uganda"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-[50%_30%] md:object-top transition-transform duration-500"
         />
       </div>

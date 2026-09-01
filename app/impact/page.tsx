@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHero } from '@/components/shared/PageHero';
 import { ImpactReportSpotlight } from '@/components/sections/ImpactReportSpotlight';
+import { StoryCard } from '@/components/shared/StoryCard';
 import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { DonateCTA } from '@/components/sections/DonateCTA';
 
@@ -117,7 +117,7 @@ export default function ImpactPage() {
       title: "Rebuilding Mental Wellbeing & Safe Community Spaces",
       excerpt: "How community-led healing circles and psychosocial counseling in Gulu helped women overcome severe isolation, build coping skills, and find pathways to dignity.",
       category: "Mental Health",
-      image: "/images/AWIHF-MH-Field.webp",
+      image: "/images/AWIHF-MentalHealth1.webp",
       author: "Psychosocial Support Team",
       link: "/stories/healing-trauma-gulu"
     },
@@ -126,9 +126,27 @@ export default function ImpactPage() {
       title: "Dignity in Education: Empowering Schoolgirls",
       excerpt: "How a teenage schoolgirl in a rural sub-county was equipped with reusable sanitary pads and trained as an SRHR peer educator, eliminating absenteeism in her classroom.",
       category: "Health Education",
-      image: "/images/AWIHF-CHE-Field.webp",
+      image: "/images/AWIHF-SchoolOutreach4.webp",
       author: "Education Coordinator",
       link: "/stories/dignity-hygiene-education"
+    },
+    {
+      slug: "national-mentorship-launch",
+      title: "Building the Next Generation of Healthcare Leaders",
+      excerpt: "Connecting over 50 nursing and medical students nationwide with experienced clinical mentors to bridge structural gaps in local healthcare capacity.",
+      category: "Mentorship & Systems",
+      image: "/images/AWIHF-Mentorship1.webp",
+      author: "Mentorship Operations Desk",
+      link: "/stories/national-mentorship-launch"
+    },
+    {
+      slug: "cervical-cancer-regional-initiative",
+      title: "Extending Cervical Cancer Screening & Diagnosis Literacy",
+      excerpt: "Rolling out large-scale diagnostic literacy and screening awareness across rural sub-counties to promote early detection and timely healthcare access.",
+      category: "Preventive Care",
+      image: "/images/AWIHF-Maternal2.webp",
+      author: "Health Committee",
+      link: "/stories/cervical-cancer-regional-initiative"
     },
     {
       slug: "abwoch-medical-outreach-2026",
@@ -138,24 +156,6 @@ export default function ImpactPage() {
       image: "/images/AWIHF-Abwoch.webp",
       author: "AWIHF Clinical Team",
       link: "/stories/abwoch-medical-outreach-2026"
-    },
-    {
-      slug: "national-mentorship-launch",
-      title: "Building the Next Generation of Healthcare Leaders",
-      excerpt: "Connecting over 50 nursing and medical students nationwide with experienced clinical mentors to bridge structural gaps in local healthcare capacity.",
-      category: "Mentorship & Systems",
-      image: "/images/AWIHF-Mentorship.webp",
-      author: "Mentorship Operations Desk",
-      link: "/stories/national-mentorship-launch"
-    },
-    {
-      slug: "cervical-cancer-regional-initiative",
-      title: "Extending Cervical Cancer Screening & Diagnosis Literacy",
-      excerpt: "Rolling out large-scale diagnostic literacy and screening awareness across rural sub-counties to promote early detection and timely healthcare access.",
-      category: "Preventive Care",
-      image: "/images/AWIHF-Cervical Cancer.webp",
-      author: "Health Committee",
-      link: "/stories/cervical-cancer-regional-initiative"
     }
   ];
 
@@ -204,7 +204,7 @@ export default function ImpactPage() {
       {/* Patiko Outreach Spotlight */}
       <section className="relative w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center px-4 md:px-8 py-10 md:py-16">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/AWIHF-Patiko.webp" alt="Patiko Medical Outreach" fill className="object-cover opacity-25" />
+          <Image src="/images/AWIHF-Patiko.webp" alt="Patiko Medical Outreach" fill sizes="100vw" className="object-cover opacity-25" />
           <div className="absolute inset-0 bg-brand-brown/80" />
         </div>
         <div className="relative z-10 text-center max-w-4xl">
@@ -254,35 +254,18 @@ export default function ImpactPage() {
               Real narratives of resilience, health empowerment, and transformation from the communities we serve.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
             {stories.map((story) => (
-              <Card key={story.slug} className="group p-0 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all duration-300">
-                <div className="relative aspect-[3/2] w-full bg-gray-100 overflow-hidden border-b border-gray-200">
-                  <Image 
-                    src={story.image} 
-                    alt={story.title} 
-                    fill 
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 z-30">
-                    <Badge variant="program" className="!bg-brand-orange !text-white text-[12px] shadow-md ring-1 ring-white/70">{story.category}</Badge>
-                  </div>
-                </div>
-                <div className="p-5 md:p-6 flex flex-col flex-1">
-                  <span className="text-[12px] font-semibold text-gray-400 mb-2 block">By {story.author}</span>
-                  <h3 className="text-[17px] md:text-[20px] font-semibold text-brand-brown mb-3 leading-[1.4] group-hover:text-brand-orange transition-colors">
-                    {story.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                    {story.excerpt}
-                  </p>
-                  <div className="mt-auto">
-                    <Link href={story.link || `/stories/${story.slug}`}>
-                      <Button variant="secondary" size="small" className="w-full sm:w-auto">Read Story</Button>
-                    </Link>
-                  </div>
-                </div>
-              </Card>
+              <StoryCard
+                key={story.slug}
+                title={story.title}
+                category={story.category}
+                author={story.author}
+                excerpt={story.excerpt}
+                image={story.image}
+                href={story.link || `/stories/${story.slug}`}
+                ctaText="Read Story"
+              />
             ))}
           </div>
         </div>
