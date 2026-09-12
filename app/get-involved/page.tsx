@@ -1,10 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { PageHero } from '@/components/shared/PageHero';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { Gift, MessageSquare, Award, FileText, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Get Involved',
+  description: 'Partner with, volunteer for, mentor with, advocate for, or financially support AWIHF work with women and girls in Northern Uganda.',
+  alternates: {
+    canonical: '/get-involved',
+  },
+};
 
 export default function GetInvolvedPage() {
   const engagementPathways = [

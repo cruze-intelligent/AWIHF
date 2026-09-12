@@ -23,6 +23,7 @@ export async function LatestNews() {
               author={item.author}
               excerpt={item.excerpt}
               image={item.image}
+              imageAlt={item.imageAlt}
               href={`/news/${item.slug}`}
               ctaText="Read More"
             />

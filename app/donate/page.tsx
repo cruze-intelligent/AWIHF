@@ -1,11 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { PageHero } from '@/components/shared/PageHero';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getDonationInfo } from '@/lib/content/donation';
 import { CheckCircle2, Phone, ShieldCheck } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Donate',
+  description: 'Support AWIHF programmes in maternal health, mental health, community outreach, health education, and mentorship through official mobile money donation details.',
+  alternates: {
+    canonical: '/donate',
+  },
+};
 
 export default async function DonatePage() {
   const donationInfo = await getDonationInfo();

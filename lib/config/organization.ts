@@ -1,6 +1,11 @@
 export const organizationProfile = {
   name: 'Acholi Women in Health Foundation',
   shortName: 'AWIHF',
+  url: 'https://acholiwomeninhealth.org',
+  description:
+    'Acholi Women in Health Foundation (AWIHF) is a women-led, community-rooted non-profit improving healthcare outcomes for women and girls in Gulu and the Acholi sub-region of Northern Uganda.',
+  slogan: 'Empowering Women. Improving Health. Healing Lives, Transforming Communities.',
+  foundingDate: '2023',
   email: 'acholiwomeninhealth@gmail.com',
   phoneNumbers: ['0762401363', '0772388143'],
   postalAddress: {
@@ -14,6 +19,15 @@ export const organizationProfile = {
     instagram: 'https://www.instagram.com/acholiwomeninhealth/',
     x: 'https://x.com/acholiwomeninhealth',
   },
+  areaServed: ['Gulu City', 'Acholi sub-region', 'Northern Uganda', 'Uganda'],
+  knowsAbout: [
+    'Maternal and reproductive health',
+    'Mental health and trauma support',
+    'Community health education',
+    'Healthcare systems strengthening',
+    'School and community outreach',
+    'Healthcare mentorship',
+  ],
 } as const;
 
 export const leadershipTeam = [

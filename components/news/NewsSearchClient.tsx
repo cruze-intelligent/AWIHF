@@ -57,6 +57,7 @@ export function NewsSearchClient({ posts }: { posts: NewsPost[] }) {
               author={item.author}
               excerpt={item.excerpt}
               image={item.image}
+              imageAlt={item.imageAlt}
               href={`/news/${item.slug}`}
               ctaText="Read Full Article"
             />

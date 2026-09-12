@@ -13,6 +13,7 @@ export interface StoryCardProps {
   author?: string;
   excerpt: string;
   image: string;
+  imageAlt?: string;
   href: string;
   ctaText?: string;
   className?: string;
@@ -25,6 +26,7 @@ export function StoryCard({
   author,
   excerpt,
   image,
+  imageAlt,
   href,
   ctaText = 'Read More',
   className = '',
@@ -45,7 +47,7 @@ export function StoryCard({
         {/* Whole, uncropped, authentic image */}
         <Image
           src={image}
-          alt={title}
+          alt={imageAlt || title}
           fill
           className="object-contain relative z-10 transition-transform duration-500 group-hover:scale-[1.02] p-1"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

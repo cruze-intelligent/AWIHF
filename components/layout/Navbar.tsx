@@ -33,7 +33,7 @@ export function Navbar() {
             className="object-contain w-9 h-9 md:w-10 md:h-10"
             priority
           />
-          <span className="text-brand-orange font-bold text-xl tracking-tight hidden sm:inline-block">AWIHF</span>
+          <span className="text-brand-orange font-bold text-xl hidden sm:inline-block">AWIHF</span>
         </Link>
 
         {/* Desktop Nav */}

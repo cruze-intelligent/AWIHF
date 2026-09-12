@@ -8,16 +8,26 @@ export type CmsNewsArticle = {
   title: string;
   category: string;
   date: string;
+  publishedAt?: string;
   excerpt: string;
   image: string | Record<string, unknown>;
+  imageAlt?: string;
+  articleImage?: string | Record<string, unknown>;
+  articleImageAlt?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoImage?: string | Record<string, unknown>;
+  votingUrl?: string;
   author: string;
   readTime: string;
   content: string[];
   body?: unknown[];
 };
 
-export type NewsPost = Omit<CmsNewsArticle, 'image'> & {
+export type NewsPost = Omit<CmsNewsArticle, 'image' | 'articleImage' | 'seoImage'> & {
   image: string;
+  articleImage?: string;
+  seoImage?: string;
 };
 
 function normalizeNewsArticle(article: CmsNewsArticle): NewsPost {
@@ -26,8 +36,16 @@ function normalizeNewsArticle(article: CmsNewsArticle): NewsPost {
     title: article.title,
     category: article.category,
     date: article.date,
+    publishedAt: article.publishedAt,
     excerpt: article.excerpt,
     image: imageUrl(article.image, 1200, 675) || '/images/AWIHF-Patiko.webp',
+    imageAlt: article.imageAlt,
+    articleImage: imageUrl(article.articleImage, 1200) || undefined,
+    articleImageAlt: article.articleImageAlt,
+    seoTitle: article.seoTitle,
+    seoDescription: article.seoDescription,
+    seoImage: imageUrl(article.seoImage, 1200, 675) || undefined,
+    votingUrl: article.votingUrl,
     author: article.author,
     readTime: article.readTime,
     content: article.content,
@@ -43,9 +61,17 @@ async function fetchNewsFromCms(): Promise<CmsNewsArticle[]> {
       category,
       "excerpt": summary,
       "image": featuredImage,
+      "imageAlt": featuredImage.alt,
+      "articleImage": coalesce(articleImage, featuredImage),
+      "articleImageAlt": articleImage.alt,
       author,
       "date": coalesce(publishedAt, _createdAt),
+      publishedAt,
       "readTime": coalesce(readTime, "3 min read"),
+      seoTitle,
+      seoDescription,
+      "seoImage": coalesce(seoImage, featuredImage),
+      votingUrl,
       body,
       "content": coalesce(body[].children[].text, [])
     }

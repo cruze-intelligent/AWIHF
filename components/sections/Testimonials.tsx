@@ -4,7 +4,9 @@ import React from 'react';
 import Link from 'next/link';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
+import { ProgrammeInPracticeGallery } from '@/components/shared/ProgrammeInPracticeGallery';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { impactGalleryImages } from '@/lib/content/impactGallery';
 import { Quote } from 'lucide-react';
 
 export function Testimonials() {
@@ -39,9 +41,19 @@ export function Testimonials() {
             Impact Through Their Eyes
           </h2>
           <p className="text-gray-500 text-[15px] md:text-[17px] leading-[1.6] max-w-xl mx-auto mt-2">
-            Real stories from the women and communities we serve, showing that change is happening.
+            Field photographs and witness accounts from women, students, health workers, and communities show how AWIHF's work is taking root across Gulu and the Acholi sub-region.
           </p>
         </div>
+
+        <ProgrammeInPracticeGallery
+          title="AWIHF impact"
+          heading="Impact Through Their Eyes"
+          description="A visual record of AWIHF programmes, outreach, mentorship, and community health work across Gulu and the Acholi sub-region."
+          images={impactGalleryImages}
+          className="mb-9 md:mb-14"
+          wrapInSection={false}
+          showHeader={false}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
           {testimonials.map((t, i) => (

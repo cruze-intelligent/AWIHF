@@ -1,12 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { PageHero } from '@/components/shared/PageHero';
 import { ImpactReportSpotlight } from '@/components/sections/ImpactReportSpotlight';
 import { StoryCard } from '@/components/shared/StoryCard';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { DonateCTA } from '@/components/sections/DonateCTA';
+import { Testimonials } from '@/components/sections/Testimonials';
+
+export const metadata: Metadata = {
+  title: 'Impact',
+  description: 'Explore AWIHF impact across Northern Uganda, including households reached, healthcare students equipped, outreach milestones, programme phases, and community stories.',
+  alternates: {
+    canonical: '/impact',
+  },
+};
 
 export default function ImpactPage() {
   const impactHeroStats = [
@@ -102,6 +112,39 @@ export default function ImpactPage() {
     { target: "Establish mental health referral hubs", category: "Mental Health" },
   ];
 
+  const programmeHighlights = [
+    {
+      title: "Maternal & Reproductive Health",
+      description:
+        "Expanding safe motherhood, antenatal support, family planning education, cervical cancer awareness, and referral pathways for women and girls in underserved communities.",
+    },
+    {
+      title: "Mental Health & Trauma Support",
+      description:
+        "Creating community-based psychosocial support, healing spaces, peer networks, stigma reduction, and trusted referral pathways for women and girls.",
+    },
+    {
+      title: "Community Health Education",
+      description:
+        "Delivering school health sessions, menstrual hygiene education, SRHR peer education, and public prevention campaigns that strengthen health literacy.",
+    },
+    {
+      title: "Healthcare Systems Strengthening",
+      description:
+        "Equipping Village Health Teams, community health workers, and local health actors while improving emergency referral coordination between communities and facilities.",
+    },
+    {
+      title: "School & Community Outreach",
+      description:
+        "Bringing integrated frontline medical camps, screenings, consultations, and diagnostic education directly to schools and rural community spaces.",
+    },
+    {
+      title: "Mentorship Programme",
+      description:
+        "Connecting medical and nursing students with clinical mentors to build a stronger pipeline of women-led healthcare leadership across Uganda.",
+    },
+  ];
+
   const stories = [
     {
       slug: "safe-motherhood-patiko",
@@ -168,6 +211,25 @@ export default function ImpactPage() {
         stats={impactHeroStats}
       />
 
+      <section className="section-wrapper bg-white">
+        <div className="content-container max-w-4xl mx-auto">
+          <div className="text-center md:text-left mb-5 md:mb-7">
+            <h2 className="section-heading">Impact Summary</h2>
+          </div>
+          <div className="space-y-5 text-[#111111] text-[16px] md:text-[17px] leading-[1.75]">
+            <p>
+              Acholi Women in Health Foundation exists to address persistent health inequities affecting women and girls in the post-conflict Acholi sub-region of Northern Uganda. In Gulu and surrounding communities, families continue to face barriers to timely maternal care, reproductive-health information, mental-health support, preventive screening, and reliable referral pathways. AWIHF responds by bringing health services and education closer to the places where people already live, learn, gather, and seek support.
+            </p>
+            <p>
+              The foundation's impact is created through connected programmes rather than isolated activities. Maternal and reproductive health outreach supports safer motherhood and informed choices; mental-health and trauma support creates trusted spaces for psychosocial care; community health education strengthens prevention and dignity for women and adolescent girls; healthcare systems strengthening equips local health actors; school and community outreach takes screening and health literacy into everyday community settings; and mentorship builds the next generation of health professionals.
+            </p>
+            <p>
+              This approach has already produced measurable results, including more than 1,000 households reached through the Patiko Medical Outreach, more than 50 healthcare students equipped through the mentorship pipeline, and multiple structured programme phases completed across the Acholi sub-region. Together, these efforts show AWIHF's practical model of impact: community trust, women-led health leadership, stronger local systems, and more dignified access to care for women, girls, and families in Northern Uganda.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <ImpactReportSpotlight />
 
       {/* Organisational Timeline */}
@@ -223,27 +285,17 @@ export default function ImpactPage() {
             <h2 className="section-heading">Programme Highlights</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <Card className="border-t-4 border-t-brand-orange">
-              <h4 className="text-[20px] font-semibold text-brand-brown mb-3">SRHR Research</h4>
-              <p className="text-gray-600 leading-[1.6]">
-                Conducted critical baseline research on sexual and reproductive health needs in rural settings, forming the foundation for targeted interventions.
-              </p>
-            </Card>
-            <Card className="border-t-4 border-t-brand-orange">
-              <h4 className="text-[20px] font-semibold text-brand-brown mb-3">GBV & AIDS Campaigns</h4>
-              <p className="text-gray-600 leading-[1.6]">
-                Led community-wide awareness campaigns addressing Gender-Based Violence and HIV/AIDS prevention, integrating care with psychosocial support.
-              </p>
-            </Card>
-            <Card className="border-t-4 border-t-brand-orange">
-              <h4 className="text-[20px] font-semibold text-brand-brown mb-3">Cervical Cancer Awareness</h4>
-              <p className="text-gray-600 leading-[1.6]">
-                Launched an extensive educational drive on cervical cancer screening, helping women understand risks and access early diagnostic services.
-              </p>
-            </Card>
+            {programmeHighlights.map((highlight) => (
+              <Card key={highlight.title} className="border-t-4 border-t-brand-orange">
+                <h4 className="text-[20px] font-semibold text-brand-brown mb-3">{highlight.title}</h4>
+                <p className="text-gray-600 leading-[1.6]">{highlight.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* Stories of Impact — integrated from former Stories page */}
       <section id="stories" className="section-wrapper bg-white scroll-mt-20">

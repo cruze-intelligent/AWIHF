@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { PageHero } from '@/components/shared/PageHero';
 import { Heart, Users, BookOpen, Brain, Target, Shield } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
@@ -8,6 +9,14 @@ import { DonateCTA } from '@/components/sections/DonateCTA';
 import { PartnershipsSection } from '@/components/sections/PartnershipsSection';
 import { Linkedin } from '@/components/ui/SocialIcons';
 import { leadershipTeam } from '@/lib/config/organization';
+
+export const metadata: Metadata = {
+  title: 'About Acholi Women in Health Foundation',
+  description: 'Learn about AWIHF, a women-led, community-rooted foundation improving health outcomes for women and girls in Gulu and the Acholi sub-region of Northern Uganda.',
+  alternates: {
+    canonical: '/about',
+  },
+};
 
 export default function AboutPage() {
   const values = [
@@ -213,7 +222,7 @@ export default function AboutPage() {
             <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-3.5">
-                  <span className="text-2xl md:text-[26px] font-bold text-brand-orange tracking-tight">106.0</span>
+                  <span className="text-2xl md:text-[26px] font-bold text-brand-orange">106.0</span>
                   <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
                     Maternal Health
                   </Badge>
@@ -231,7 +240,7 @@ export default function AboutPage() {
             <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-3.5">
-                  <span className="text-2xl md:text-[26px] font-bold text-brand-orange tracking-tight">24%</span>
+                  <span className="text-2xl md:text-[26px] font-bold text-brand-orange">24%</span>
                   <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
                     Adolescent Care
                   </Badge>
@@ -249,7 +258,7 @@ export default function AboutPage() {
             <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-3.5">
-                  <span className="text-xl md:text-[22px] font-bold text-brand-orange tracking-tight">Safe Spaces</span>
+                  <span className="text-xl md:text-[22px] font-bold text-brand-orange">Safe Spaces</span>
                   <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
                     Psychosocial
                   </Badge>
@@ -267,7 +276,7 @@ export default function AboutPage() {
             <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-3.5">
-                  <span className="text-xl md:text-[22px] font-bold text-brand-orange tracking-tight">Grassroots</span>
+                  <span className="text-xl md:text-[22px] font-bold text-brand-orange">Grassroots</span>
                   <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
                     Community Reach
                   </Badge>
@@ -285,7 +294,7 @@ export default function AboutPage() {
             <Card className="p-5 md:p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
               <div>
                 <div className="flex items-center justify-between gap-3 mb-3.5">
-                  <span className="text-xl md:text-[22px] font-bold text-brand-orange tracking-tight">Local Capacity</span>
+                  <span className="text-xl md:text-[22px] font-bold text-brand-orange">Local Capacity</span>
                   <Badge variant="program" className="!bg-orange-tint !text-brand-orange text-[11px] font-semibold tracking-wide border border-brand-orange/20">
                     Health Systems
                   </Badge>

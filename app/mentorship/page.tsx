@@ -1,11 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { PageHero } from '@/components/shared/PageHero';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { MentorshipApplicationForm } from '@/components/mentorship/MentorshipApplicationForm';
 import { getApplicationWindow, getMentorshipPackages } from '@/lib/content/mentorship';
 import { CheckCircle2, GraduationCap, ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Mentorship Programme',
+  description: 'AWIHF mentorship connects healthcare students and emerging community health leaders with clinical mentors to strengthen women-led health leadership in Uganda.',
+  alternates: {
+    canonical: '/mentorship',
+  },
+};
 
 export default async function MentorshipPage() {
   const [applicationWindow, mentorshipPackages] = await Promise.all([

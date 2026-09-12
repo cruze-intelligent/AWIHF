@@ -31,7 +31,7 @@ export function Footer() {
                 height={44}
                 className="object-contain bg-white rounded-lg p-1 md:w-12 md:h-12"
               />
-              <span className="text-brand-orange font-bold text-xl md:text-2xl tracking-tight">AWIHF</span>
+              <span className="text-brand-orange font-bold text-xl md:text-2xl">AWIHF</span>
             </div>
             <p className="text-white/80 max-w-sm text-sm md:text-base leading-relaxed">
               Healing Lives, Transforming Communities.

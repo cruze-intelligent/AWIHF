@@ -1,5 +1,536 @@
 [
   {
+    "slug": "awihf-shortlisted-social-enterprise-awards-2026",
+    "title": "BREAKING: AWIHF Shortlisted for the National Social Enterprise Awards 2026!",
+    "category": "Awards",
+    "date": "September 12, 2026",
+    "publishedAt": "2026-09-12",
+    "excerpt": "Acholi Women in Health Foundation has been shortlisted for the 3rd Edition Social Enterprise Awards 2026 under the Health and Social Care Social Enterprise of the Year category.",
+    "image": "/images/Vote for AWIHF poster.webp",
+    "imageAlt": "Vote for Acholi Women in Health Foundation in the 2026 Social Enterprise Awards",
+    "articleImage": "/images/Social Enterprise Awards poster.webp",
+    "articleImageAlt": "Official 3rd Edition Social Enterprise Awards 2026 shortlist poster showing Acholi Women in Health Foundation under Health and Social Care Social Enterprise of the Year",
+    "seoTitle": "AWIHF Shortlisted for Social Enterprise Awards 2026",
+    "seoDescription": "Acholi Women in Health Foundation has been shortlisted for the 3rd Edition Social Enterprise Awards 2026 in Uganda's Health and Social Care Social Enterprise of the Year category.",
+    "seoImage": "/images/Vote for AWIHF poster.webp",
+    "votingUrl": "https://socialenterpriseawards.org/voting26.php",
+    "author": "AWIHF Communications",
+    "readTime": "5 min read",
+    "content": [
+      "Gulu City, Northern Uganda. Acholi Women in Health Foundation has been officially shortlisted for the 3rd Edition Social Enterprise Awards 2026 under the Health and Social Care Social Enterprise of the Year category.",
+      "This recognition places AWIHF among organisations transforming lives across Uganda's social enterprise landscape and validates the grassroots work the team has poured into the Acholi sub-region since its founding in 2023.",
+      "Supporters can vote by visiting socialenterpriseawards.org/voting26.php, selecting Health and Social Care Social Enterprise of the Year, finding Acholi Women in Health Foundation, and casting their vote."
+    ],
+    "body": [
+      {
+        "_key": "intro1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "intro1-span",
+            "_type": "span",
+            "text": "Gulu City, Northern Uganda. A moment of immense pride has arrived for Acholi Women in Health Foundation (AWIHF). We are thrilled and deeply honoured to announce that AWIHF has been officially shortlisted for the 3rd Edition of the Social Enterprise Awards 2026, hosted by the Federation of Uganda Social Enterprises (FUSE), under the prestigious Health and Social Care Social Enterprise of the Year category.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "intro2",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "intro2-span",
+            "_type": "span",
+            "text": "This recognition places AWIHF among an elite circle of organisations transforming lives across Uganda's social enterprise landscape, and it stands as powerful validation of the tireless, grassroots work our team has poured into the Acholi sub-region since our founding in 2023.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "why-heading",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "why-heading-span",
+            "_type": "span",
+            "text": "Why This Matters",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "why1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "why1-span",
+            "_type": "span",
+            "text": "AWIHF was founded to address the persistent and disproportionate health challenges facing women and girls in the post-conflict Acholi sub-region of Northern Uganda. Our mission is to close the gaps left behind by two decades of insurgency, guided by a simple belief: when women are empowered to lead, innovate, and deliver high-quality care, the entire community thrives.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "mission-lead",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "mission-lead-span",
+            "_type": "span",
+            "text": "That mission comes alive through our core programme areas:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "programme1",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "programme1-title",
+            "_type": "span",
+            "text": "Maternal and Reproductive Health",
+            "marks": ["strong"]
+          },
+          {
+            "_key": "programme1-text",
+            "_type": "span",
+            "text": ", delivering safe motherhood care, antenatal services, family planning, and cervical cancer awareness across the region.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "programme2",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "programme2-title",
+            "_type": "span",
+            "text": "Mental Health and Trauma Support",
+            "marks": ["strong"]
+          },
+          {
+            "_key": "programme2-text",
+            "_type": "span",
+            "text": ", offering community-based psychosocial support, healing circles, and peer networks for sickle cell disease warriors and women navigating trauma.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "programme3",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "programme3-title",
+            "_type": "span",
+            "text": "Community Health Education",
+            "marks": ["strong"]
+          },
+          {
+            "_key": "programme3-text",
+            "_type": "span",
+            "text": ", running school health sessions, menstrual hygiene management, and peer education that empowers adolescent girls.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "programme4",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "programme4-title",
+            "_type": "span",
+            "text": "Healthcare Systems Strengthening",
+            "marks": ["strong"]
+          },
+          {
+            "_key": "programme4-text",
+            "_type": "span",
+            "text": ", equipping Village Health Teams and building stronger emergency referral coordination between facilities.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "programme5",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "programme5-title",
+            "_type": "span",
+            "text": "School and Community Outreach",
+            "marks": ["strong"]
+          },
+          {
+            "_key": "programme5-text",
+            "_type": "span",
+            "text": ", bringing integrated frontline medical camps, screenings, and diagnostic education directly to underserved rural communities.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "programme6",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "programme6-title",
+            "_type": "span",
+            "text": "Mentorship",
+            "marks": ["strong"]
+          },
+          {
+            "_key": "programme6-text",
+            "_type": "span",
+            "text": ", connecting medical and nursing students nationwide with clinical mentors to build the next generation of women-led health leadership.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "impact1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "impact1-span",
+            "_type": "span",
+            "text": "Since our official launch at Gulu University Library Hall in July 2026, graced by Deputy IGG Dr. Patricia Acan Okiria and Ministry of Health Commissioner for Non-Communicable Diseases Oyoo Charles Akiya, AWIHF has reached over 1,000 households through the Patiko Medical Outreach alone, equipped more than 50 healthcare students through our mentorship pipeline, and completed multiple structured phases of programming across the Acholi sub-region.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "impact2",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "impact2-span",
+            "_type": "span",
+            "text": "This nomination is proof that this mission is being seen, felt, and celebrated far beyond our community. Being shortlisted alongside respected names in the Health and Social Care category is no small feat. It reflects the trust our beneficiaries have placed in us, the dedication of our volunteers and staff, and the belief of our partners that community-driven healthcare solutions can, and do, change lives.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "next-heading",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "next-heading-span",
+            "_type": "span",
+            "text": "What Happens Next",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "next1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "next1-span",
+            "_type": "span",
+            "text": "Winners of the Social Enterprise Awards 2026 will be determined by a powerful combination of:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "next2",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "next2-span",
+            "_type": "span",
+            "text": "50% Public Vote, decided by people like you",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "next3",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "next3-span",
+            "_type": "span",
+            "text": "50% Judges' Evaluation, based on real, measurable impact in society",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "next4",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "next4-span",
+            "_type": "span",
+            "text": "This means every single vote counts, and every person reading this has the power to help bring this award home to the Acholi sub-region.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "help-heading",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "help-heading-span",
+            "_type": "span",
+            "text": "How You Can Help Us Make History",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "help1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "help1-span",
+            "_type": "span",
+            "text": "We are calling on our entire community, supporters, partners, alumni, volunteers, and friends of AWIHF to rally behind this nomination and vote.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "vote1",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [
+          {
+            "_key": "vote-link",
+            "_type": "link",
+            "href": "https://socialenterpriseawards.org/voting26.php"
+          }
+        ],
+        "children": [
+          {
+            "_key": "vote1-text",
+            "_type": "span",
+            "text": "Visit: ",
+            "marks": []
+          },
+          {
+            "_key": "vote1-link",
+            "_type": "span",
+            "text": "socialenterpriseawards.org/voting26.php",
+            "marks": ["vote-link"]
+          }
+        ]
+      },
+      {
+        "_key": "vote2",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "vote2-span",
+            "_type": "span",
+            "text": "Select: Health and Social Care Social Enterprise of the Year",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "vote3",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "vote3-span",
+            "_type": "span",
+            "text": "Find: Acholi Women in Health Foundation",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "vote4",
+        "_type": "block",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "vote4-span",
+            "_type": "span",
+            "text": "Cast your vote.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "share",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "share-span",
+            "_type": "span",
+            "text": "Then share it. Tag a friend. Post it on your timeline. Every share multiplies our chance of bringing this trophy home to Northern Uganda.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "community-heading",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "community-heading-span",
+            "_type": "span",
+            "text": "A Message to Our Community",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "community1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "community1-span",
+            "_type": "span",
+            "text": "This nomination belongs to every mother we've supported through safe motherhood care, every young person we've mentored, every health professional we've helped train, and every community member who has believed in the AWIHF vision. It belongs to Gulu, to the Acholi sub-region, and to everyone working to build a healthier, more equitable Northern Uganda.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "community2",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "community2-span",
+            "_type": "span",
+            "text": "We are just getting started. Let's bring this home, together.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "tagline1",
+        "_type": "block",
+        "style": "blockquote",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "tagline1-span",
+            "_type": "span",
+            "text": "VOTE. SHARE. TAG A FRIEND.",
+            "marks": ["strong"]
+          }
+        ]
+      },
+      {
+        "_key": "tagline2",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "tagline2-span",
+            "_type": "span",
+            "text": "Empowering Women. Improving Health. Healing Lives, Transforming Communities.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "social",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "social-span",
+            "_type": "span",
+            "text": "Follow Acholi Women in Health Foundation on Facebook, Instagram, LinkedIn, and @awihf.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "awihf-official-launch-2026",
     "title": "AWIHF Officially Launches at Gulu University Library Hall",
     "category": "Launch",

@@ -1,10 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { PageHero } from '@/components/shared/PageHero';
 import { Linkedin } from '@/components/ui/SocialIcons';
 import { Button } from '@/components/ui/Button';
 import { leadershipTeam } from '@/lib/config/organization';
+
+export const metadata: Metadata = {
+  title: 'Team',
+  description: 'Meet the AWIHF leadership team guiding women-led, community-rooted healthcare work in Gulu and across Northern Uganda.',
+  alternates: {
+    canonical: '/team',
+  },
+};
 
 export default function TeamPage() {
   return (

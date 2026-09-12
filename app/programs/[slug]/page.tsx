@@ -1,5 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { ProgramLayout } from '@/components/shared/ProgramLayout';
 
 type ProgramData = {
@@ -285,6 +286,35 @@ const programsData: Record<string, ProgramData> = {
 
 export function generateStaticParams() {
   return Object.keys(programsData).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const params = await props.params;
+  const program = programsData[params.slug];
+
+  if (!program) {
+    return {};
+  }
+
+  return {
+    title: program.title,
+    description: program.objective,
+    alternates: {
+      canonical: `/programs/${params.slug}`,
+    },
+    openGraph: {
+      title: `${program.title} | AWIHF`,
+      description: program.objective,
+      images: program.heroImage
+        ? [
+            {
+              url: program.heroImage,
+              alt: program.title,
+            },
+          ]
+        : undefined,
+    },
+  };
 }
 
 export default async function ProgramPage(props: { params: Promise<{ slug: string }> }) {

@@ -2,6 +2,24 @@ import Image from 'next/image';
 import { PortableText, type PortableTextComponents } from '@portabletext/react';
 import { imageUrl } from '@/lib/sanity/image';
 
+function safeHref(value: unknown) {
+  if (typeof value !== 'string') {
+    return '#';
+  }
+
+  if (
+    value.startsWith('/') ||
+    value.startsWith('https://') ||
+    value.startsWith('http://') ||
+    value.startsWith('mailto:') ||
+    value.startsWith('tel:')
+  ) {
+    return value;
+  }
+
+  return '#';
+}
+
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
@@ -25,16 +43,21 @@ const components: PortableTextComponents = {
   marks: {
     strong: ({ children }) => <strong className="font-bold text-brand-brown">{children}</strong>,
     em: ({ children }) => <em>{children}</em>,
-    link: ({ children, value }) => (
-      <a
-        href={value?.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-semibold text-brand-orange hover:text-brand-brown transition-colors"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }) => {
+      const href = safeHref(value?.href);
+      const isExternal = href.startsWith('http://') || href.startsWith('https://');
+
+      return (
+        <a
+          href={href}
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          className="font-semibold text-brand-orange hover:text-brand-brown transition-colors"
+        >
+          {children}
+        </a>
+      );
+    },
   },
   types: {
     image: ({ value }) => {
