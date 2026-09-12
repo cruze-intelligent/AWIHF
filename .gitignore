@@ -49,6 +49,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# codex temp/cache
+.codex-tmp/
+
 # editor and OS-local state
 .vscode/
 .idea/
